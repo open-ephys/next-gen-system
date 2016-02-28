@@ -3436,7 +3436,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="R6" library="RHD2000_eval_board" deviceset="R" device="_0603" value="100"/>
 <part name="J2" library="RHD2000_eval_board" deviceset="DC_POWER_JACK" device="-PJ-102AH"/>
 <part name="LINK_GNDS" library="jumper" deviceset="JP2E" device=""/>
-<part name="LIN5V" library="jumper" deviceset="JP2E" device=""/>
+<part name="LINK-5V" library="jumper" deviceset="JP2E" device=""/>
 <part name="S2" library="RHD2000_eval_board" deviceset="RHD2000-CABLE-DAQ-SIDE" device=""/>
 <part name="U$13" library="SA_BB" deviceset="SMA_JACK_142-0701-201_DEV" device=""/>
 <part name="U$14" library="SA_BB" deviceset="SMA_JACK_142-0701-201_DEV" device=""/>
@@ -3532,7 +3532,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="R6" gate="R" x="88.9" y="185.42"/>
 <instance part="J2" gate="A" x="119.38" y="358.14" rot="R270"/>
 <instance part="LINK_GNDS" gate="1" x="165.1" y="332.74"/>
-<instance part="LIN5V" gate="1" x="165.1" y="360.68"/>
+<instance part="LINK-5V" gate="1" x="165.1" y="360.68"/>
 <instance part="S2" gate="A" x="33.02" y="88.9" rot="R270"/>
 <instance part="U$13" gate="G$1" x="175.26" y="71.12"/>
 <instance part="U$14" gate="G$1" x="175.26" y="53.34"/>
@@ -3994,7 +3994,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="88.9" y1="289.56" x2="121.92" y2="289.56" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="289.56" x2="121.92" y2="350.52" width="0.1524" layer="91"/>
 <pinref part="J2" gate="A" pin="PWR"/>
-<pinref part="LIN5V" gate="1" pin="1"/>
+<pinref part="LINK-5V" gate="1" pin="1"/>
 <wire x1="121.92" y1="350.52" x2="154.94" y2="350.52" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="350.52" x2="162.56" y2="358.14" width="0.1524" layer="91"/>
 </segment>
@@ -4238,7 +4238,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="5VD1" gate="A" pin="EN"/>
 <wire x1="185.42" y1="256.54" x2="187.96" y2="256.54" width="0.1524" layer="91"/>
 <pinref part="J1" gate="A" pin="PWR"/>
-<pinref part="LIN5V" gate="1" pin="2"/>
+<pinref part="LINK-5V" gate="1" pin="2"/>
 <wire x1="180.34" y1="284.48" x2="180.34" y2="342.9" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="342.9" x2="165.1" y2="358.14" width="0.1524" layer="91"/>
 <junction x="180.34" y="284.48"/>
