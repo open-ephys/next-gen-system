@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.01" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="42" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="42" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -138,11 +138,11 @@
 <wire x1="71.628" y1="32.512" x2="73.914" y2="32.512" width="0.3048" layer="25"/>
 <wire x1="73.914" y1="28.956" x2="71.628" y2="28.956" width="0.3048" layer="25"/>
 <wire x1="71.628" y1="25.4" x2="74.168" y2="25.4" width="0.3048" layer="25"/>
-<text x="94.742" y="52.07" size="1.27" layer="25" font="vector" ratio="15">isolated</text>
+<text x="94.234" y="62.738" size="1.27" layer="25" font="vector" ratio="15">isolated</text>
 <text x="27.178" y="61.468" size="1.27" layer="25" font="vector" ratio="15">non-isolated</text>
 <text x="92.202" y="37.084" size="1.27" layer="25" font="vector" ratio="15" rot="R90">5V
 isolated</text>
-<text x="64.516" y="1.778" size="1.27" layer="25" font="vector" ratio="15">5V non-
+<text x="59.182" y="12.954" size="1.27" layer="25" font="vector" ratio="15">5V non-
 isolated</text>
 <text x="72.644" y="65.278" size="1.27" layer="25" font="vector" ratio="15" rot="R90">gnd</text>
 <text x="75.946" y="65.532" size="1.27" layer="25" font="vector" ratio="15" rot="R225">mosi+</text>
@@ -156,13 +156,21 @@ isolated</text>
 <text x="80.01" y="21.336" size="1.27" layer="25" font="vector" ratio="15" rot="R225">5v</text>
 <text x="79.502" y="16.256" size="1.27" layer="25" font="vector" ratio="15" rot="R45">vdd33</text>
 <text x="86.36" y="20.32" size="1.27" layer="25" font="vector" ratio="15" rot="R315">vdd_is</text>
-<text x="50.038" y="5.842" size="1.27" layer="25" font="vector" ratio="15" rot="R45">gnd</text>
+<text x="49.784" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">gnd</text>
 <text x="68.326" y="22.606" size="1.27" layer="25" font="vector" ratio="15">isolated</text>
 <wire x1="76.2" y1="24.13" x2="76.2" y2="25.146" width="0.3048" layer="25"/>
 <wire x1="76.2" y1="25.146" x2="90.424" y2="25.146" width="0.3048" layer="25"/>
 <wire x1="90.424" y1="25.146" x2="90.424" y2="23.114" width="0.3048" layer="25"/>
 <wire x1="90.424" y1="23.114" x2="90.678" y2="23.114" width="0.3048" layer="25"/>
-<text x="46.99" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">vdd_in</text>
+<text x="47.244" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">vdd_in</text>
+<text x="27.178" y="63.5" size="1.778" layer="25" font="vector" ratio="15">A</text>
+<text x="94.234" y="64.516" size="1.778" layer="25" font="vector" ratio="15">A</text>
+<text x="24.638" y="9.398" size="1.778" layer="25" font="vector" ratio="15">B</text>
+<text x="24.638" y="7.874" size="1.27" layer="25" font="vector" ratio="15">non-isolated</text>
+<wire x1="41.91" y1="17.018" x2="44.704" y2="17.018" width="0.3048" layer="25"/>
+<wire x1="44.45" y1="12.7" x2="41.91" y2="12.7" width="0.3048" layer="25"/>
+<text x="44.704" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">vdd33</text>
+<text x="41.91" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">3v_fpga</text>
 </plain>
 <libraries>
 <library name="SA_BB">
@@ -2288,7 +2296,7 @@ design rules under a new name.</description>
 <element name="U$4" library="SA_BB" package="FMC_LPC_MALE_WITH_SP601_BSILK" value="FMC_LPC_160_PIN" x="18.415" y="34.925" rot="R270"/>
 <element name="U$2" library="SA_BB" package="SMA_JACK_142-0701-201" value="SMA_JACK_142-0701-201_DEV" x="5.715" y="50.8"/>
 <element name="U$5" library="SA_BB" package="SMA_JACK_142-0701-201" value="SMA_JACK_142-0701-201_DEV" x="5.715" y="64.135"/>
-<element name="U$1" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="25.908" y="40.386"/>
+<element name="U$1" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="24.892" y="39.116"/>
 <element name="U$3" library="open-ephys" package="8-SOIC" value="ADN4663" x="61.468" y="56.515" rot="R180"/>
 <element name="U$6" library="open-ephys" package="8-SOIC" value="ADN4664" x="86.36" y="57.023" rot="R180"/>
 <element name="U$7" library="open-ephys" package="8-SOIC" value="ADN4663" x="81.026" y="44.958"/>
@@ -2385,7 +2393,7 @@ design rules under a new name.</description>
 <element name="C16" library="RHD2000_eval_board" package="0603" value="100n" x="82.931" y="59.944"/>
 <element name="C17" library="RHD2000_eval_board" package="0603" value="100n" x="61.341" y="42.291" rot="R180"/>
 <element name="C18" library="RHD2000_eval_board" package="0603" value="100n" x="61.341" y="50.419"/>
-<element name="S3" library="RHD2000_eval_board" package="OMNETICS_PZN-12-AA" value="RHD2000-CABLE-DAQ-SIDE" x="99.822" y="56.515" smashed="yes" rot="R270">
+<element name="A_ISOLATED" library="RHD2000_eval_board" package="OMNETICS_PZN-12-AA" value="RHD2000-CABLE-DAQ-SIDE" x="99.822" y="56.515" smashed="yes" rot="R270">
 <attribute name="NAME" x="104.5845" y="55.245" size="1.27" layer="25" font="vector"/>
 </element>
 <element name="TP3" library="testpad" package="P5-25-13" value="TP5P5-25-13" x="83.693" y="22.86" smashed="yes" rot="R180">
@@ -2426,12 +2434,17 @@ design rules under a new name.</description>
 <attribute name="NAME" x="66.929" y="31.369" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="75.057" y="35.052" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="S2" library="RHD2000_eval_board" package="OMNETICS_PZN-12-AA" value="RHD2000-CABLE-DAQ-SIDE" x="33.401" y="65.786" smashed="yes">
+<element name="A" library="RHD2000_eval_board" package="OMNETICS_PZN-12-AA" value="RHD2000-CABLE-DAQ-SIDE" x="33.401" y="65.786" smashed="yes">
 <attribute name="NAME" x="32.639" y="71.3105" size="1.27" layer="25" font="vector" rot="R90"/>
 </element>
 <element name="U$13" library="SA_BB" package="SMA_JACK_142-0701-201" value="SMA_JACK_142-0701-201_DEV" x="5.842" y="10.795"/>
 <element name="U$14" library="SA_BB" package="SMA_JACK_142-0701-201" value="SMA_JACK_142-0701-201_DEV" x="5.969" y="24.257"/>
 <element name="U$15" library="SA_BB" package="SMA_JACK_142-0701-201" value="SMA_JACK_142-0701-201_DEV" x="5.842" y="37.465"/>
+<element name="B" library="RHD2000_eval_board" package="OMNETICS_PZN-12-AA" value="RHD2000-CABLE-DAQ-SIDE" x="31.75" y="4.064" rot="R180"/>
+<element name="LINK_FPGA_3V" library="jumper" package="JP2" value="" x="41.91" y="14.732" smashed="yes" rot="R180">
+<attribute name="NAME" x="47.752" y="19.685" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="45.466" y="19.05" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -2456,7 +2469,7 @@ design rules under a new name.</description>
 <contactref element="J1" pad="3"/>
 <contactref element="J1" pad="2"/>
 <contactref element="TP2" pad="TP-5"/>
-<contactref element="S2" pad="T6"/>
+<contactref element="A" pad="T6"/>
 <contactref element="LINK_GNDS" pad="2"/>
 <wire x1="46.91" y1="62.484" x2="47.498" y2="62.484" width="0.4064" layer="1"/>
 <wire x1="47.498" y1="62.484" x2="48.006" y2="62.992" width="0.4064" layer="1"/>
@@ -2472,9 +2485,8 @@ design rules under a new name.</description>
 <vertex x="-6.096" y="-3.048"/>
 <vertex x="-6.096" y="68.326"/>
 </polygon>
-<wire x1="62.2046" y1="42.291" x2="62.2046" y2="40.9194" width="0.4064" layer="1"/>
-<wire x1="62.2046" y1="40.9194" x2="62.23" y2="40.894" width="0.4064" layer="1"/>
-<wire x1="62.23" y1="40.894" x2="62.992" y2="40.64" width="0.4064" layer="1"/>
+<wire x1="62.2046" y1="42.291" x2="62.2046" y2="41.4274" width="0.4064" layer="1"/>
+<wire x1="62.2046" y1="41.4274" x2="62.992" y2="40.64" width="0.4064" layer="1"/>
 <via x="62.992" y="40.64" extent="1-16" drill="0.6"/>
 <wire x1="62.992" y1="40.64" x2="62.992" y2="45.212" width="0.4064" layer="16"/>
 <wire x1="62.992" y1="45.212" x2="64.262" y2="46.482" width="0.4064" layer="16"/>
@@ -2515,6 +2527,49 @@ design rules under a new name.</description>
 <vertex x="66.548" y="20.066"/>
 <vertex x="66.548" y="-3.556"/>
 </polygon>
+<contactref element="B" pad="T6"/>
+<polygon width="0.3048" layer="16">
+<vertex x="-4.318" y="73.914"/>
+<vertex x="26.67" y="73.914"/>
+<vertex x="27.94" y="72.644"/>
+<vertex x="27.94" y="0"/>
+<vertex x="18.288" y="-9.652"/>
+<vertex x="3.048" y="-9.652"/>
+<vertex x="-5.08" y="-1.524"/>
+<vertex x="-5.08" y="73.152"/>
+</polygon>
+<contactref element="U$4" pad="P$3"/>
+<contactref element="U$4" pad="P$39"/>
+<contactref element="U$4" pad="P$160"/>
+<contactref element="U$4" pad="P$158"/>
+<contactref element="U$4" pad="P$156"/>
+<contactref element="U$5" pad="GND$1"/>
+<contactref element="U$5" pad="GND$2"/>
+<contactref element="U$5" pad="GND$3"/>
+<contactref element="U$5" pad="GND$4"/>
+<contactref element="U$2" pad="GND$1"/>
+<contactref element="U$2" pad="GND$2"/>
+<contactref element="U$2" pad="GND$3"/>
+<contactref element="U$2" pad="GND$4"/>
+<contactref element="U$13" pad="GND$1"/>
+<contactref element="U$13" pad="GND$2"/>
+<contactref element="U$13" pad="GND$3"/>
+<contactref element="U$13" pad="GND$4"/>
+<contactref element="U$14" pad="GND$4"/>
+<contactref element="U$14" pad="GND$3"/>
+<contactref element="U$14" pad="GND$2"/>
+<contactref element="U$14" pad="GND$1"/>
+<contactref element="U$15" pad="GND$4"/>
+<contactref element="U$15" pad="GND$3"/>
+<contactref element="U$15" pad="GND$2"/>
+<contactref element="U$15" pad="GND$1"/>
+<contactref element="U$4" pad="P$121"/>
+<contactref element="U$4" pad="P$124"/>
+<contactref element="U$4" pad="P$125"/>
+<contactref element="U$4" pad="P$129"/>
+<contactref element="U$4" pad="P$128"/>
+<contactref element="U$4" pad="P$82"/>
+<contactref element="U$4" pad="P$83"/>
 </signal>
 <signal name="MISO2+">
 <contactref element="U$3" pad="P7"/>
@@ -2530,8 +2585,9 @@ design rules under a new name.</description>
 <wire x1="64.77" y1="64.516" x2="62.992" y2="64.516" width="0.4064" layer="16"/>
 <wire x1="62.992" y1="64.516" x2="58.166" y2="59.69" width="0.4064" layer="16"/>
 <via x="58.166" y="59.69" extent="1-16" drill="0.6"/>
-<wire x1="58.166" y1="59.69" x2="58.166" y2="55.372" width="0.4064" layer="1"/>
-<wire x1="58.166" y1="55.372" x2="56.395" y2="55.372" width="0.4064" layer="1"/>
+<wire x1="58.166" y1="59.69" x2="58.166" y2="56.134" width="0.4064" layer="1"/>
+<wire x1="58.166" y1="56.134" x2="57.404" y2="55.372" width="0.4064" layer="1"/>
+<wire x1="57.404" y1="55.372" x2="56.395" y2="55.372" width="0.4064" layer="1"/>
 <wire x1="56.395" y1="55.372" x2="56.268" y2="55.245" width="0.4064" layer="1"/>
 </signal>
 <signal name="MISO1-">
@@ -2587,7 +2643,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MISO2-_ISOLATED">
 <contactref element="U$6" pad="P1"/>
-<contactref element="S3" pad="T5"/>
+<contactref element="A_ISOLATED" pad="T5"/>
 <contactref element="R5" pad="2"/>
 <wire x1="97.663" y1="57.4675" x2="96.9645" y2="57.4675" width="0.3048" layer="1"/>
 <wire x1="96.9645" y1="57.4675" x2="95.758" y2="58.674" width="0.3048" layer="1"/>
@@ -2603,7 +2659,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MISO1+_ISOLATED">
 <contactref element="U$6" pad="P3"/>
-<contactref element="S3" pad="B4"/>
+<contactref element="A_ISOLATED" pad="B4"/>
 <contactref element="R6" pad="1"/>
 <contactref element="TP1" pad="TP-4"/>
 <wire x1="86.36" y1="55.753" x2="88.9" y2="55.753" width="0.3048" layer="1"/>
@@ -2625,7 +2681,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MISO1-_ISOLATED">
 <contactref element="U$6" pad="P4"/>
-<contactref element="S3" pad="T4"/>
+<contactref element="A_ISOLATED" pad="T4"/>
 <contactref element="R6" pad="2"/>
 <wire x1="86.36" y1="57.023" x2="86.487" y2="57.023" width="0.3048" layer="1"/>
 <wire x1="86.487" y1="57.023" x2="87.122" y2="57.658" width="0.3048" layer="1"/>
@@ -2636,7 +2692,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MISO2+_ISOLATED">
 <contactref element="U$6" pad="P2"/>
-<contactref element="S3" pad="B5"/>
+<contactref element="A_ISOLATED" pad="B5"/>
 <contactref element="R5" pad="1"/>
 <wire x1="98.806" y1="57.4675" x2="101.2825" y2="57.4675" width="0.3048" layer="1"/>
 <wire x1="101.2825" y1="57.4675" x2="101.854" y2="57.15" width="0.3048" layer="1"/>
@@ -2668,13 +2724,13 @@ design rules under a new name.</description>
 <signal name="MOSI+">
 <contactref element="U$8" pad="P4"/>
 <contactref element="TP2" pad="TP-4"/>
-<wire x1="60.325" y1="67.183" x2="60.325" y2="59.563" width="0.4064" layer="1"/>
-<wire x1="60.325" y1="59.563" x2="58.928" y2="58.166" width="0.4064" layer="1"/>
-<wire x1="58.928" y1="58.166" x2="58.928" y2="52.07" width="0.4064" layer="1"/>
-<wire x1="58.928" y1="52.07" x2="57.912" y2="51.054" width="0.4064" layer="1"/>
-<wire x1="57.912" y1="51.054" x2="57.912" y2="35.814" width="0.4064" layer="1"/>
-<wire x1="57.912" y1="35.814" x2="56.261" y2="35.814" width="0.4064" layer="1"/>
-<wire x1="56.261" y1="35.814" x2="55.88" y2="36.195" width="0.4064" layer="1"/>
+<wire x1="60.325" y1="67.183" x2="60.325" y2="60.071" width="0.4064" layer="1"/>
+<wire x1="60.325" y1="60.071" x2="58.928" y2="58.674" width="0.4064" layer="1"/>
+<wire x1="58.928" y1="58.674" x2="58.928" y2="49.022" width="0.4064" layer="1"/>
+<wire x1="58.928" y1="49.022" x2="57.912" y2="48.006" width="0.4064" layer="1"/>
+<wire x1="57.912" y1="48.006" x2="57.912" y2="36.068" width="0.4064" layer="1"/>
+<wire x1="57.912" y1="36.068" x2="56.261" y2="36.068" width="0.4064" layer="1"/>
+<wire x1="56.261" y1="36.068" x2="55.88" y2="36.195" width="0.4064" layer="1"/>
 </signal>
 <signal name="CS-">
 <contactref element="U$10" pad="P3"/>
@@ -2684,7 +2740,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="CS-_ISOLATED">
 <contactref element="U$9" pad="P8"/>
-<contactref element="S3" pad="T1"/>
+<contactref element="A_ISOLATED" pad="T1"/>
 <wire x1="97.663" y1="54.9275" x2="97.663" y2="51.689" width="0.3048" layer="1"/>
 <wire x1="97.663" y1="51.689" x2="87.884" y2="41.91" width="0.3048" layer="1"/>
 <wire x1="87.884" y1="41.91" x2="87.884" y2="40.64" width="0.3048" layer="1"/>
@@ -2744,7 +2800,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="SCLK-_ISOLATED">
 <contactref element="U$7" pad="P5"/>
-<contactref element="S3" pad="T2"/>
+<contactref element="A_ISOLATED" pad="T2"/>
 <wire x1="97.663" y1="55.5625" x2="96.9645" y2="55.5625" width="0.3048" layer="1"/>
 <wire x1="96.9645" y1="55.5625" x2="96.52" y2="55.118" width="0.3048" layer="1"/>
 <wire x1="96.52" y1="55.118" x2="96.52" y2="51.562" width="0.3048" layer="1"/>
@@ -2753,7 +2809,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MOSI-_ISOLATED">
 <contactref element="U$7" pad="P8"/>
-<contactref element="S3" pad="T3"/>
+<contactref element="A_ISOLATED" pad="T3"/>
 <wire x1="97.663" y1="56.1975" x2="96.8375" y2="56.1975" width="0.3048" layer="1"/>
 <wire x1="96.8375" y1="56.1975" x2="96.012" y2="55.372" width="0.3048" layer="1"/>
 <wire x1="96.012" y1="55.372" x2="96.012" y2="52.07" width="0.3048" layer="1"/>
@@ -2764,7 +2820,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="MOSI+_ISOLATED">
 <contactref element="U$7" pad="P7"/>
-<contactref element="S3" pad="B3"/>
+<contactref element="A_ISOLATED" pad="B3"/>
 <contactref element="TP1" pad="TP-2"/>
 <wire x1="98.806" y1="56.1975" x2="98.806" y2="56.134" width="0.3048" layer="1"/>
 <wire x1="98.806" y1="56.134" x2="99.822" y2="56.134" width="0.3048" layer="1"/>
@@ -2810,14 +2866,14 @@ design rules under a new name.</description>
 <signal name="CS_SE">
 <contactref element="U$10" pad="P6"/>
 <contactref element="U$12" pad="P4"/>
-<wire x1="61.08" y1="45.72" x2="62.738" y2="45.72" width="0.4064" layer="1"/>
-<wire x1="62.738" y1="45.72" x2="64.008" y2="44.45" width="0.4064" layer="1"/>
-<wire x1="64.008" y1="44.45" x2="64.008" y2="41.91" width="0.4064" layer="1"/>
-<wire x1="64.008" y1="41.91" x2="65.024" y2="40.894" width="0.4064" layer="1"/>
+<wire x1="61.08" y1="45.72" x2="62.484" y2="45.72" width="0.4064" layer="1"/>
+<wire x1="62.484" y1="45.72" x2="63.5" y2="44.704" width="0.4064" layer="1"/>
+<wire x1="63.5" y1="44.704" x2="63.5" y2="42.418" width="0.4064" layer="1"/>
+<wire x1="63.5" y1="42.418" x2="65.024" y2="40.894" width="0.4064" layer="1"/>
 <wire x1="65.024" y1="40.894" x2="66.421" y2="40.894" width="0.4064" layer="1"/>
 </signal>
 <signal name="GND_ISOLATED">
-<contactref element="S3" pad="T6"/>
+<contactref element="A_ISOLATED" pad="T6"/>
 <contactref element="U$9" pad="P4"/>
 <contactref element="U$7" pad="P4"/>
 <contactref element="C14" pad="2"/>
@@ -2910,7 +2966,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="VDD_ISOLATED">
 <contactref element="C15" pad="1"/>
-<contactref element="S3" pad="B6"/>
+<contactref element="A_ISOLATED" pad="B6"/>
 <contactref element="5VD2" pad="6"/>
 <contactref element="C8" pad="1"/>
 <contactref element="C9" pad="1"/>
@@ -3008,6 +3064,27 @@ design rules under a new name.</description>
 <wire x1="55.372" y1="60.452" x2="57.404" y2="58.42" width="0.4064" layer="16"/>
 <wire x1="57.404" y1="58.42" x2="61.722" y2="58.42" width="0.4064" layer="16"/>
 <wire x1="61.722" y1="58.42" x2="62.484" y2="59.182" width="0.4064" layer="16"/>
+<contactref element="TP4" pad="TP-3"/>
+<contactref element="LINK_FPGA_3V" pad="1"/>
+<wire x1="61.08" y1="40.005" x2="61.08" y2="40.012" width="0.3048" layer="1"/>
+<wire x1="61.08" y1="40.012" x2="60.706" y2="40.386" width="0.3048" layer="1"/>
+<wire x1="61.08" y1="40.005" x2="59.563" y2="40.005" width="0.3048" layer="1"/>
+<wire x1="59.563" y1="40.005" x2="59.182" y2="39.624" width="0.3048" layer="1"/>
+<wire x1="59.182" y1="39.624" x2="59.182" y2="35.306" width="0.3048" layer="1"/>
+<wire x1="59.182" y1="35.306" x2="58.928" y2="35.052" width="0.3048" layer="1"/>
+<via x="58.928" y="35.052" extent="1-16" drill="0.5"/>
+<wire x1="58.928" y1="35.052" x2="58.928" y2="9.652" width="0.3048" layer="16"/>
+<wire x1="58.928" y1="9.652" x2="58.166" y2="8.89" width="0.3048" layer="16"/>
+<wire x1="58.166" y1="8.89" x2="54.356" y2="8.89" width="0.3048" layer="16"/>
+<wire x1="54.356" y1="8.89" x2="52.324" y2="6.858" width="0.3048" layer="16"/>
+<wire x1="52.324" y1="6.858" x2="52.324" y2="1.524" width="0.3048" layer="16"/>
+<wire x1="52.324" y1="1.524" x2="51.562" y2="0.762" width="0.3048" layer="16"/>
+<wire x1="51.562" y1="0.762" x2="44.958" y2="0.762" width="0.3048" layer="16"/>
+<wire x1="44.958" y1="0.762" x2="44.45" y2="1.27" width="0.3048" layer="16"/>
+<wire x1="44.45" y1="1.27" x2="44.45" y2="3.302" width="0.3048" layer="16"/>
+<wire x1="44.45" y1="3.302" x2="44.577" y2="3.429" width="0.3048" layer="16"/>
+<wire x1="44.45" y1="14.732" x2="44.45" y2="3.556" width="0.3048" layer="16"/>
+<wire x1="44.45" y1="3.556" x2="44.577" y2="3.429" width="0.3048" layer="16"/>
 </signal>
 <signal name="VDD33_ISOLATED">
 <contactref element="5VD" pad="6"/>
@@ -3101,13 +3178,11 @@ design rules under a new name.</description>
 <wire x1="57.15" y1="52.578" x2="43.688" y2="66.04" width="0.4064" layer="16"/>
 <via x="43.688" y="66.04" extent="1-16" drill="0.6"/>
 <wire x1="43.688" y1="66.04" x2="43.688" y2="65.532" width="0.4064" layer="1"/>
-<wire x1="71.501" y1="30.734" x2="71.501" y2="31.623" width="0.4064" layer="16"/>
-<wire x1="71.501" y1="31.623" x2="69.342" y2="33.782" width="0.4064" layer="16"/>
-<wire x1="69.342" y1="33.782" x2="57.15" y2="33.782" width="0.4064" layer="16"/>
 <wire x1="57.15" y1="33.782" x2="57.15" y2="11.89" width="0.3048" layer="16"/>
-</signal>
-<signal name="5VBOOST">
-<contactref element="TP4" pad="TP-1"/>
+<wire x1="57.15" y1="33.782" x2="69.596" y2="33.782" width="0.3048" layer="1"/>
+<wire x1="69.596" y1="33.782" x2="71.374" y2="32.004" width="0.3048" layer="1"/>
+<wire x1="71.374" y1="32.004" x2="71.374" y2="30.861" width="0.3048" layer="1"/>
+<wire x1="71.374" y1="30.861" x2="71.501" y2="30.734" width="0.3048" layer="1"/>
 </signal>
 <signal name="5V_ISOLATED">
 <contactref element="5VD" pad="1"/>
@@ -3213,7 +3288,7 @@ design rules under a new name.</description>
 <contactref element="C15" pad="2"/>
 </signal>
 <signal name="CS+_ISOLATED">
-<contactref element="S3" pad="B1"/>
+<contactref element="A_ISOLATED" pad="B1"/>
 <contactref element="U$9" pad="P7"/>
 <wire x1="98.806" y1="54.9275" x2="98.806" y2="51.816" width="0.3048" layer="1"/>
 <wire x1="98.806" y1="51.816" x2="88.646" y2="41.656" width="0.3048" layer="1"/>
@@ -3223,7 +3298,7 @@ design rules under a new name.</description>
 <wire x1="86.353" y1="39.116" x2="86.226" y2="38.989" width="0.3048" layer="1"/>
 </signal>
 <signal name="SCLK+_ISOLATED">
-<contactref element="S3" pad="B2"/>
+<contactref element="A_ISOLATED" pad="B2"/>
 <contactref element="U$7" pad="P6"/>
 <wire x1="98.806" y1="55.5625" x2="98.9965" y2="55.5625" width="0.3048" layer="1"/>
 <wire x1="98.9965" y1="55.5625" x2="99.06" y2="55.626" width="0.3048" layer="1"/>
@@ -3237,11 +3312,31 @@ design rules under a new name.</description>
 <wire x1="91.186" y1="48.514" x2="88.9" y2="46.228" width="0.3048" layer="1"/>
 <wire x1="88.9" y1="46.228" x2="86.226" y2="46.228" width="0.3048" layer="1"/>
 </signal>
-<signal name="PWR_JACK">
-<contactref element="TP4" pad="TP-3"/>
-</signal>
-<signal name="VDD_FROM_BOARD">
+<signal name="3V_FPGA">
+<contactref element="U$4" pad="P$118"/>
+<contactref element="U$4" pad="P$116"/>
+<contactref element="U$4" pad="P$120"/>
+<contactref element="U$4" pad="P$159"/>
 <contactref element="TP4" pad="TP-2"/>
+<contactref element="LINK_FPGA_3V" pad="2"/>
+<wire x1="41.91" y1="14.732" x2="41.91" y2="14.224" width="0.3048" layer="16"/>
+<wire x1="41.91" y1="14.224" x2="41.91" y2="3.556" width="0.3048" layer="16"/>
+<wire x1="41.91" y1="3.556" x2="42.037" y2="3.429" width="0.3048" layer="16"/>
+<wire x1="15.24" y1="58.42" x2="16.51" y2="59.69" width="0.3048" layer="16"/>
+<wire x1="15.24" y1="58.42" x2="16.51" y2="57.15" width="0.3048" layer="16"/>
+<wire x1="16.51" y1="57.15" x2="17.78" y2="55.88" width="0.3048" layer="16"/>
+<wire x1="17.78" y1="55.88" x2="17.78" y2="54.864" width="0.3048" layer="16"/>
+<wire x1="16.51" y1="54.61" x2="17.526" y2="54.61" width="0.3048" layer="16"/>
+<wire x1="17.526" y1="54.61" x2="17.78" y2="54.864" width="0.3048" layer="16"/>
+<via x="17.78" y="54.864" extent="1-16" drill="0.5"/>
+<wire x1="17.78" y1="54.864" x2="36.068" y2="54.864" width="0.3048" layer="1"/>
+<wire x1="36.068" y1="54.864" x2="41.656" y2="60.452" width="0.3048" layer="1"/>
+<via x="41.656" y="60.452" extent="1-16" drill="0.5"/>
+<wire x1="41.656" y1="60.452" x2="41.656" y2="14.478" width="0.3048" layer="16"/>
+<wire x1="41.656" y1="14.478" x2="41.91" y2="14.224" width="0.3048" layer="16"/>
+</signal>
+<signal name="N$3">
+<contactref element="LINK_FPGA_3V" pad="3"/>
 </signal>
 </signals>
 </board>
