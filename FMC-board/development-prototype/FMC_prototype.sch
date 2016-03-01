@@ -3460,6 +3460,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="R10" library="RHD2000_eval_board" deviceset="R" device="_0603" value="30.9k"/>
 <part name="C23" library="RHD2000_eval_board" deviceset="C" device="_0603" value="10n"/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
+<part name="TP5" library="testpad" deviceset="TP5" device="P5-25-13"/>
 </parts>
 <sheets>
 <sheet>
@@ -3578,6 +3579,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="R10" gate="R" x="160.02" y="-40.64"/>
 <instance part="C23" gate="C" x="144.78" y="-38.1"/>
 <instance part="GND22" gate="1" x="172.72" y="-45.72" rot="R90"/>
+<instance part="TP5" gate="A" x="101.6" y="45.72" rot="R270"/>
+<instance part="TP5" gate="B" x="101.6" y="40.64" rot="R270"/>
+<instance part="TP5" gate="C" x="101.6" y="35.56" rot="R270"/>
+<instance part="TP5" gate="D" x="101.6" y="30.48" rot="R270"/>
+<instance part="TP5" gate="E" x="101.6" y="25.4" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -4810,6 +4816,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="66.04" y1="20.32" x2="71.12" y2="20.32" width="0.1524" layer="91"/>
 <label x="71.12" y="20.32" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="99.06" y1="45.72" x2="106.68" y2="45.72" width="0.1524" layer="91"/>
+<label x="106.68" y="45.72" size="1.778" layer="95"/>
+<pinref part="TP5" gate="A" pin="TP"/>
+</segment>
 </net>
 <net name="B_MISO2-" class="0">
 <segment>
@@ -4833,6 +4844,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="B" gate="A" pin="MISO1+"/>
 <wire x1="66.04" y1="27.94" x2="71.12" y2="27.94" width="0.1524" layer="91"/>
 <label x="71.12" y="27.94" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="99.06" y1="40.64" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
+<label x="106.68" y="40.64" size="1.778" layer="95"/>
+<pinref part="TP5" gate="B" pin="TP"/>
 </segment>
 </net>
 <net name="B_MISO1-" class="0">
@@ -4858,6 +4874,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="66.04" y1="35.56" x2="71.12" y2="35.56" width="0.1524" layer="91"/>
 <label x="71.12" y="35.56" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="99.06" y1="35.56" x2="106.68" y2="35.56" width="0.1524" layer="91"/>
+<label x="106.68" y="35.56" size="1.778" layer="95"/>
+<pinref part="TP5" gate="C" pin="TP"/>
+</segment>
 </net>
 <net name="B_MOSI-" class="0">
 <segment>
@@ -4882,6 +4903,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="66.04" y1="43.18" x2="71.12" y2="43.18" width="0.1524" layer="91"/>
 <label x="71.12" y="43.18" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="99.06" y1="30.48" x2="106.68" y2="30.48" width="0.1524" layer="91"/>
+<label x="106.68" y="30.48" size="1.778" layer="95"/>
+<pinref part="TP5" gate="D" pin="TP"/>
+</segment>
 </net>
 <net name="B_SCLK-" class="0">
 <segment>
@@ -4905,6 +4931,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="B" gate="A" pin="!CS!+"/>
 <wire x1="66.04" y1="50.8" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
 <label x="71.12" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="99.06" y1="25.4" x2="106.68" y2="25.4" width="0.1524" layer="91"/>
+<label x="106.68" y="25.4" size="1.778" layer="95"/>
+<pinref part="TP5" gate="E" pin="TP"/>
 </segment>
 </net>
 <net name="B_CS-" class="0">
