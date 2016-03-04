@@ -1,5 +1,10 @@
 # FMC daughter board development prototype
 
+FMC LPC pinout diagram at:
+https://docs.google.com/spreadsheets/d/1bgnBP1xqPFtFIQYF-BCybK1KkekfmRYwm2GDAU4D9lo/edit?usp=sharing
+
+
+
 Features:
 
 1x FMC connector (use LPC side, seems marginally easier to solder and we dont need the high pin count right now)
