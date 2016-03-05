@@ -3527,7 +3527,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="C12" gate="C" x="180.34" y="241.3"/>
 <instance part="C13" gate="C" x="91.44" y="203.2" rot="R90"/>
 <instance part="C14" gate="C" x="91.44" y="233.68" rot="R90"/>
-<instance part="C15" gate="C" x="58.42" y="177.8" rot="R90"/>
+<instance part="C15" gate="C" x="58.42" y="170.18" rot="R90"/>
 <instance part="C16" gate="C" x="137.16" y="233.68" rot="R180"/>
 <instance part="C17" gate="C" x="180.34" y="172.72"/>
 <instance part="C18" gate="C" x="200.66" y="228.6" rot="R90"/>
@@ -4006,9 +4006,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <segment>
 <wire x1="63.5" y1="182.88" x2="60.96" y2="185.42" width="0.1524" layer="91"/>
 <label x="63.5" y="170.18" size="1.778" layer="95"/>
-<wire x1="63.5" y1="182.88" x2="63.5" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="182.88" x2="63.5" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="A_ISOLATED" gate="A" pin="GND"/>
 <wire x1="60.96" y1="185.42" x2="40.64" y2="185.42" width="0.1524" layer="91"/>
+<pinref part="C15" gate="C" pin="2"/>
+<junction x="63.5" y="170.18"/>
+<wire x1="63.5" y1="172.72" x2="63.5" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$9" gate="G$1" pin="GND"/>
@@ -4153,12 +4156,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </net>
 <net name="VDD_ISOLATED" class="0">
 <segment>
-<wire x1="55.88" y1="180.34" x2="55.88" y2="177.8" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="177.8" x2="55.88" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="180.34" x2="55.88" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="180.34" x2="53.34" y2="182.88" width="0.1524" layer="91"/>
 <label x="53.34" y="170.18" size="1.778" layer="95" rot="R180"/>
 <pinref part="C15" gate="C" pin="1"/>
-<junction x="55.88" y="177.8"/>
+<junction x="55.88" y="170.18"/>
 <pinref part="A_ISOLATED" gate="A" pin="VDD"/>
 <wire x1="53.34" y1="182.88" x2="40.64" y2="182.88" width="0.1524" layer="91"/>
 </segment>
@@ -4344,6 +4346,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="347.98" y1="48.26" x2="347.98" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="347.98" y1="45.72" x2="347.98" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="GND15" gate="1" pin="GND"/>
+<junction x="347.98" y="48.26"/>
+<junction x="347.98" y="45.72"/>
 </segment>
 <segment>
 <pinref part="U$5" gate="G$1" pin="GND$1"/>
@@ -4428,6 +4432,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="U$4" gate="G$1" pin="P$83"/>
 <wire x1="322.58" y1="139.7" x2="327.66" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="327.66" y1="139.7" x2="330.2" y2="142.24" width="0.1524" layer="91"/>
+<junction x="347.98" y="137.16"/>
+<junction x="350.52" y="129.54"/>
+<junction x="350.52" y="139.7"/>
+<junction x="330.2" y="142.24"/>
 </segment>
 <segment>
 <pinref part="A" gate="A" pin="GND"/>
@@ -4732,12 +4740,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="R3" gate="R" pin="1"/>
 </segment>
 </net>
-<net name="GND4" class="0">
-<segment>
-<pinref part="C15" gate="C" pin="2"/>
-<junction x="63.5" y="177.8"/>
-</segment>
-</net>
 <net name="CS+_ISOLATED" class="0">
 <segment>
 <pinref part="A_ISOLATED" gate="A" pin="!CS!+"/>
@@ -4774,6 +4776,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="327.66" y1="45.72" x2="327.66" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="327.66" y1="43.18" x2="327.66" y2="40.64" width="0.1524" layer="91"/>
 <label x="327.66" y="40.64" size="1.778" layer="95" rot="R180"/>
+<junction x="327.66" y="48.26"/>
+<junction x="327.66" y="45.72"/>
+<junction x="327.66" y="43.18"/>
 </segment>
 <segment>
 <pinref part="TP4" gate="B" pin="TP"/>
@@ -5031,8 +5036,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <net name="TP2_TO_FPGA" class="0">
 <segment>
 <pinref part="U$11" gate="G$1" pin="VOD"/>
-<wire x1="177.8" y1="210.82" x2="177.8" y2="200.66" width="0.1524" layer="91"/>
-<label x="177.8" y="200.66" size="1.778" layer="95" rot="R270"/>
+<wire x1="177.8" y1="210.82" x2="175.26" y2="203.2" width="0.1524" layer="91"/>
+<label x="175.26" y="203.2" size="1.778" layer="95" rot="R270"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="P$23"/>
