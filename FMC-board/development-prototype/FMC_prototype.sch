@@ -9,6 +9,20 @@
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
@@ -2617,6 +2631,24 @@
 <circle x="1.8" y="3.9" radius="0.282840625" width="0.127" layer="21"/>
 <text x="2.54" y="1.27" size="0.762" layer="21" rot="R90" align="center">&gt;NAME</text>
 </package>
+<package name="PDS1">
+<pad name="P1" x="-5.08" y="0" drill="1"/>
+<pad name="P2" x="-2.54" y="0" drill="1"/>
+<pad name="P3" x="0" y="0" drill="1"/>
+<pad name="P4" x="2.54" y="0" drill="1"/>
+<wire x1="-5.08" y1="5.08" x2="-7.112" y2="5.08" width="0.127" layer="21"/>
+<wire x1="-7.112" y1="5.08" x2="-7.112" y2="2.54" width="0.127" layer="21"/>
+<wire x1="2.54" y1="5.08" x2="4.572" y2="5.08" width="0.127" layer="21"/>
+<wire x1="4.572" y1="5.08" x2="4.572" y2="2.54" width="0.127" layer="21"/>
+<wire x1="4.572" y1="1.016" x2="4.572" y2="-1.524" width="0.127" layer="21"/>
+<wire x1="4.572" y1="-1.524" x2="2.54" y2="-1.524" width="0.127" layer="21"/>
+<wire x1="-7.112" y1="1.016" x2="-7.112" y2="-1.524" width="0.127" layer="21"/>
+<wire x1="-7.112" y1="-1.524" x2="-5.08" y2="-1.524" width="0.127" layer="21"/>
+<text x="-5.08" y="1.27" size="1.27" layer="21" rot="R90">GND</text>
+<text x="-2.54" y="1.27" size="1.27" layer="21" rot="R90">VIN</text>
+<text x="0" y="1.27" size="1.27" layer="21" rot="R90">0V</text>
+<text x="2.54" y="1.27" size="1.27" layer="21" rot="R90">+V0</text>
+</package>
 </packages>
 <symbols>
 <symbol name="OPEN_EPHYS_LOGO">
@@ -2655,6 +2687,19 @@
 <wire x1="-10.16" y1="5.08" x2="-10.16" y2="0" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="0" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="2.54" x2="-10.16" y2="5.08" width="0.254" layer="94"/>
+</symbol>
+<symbol name="PDS1">
+<pin name="VIN" x="0" y="0" length="middle" rot="R90"/>
+<pin name="GND" x="-5.08" y="0" length="middle" rot="R90"/>
+<pin name="0V" x="5.08" y="0" length="middle" rot="R90"/>
+<pin name="+VO" x="10.16" y="0" length="middle" rot="R90"/>
+<wire x1="-7.62" y1="12.7" x2="-7.62" y2="-5.08" width="0.254" layer="199"/>
+<wire x1="-7.62" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="199"/>
+<wire x1="2.54" y1="-5.08" x2="2.54" y2="12.7" width="0.254" layer="199"/>
+<wire x1="2.54" y1="12.7" x2="-7.62" y2="12.7" width="0.254" layer="199"/>
+<wire x1="2.54" y1="12.7" x2="12.7" y2="12.7" width="0.254" layer="199"/>
+<wire x1="12.7" y1="12.7" x2="12.7" y2="-5.08" width="0.254" layer="199"/>
+<wire x1="12.7" y1="-5.08" x2="2.54" y2="-5.08" width="0.254" layer="199"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2708,6 +2753,25 @@
 <connect gate="G$1" pin="ROUT1" pad="P7"/>
 <connect gate="G$1" pin="ROUT2" pad="P6"/>
 <connect gate="G$1" pin="VCC" pad="P8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PDS1">
+<description>CUI inc. DC-DC converter, see http://www.cui.com/product/resource/pds1-s.pdf</description>
+<gates>
+<gate name="G$1" symbol="PDS1" x="-2.54" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="PDS1">
+<connects>
+<connect gate="G$1" pin="+VO" pad="P4"/>
+<connect gate="G$1" pin="0V" pad="P3"/>
+<connect gate="G$1" pin="GND" pad="P1"/>
+<connect gate="G$1" pin="VIN" pad="P2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -3364,6 +3428,76 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </deviceset>
 </devicesets>
 </library>
+<library name="inductor-neosid">
+<description>&lt;b&gt;Neosid Chokes and Transformers&lt;/b&gt;&lt;p&gt;
+
+Based on the following sources:
+&lt;ul&gt;
+&lt;li&gt;Electronic Component Book, Part 2 : Chokes, Fixed Value Inductors
+&lt;li&gt;Part 3 : Filters, Coil Assemblies, Thermoplastic Parts
+&lt;li&gt;Part 4 : SMD Filters, Coils, Fixed Value Inductors
+&lt;li&gt;www.neosid.de
+&lt;/ul&gt;
+ &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="MS42">
+<description>SMD &lt;B&gt;INDUCTOR&lt;/B&gt;</description>
+<wire x1="-1.9" y1="1.9" x2="1.9" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="1.9" y1="1.9" x2="1.9" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="1.9" y1="-1.9" x2="-1.9" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="-1.9" y1="-1.9" x2="-1.9" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-1.6" y1="0.9" x2="-0.9" y2="1.6" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="-1.6" x2="-1.6" y2="-0.9" width="0.2032" layer="21"/>
+<wire x1="-1.6" y1="0.9" x2="-1.6" y2="-0.9" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="-1.6" x2="0.9" y2="-1.6" width="0.2032" layer="21"/>
+<wire x1="0.9" y1="-1.6" x2="1.6" y2="-0.9" width="0.2032" layer="21"/>
+<wire x1="1.6" y1="-0.9" x2="1.6" y2="0.9" width="0.2032" layer="21"/>
+<wire x1="1.6" y1="0.9" x2="0.9" y2="1.6" width="0.2032" layer="21"/>
+<wire x1="-0.9" y1="1.6" x2="0.9" y2="1.6" width="0.2032" layer="21"/>
+<smd name="1" x="0" y="2.3" dx="2.4" dy="1" layer="1"/>
+<smd name="2" x="0" y="-2.3" dx="2.4" dy="1" layer="1"/>
+<text x="-1.7" y="-1.9" size="0.6096" layer="21">1</text>
+<text x="-2.5" y="-2.3" size="1.016" layer="25" rot="R90">&gt;NAME</text>
+<text x="3.5" y="-2.3" size="1.016" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-0.55" y1="1.95" x2="0.55" y2="2.7" layer="51"/>
+<rectangle x1="-0.55" y1="-2.7" x2="0.55" y2="-1.95" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="L">
+<text x="-3.81" y="1.778" size="1.778" layer="95">&gt;NAME</text>
+<text x="-3.81" y="-3.556" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-3.81" y1="-1.27" x2="3.81" y2="1.27" layer="94"/>
+<pin name="1" x="-5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1"/>
+<pin name="2" x="5.08" y="0" visible="off" length="short" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MS42" prefix="L">
+<description>&lt;b&gt;INDUCTOR&lt;/b&gt;&lt;p&gt;
+SMD inductor</description>
+<gates>
+<gate name="G$1" symbol="L" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MS42">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3464,13 +3598,15 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="U$17" library="SA_BB" deviceset="SMA_JACK_142-0701-201_DEV" device=""/>
 <part name="U$18" library="SA_BB" deviceset="SMA_JACK_142-0701-201_DEV" device=""/>
 <part name="U$19" library="SA_BB" deviceset="SMA_JACK_142-0701-201_DEV" device=""/>
+<part name="L1" library="inductor-neosid" deviceset="MS42" device="" value="6.8uH"/>
+<part name="C1" library="RHD2000_eval_board" deviceset="C" device="_0603" value="4.7uF"/>
+<part name="U$20" library="open-ephys" deviceset="PDS1" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 <text x="144.78" y="318.77" size="1.778" layer="91">headstage side</text>
 <text x="166.37" y="318.77" size="1.778" layer="91">aq. board side</text>
-<text x="254" y="279.4" size="2.54" layer="91" rot="R180">boost power supply input to +5.0V</text>
 <text x="35.56" y="337.82" size="2.54" layer="91">3.3V reg. for RHD side supply</text>
 <text x="193.04" y="269.24" size="2.54" layer="91">3.3V reg for aq board side supply</text>
 <text x="35.56" y="297.18" size="2.54" layer="91">3.6V  regulator for RHD</text>
@@ -3478,6 +3614,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <text x="322.58" y="149.86" size="1.778" layer="91">D</text>
 <text x="304.8" y="149.86" size="1.778" layer="91">G</text>
 <text x="287.02" y="149.86" size="1.778" layer="91">H</text>
+<text x="226.06" y="312.42" size="1.778" layer="91">12V to 5V DC-Dc</text>
 </plain>
 <instances>
 <instance part="U$4" gate="G$1" x="309.88" y="93.98" rot="R90"/>
@@ -3590,6 +3727,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="U$17" gate="G$1" x="228.6" y="68.58"/>
 <instance part="U$18" gate="G$1" x="228.6" y="48.26"/>
 <instance part="U$19" gate="G$1" x="228.6" y="88.9"/>
+<instance part="L1" gate="G$1" x="213.36" y="307.34" rot="R90"/>
+<instance part="C1" gate="C" x="215.9" y="297.18" rot="R90"/>
+<instance part="U$20" gate="G$1" x="213.36" y="325.12" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -4153,6 +4293,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="195.58" y1="93.98" x2="198.12" y2="91.44" width="0.1524" layer="91"/>
 <label x="198.12" y="91.44" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="208.28" y1="325.12" x2="208.28" y2="337.82" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="337.82" x2="203.2" y2="337.82" width="0.1524" layer="91"/>
+<label x="203.2" y="337.82" size="1.778" layer="95" rot="R90"/>
+<pinref part="U$20" gate="G$1" pin="0V"/>
+</segment>
 </net>
 <net name="VDD_ISOLATED" class="0">
 <segment>
@@ -4182,9 +4328,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="88.9" y1="289.56" x2="121.92" y2="289.56" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="289.56" x2="121.92" y2="350.52" width="0.1524" layer="91"/>
 <pinref part="J2" gate="A" pin="PWR"/>
-<pinref part="LINK-5V" gate="1" pin="1"/>
-<wire x1="121.92" y1="350.52" x2="154.94" y2="350.52" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="350.52" x2="162.56" y2="358.14" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="350.52" x2="165.1" y2="350.52" width="0.1524" layer="91"/>
+<pinref part="LINK-5V" gate="1" pin="2"/>
+<wire x1="165.1" y1="350.52" x2="165.1" y2="358.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="TP3" gate="B" pin="TP"/>
@@ -4275,11 +4421,17 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="J1" gate="A" pin="GND2"/>
 <wire x1="251.46" y1="289.56" x2="251.46" y2="287.02" width="0.1524" layer="91"/>
 <pinref part="J1" gate="A" pin="GND1"/>
-<wire x1="251.46" y1="287.02" x2="175.26" y2="287.02" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="287.02" x2="220.98" y2="287.02" width="0.1524" layer="91"/>
 <pinref part="GND12" gate="1" pin="GND"/>
 <pinref part="LINK_GNDS" gate="1" pin="2"/>
+<wire x1="220.98" y1="287.02" x2="175.26" y2="287.02" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="287.02" x2="175.26" y2="320.04" width="0.1524" layer="91"/>
 <wire x1="175.26" y1="320.04" x2="165.1" y2="330.2" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="325.12" x2="220.98" y2="297.18" width="0.1524" layer="91"/>
+<pinref part="C1" gate="C" pin="2"/>
+<wire x1="220.98" y1="297.18" x2="220.98" y2="287.02" width="0.1524" layer="91"/>
+<junction x="220.98" y="297.18"/>
+<pinref part="U$20" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <wire x1="261.62" y1="149.86" x2="261.62" y2="152.4" width="0.1524" layer="91"/>
@@ -4617,10 +4769,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="5VD1" gate="A" pin="EN"/>
 <wire x1="185.42" y1="256.54" x2="187.96" y2="256.54" width="0.1524" layer="91"/>
 <pinref part="J1" gate="A" pin="PWR"/>
-<pinref part="LINK-5V" gate="1" pin="2"/>
 <wire x1="180.34" y1="284.48" x2="180.34" y2="342.9" width="0.1524" layer="91"/>
-<wire x1="180.34" y1="342.9" x2="165.1" y2="358.14" width="0.1524" layer="91"/>
 <junction x="180.34" y="284.48"/>
+<pinref part="LINK-5V" gate="1" pin="1"/>
+<wire x1="180.34" y1="342.9" x2="177.8" y2="342.9" width="0.1524" layer="91"/>
+<wire x1="177.8" y1="342.9" x2="162.56" y2="358.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="5VD4" gate="A" pin="IN"/>
@@ -5130,6 +5283,41 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="U$15" gate="G$1" pin="CLK"/>
 <wire x1="142.24" y1="53.34" x2="152.4" y2="53.34" width="0.1524" layer="91"/>
 <label x="152.4" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="12V_FPGA" class="0">
+<segment>
+<pinref part="U$4" gate="G$1" pin="P$157"/>
+<wire x1="340.36" y1="53.34" x2="345.44" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="P$155"/>
+<wire x1="340.36" y1="58.42" x2="345.44" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="345.44" y1="58.42" x2="350.52" y2="58.42" width="0.1524" layer="91"/>
+<label x="350.52" y="58.42" size="1.778" layer="95"/>
+<label x="350.52" y="58.42" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="213.36" y1="302.26" x2="213.36" y2="297.18" width="0.1524" layer="91"/>
+<label x="213.36" y="294.64" size="1.778" layer="95" rot="R180"/>
+<pinref part="L1" gate="G$1" pin="1"/>
+<pinref part="C1" gate="C" pin="1"/>
+<wire x1="213.36" y1="297.18" x2="213.36" y2="294.64" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="L1" gate="G$1" pin="2"/>
+<wire x1="213.36" y1="312.42" x2="213.36" y2="325.12" width="0.1524" layer="91"/>
+<pinref part="U$20" gate="G$1" pin="VIN"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="U$20" gate="G$1" pin="+VO"/>
+<wire x1="203.2" y1="325.12" x2="203.2" y2="330.2" width="0.1524" layer="91"/>
+<wire x1="203.2" y1="330.2" x2="190.5" y2="342.9" width="0.1524" layer="91"/>
+<pinref part="LINK-5V" gate="1" pin="3"/>
+<wire x1="190.5" y1="342.9" x2="182.88" y2="342.9" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="342.9" x2="167.64" y2="358.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
