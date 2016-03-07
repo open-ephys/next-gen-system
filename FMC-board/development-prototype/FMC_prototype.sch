@@ -2616,62 +2616,10 @@
 <rectangle x1="13.3223" y1="4.7879" x2="13.5001" y2="4.8133" layer="25"/>
 <rectangle x1="13.3477" y1="4.8133" x2="13.4493" y2="4.8387" layer="25"/>
 </package>
-<package name="8-SOIC">
-<smd name="P1" x="0" y="3.81" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P2" x="0" y="2.54" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P3" x="0" y="1.27" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P4" x="0" y="0" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P8" x="5.2" y="3.81" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P7" x="5.2" y="2.54" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P6" x="5.2" y="1.27" dx="2.2" dy="0.6" layer="1"/>
-<smd name="P5" x="5.2" y="0" dx="2.2" dy="0.6" layer="1"/>
-<wire x1="0" y1="4.3" x2="0" y2="5" width="0.127" layer="21"/>
-<wire x1="0" y1="5" x2="5.2" y2="5" width="0.127" layer="21"/>
-<wire x1="5.2" y1="5" x2="5.2" y2="4.3" width="0.127" layer="21"/>
-<wire x1="0" y1="-0.5" x2="0" y2="-1.1" width="0.127" layer="21"/>
-<wire x1="0" y1="-1.1" x2="5.2" y2="-1.1" width="0.127" layer="21"/>
-<wire x1="5.2" y1="-1.1" x2="5.2" y2="-0.5" width="0.127" layer="21"/>
-<circle x="1.8" y="3.9" radius="0.282840625" width="0.127" layer="21"/>
-<text x="2.54" y="1.27" size="0.762" layer="21" rot="R90" align="center">&gt;NAME</text>
-</package>
 </packages>
 <symbols>
 <symbol name="OPEN_EPHYS_LOGO">
 <text x="0" y="0" size="2.54" layer="95" font="vector">open ephys</text>
-</symbol>
-<symbol name="ADN4663">
-<pin name="DOUT1+" x="10.16" y="10.16" length="middle" rot="R180"/>
-<pin name="DOUT1-" x="10.16" y="7.62" length="middle" rot="R180"/>
-<pin name="DOUT2+" x="10.16" y="2.54" length="middle" rot="R180"/>
-<pin name="DOUT2-" x="10.16" y="0" length="middle" rot="R180"/>
-<pin name="VCC" x="-5.08" y="17.78" length="middle" rot="R270"/>
-<pin name="GND" x="-5.08" y="-7.62" length="middle" rot="R90"/>
-<pin name="DIN1" x="-17.78" y="7.62" length="middle"/>
-<pin name="DIN2" x="-17.78" y="2.54" length="middle"/>
-<wire x1="-12.7" y1="12.7" x2="-12.7" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-12.7" y1="-2.54" x2="5.08" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-2.54" x2="5.08" y2="12.7" width="0.254" layer="94"/>
-<wire x1="5.08" y1="12.7" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="7.62" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="2.54" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
-</symbol>
-<symbol name="ADN4664">
-<pin name="RIN1+" x="-17.78" y="7.62" length="middle"/>
-<pin name="RIN1-" x="-17.78" y="5.08" length="middle"/>
-<pin name="RIN2+" x="-17.78" y="0" length="middle"/>
-<pin name="RIN2-" x="-17.78" y="-2.54" length="middle"/>
-<pin name="ROUT1" x="10.16" y="5.08" length="middle" rot="R180"/>
-<pin name="ROUT2" x="10.16" y="0" length="middle" rot="R180"/>
-<pin name="VCC" x="-2.54" y="15.24" length="middle" rot="R270"/>
-<pin name="GND" x="-2.54" y="-10.16" length="middle" rot="R90"/>
-<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-12.7" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-5.08" x2="5.08" y2="10.16" width="0.254" layer="94"/>
-<wire x1="5.08" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="5.08" x2="-10.16" y2="0" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="0" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="2.54" x2="-10.16" y2="5.08" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2682,50 +2630,6 @@
 </gates>
 <devices>
 <device name="" package="OPEN_EPHYS_LOGO">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="ADN4663">
-<gates>
-<gate name="G$1" symbol="ADN4663" x="0" y="-2.54"/>
-</gates>
-<devices>
-<device name="" package="8-SOIC">
-<connects>
-<connect gate="G$1" pin="DIN1" pad="P2"/>
-<connect gate="G$1" pin="DIN2" pad="P3"/>
-<connect gate="G$1" pin="DOUT1+" pad="P7"/>
-<connect gate="G$1" pin="DOUT1-" pad="P8"/>
-<connect gate="G$1" pin="DOUT2+" pad="P6"/>
-<connect gate="G$1" pin="DOUT2-" pad="P5"/>
-<connect gate="G$1" pin="GND" pad="P4"/>
-<connect gate="G$1" pin="VCC" pad="P1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="ADN4664">
-<gates>
-<gate name="G$1" symbol="ADN4664" x="2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="8-SOIC">
-<connects>
-<connect gate="G$1" pin="GND" pad="P5"/>
-<connect gate="G$1" pin="RIN1+" pad="P2"/>
-<connect gate="G$1" pin="RIN1-" pad="P1"/>
-<connect gate="G$1" pin="RIN2+" pad="P3"/>
-<connect gate="G$1" pin="RIN2-" pad="P4"/>
-<connect gate="G$1" pin="ROUT1" pad="P7"/>
-<connect gate="G$1" pin="ROUT2" pad="P6"/>
-<connect gate="G$1" pin="VCC" pad="P8"/>
-</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -3505,6 +3409,45 @@ SMD inductor</description>
 <text x="-6.35" y="5.715" size="1.27" layer="25" font="vector" ratio="18">&gt;NAME</text>
 <text x="-6.35" y="-3.175" size="1.27" layer="27" font="vector" ratio="18">&gt;VALUE</text>
 </package>
+<package name="SOIC127P500X400-8N">
+<smd name="1" x="-2.8194" y="1.905" dx="1.778" dy="0.635" layer="1"/>
+<smd name="2" x="-2.8194" y="0.635" dx="1.778" dy="0.635" layer="1"/>
+<smd name="3" x="-2.8194" y="-0.635" dx="1.778" dy="0.635" layer="1"/>
+<smd name="4" x="-2.8194" y="-1.905" dx="1.778" dy="0.635" layer="1"/>
+<smd name="5" x="2.8194" y="-1.905" dx="1.778" dy="0.635" layer="1"/>
+<smd name="6" x="2.8194" y="-0.635" dx="1.778" dy="0.635" layer="1"/>
+<smd name="7" x="2.8194" y="0.635" dx="1.778" dy="0.635" layer="1"/>
+<smd name="8" x="2.794" y="1.905" dx="1.778" dy="0.635" layer="1"/>
+<wire x1="-2" y1="-2.5" x2="2" y2="-2.5" width="0.1524" layer="51"/>
+<wire x1="2" y1="-2.5" x2="2" y2="2.5" width="0.1524" layer="51"/>
+<wire x1="2" y1="2.5" x2="-2" y2="2.5" width="0.1524" layer="51"/>
+<wire x1="-2" y1="2.5" x2="-2" y2="-2.5" width="0.1524" layer="51"/>
+<wire x1="0.6" y1="2.5" x2="-0.6" y2="2.5" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-2" y1="-2.5" x2="2" y2="-2.5" width="0.1524" layer="21"/>
+<wire x1="2" y1="2.5" x2="0.6" y2="2.5" width="0.1524" layer="21"/>
+<wire x1="0.6" y1="2.5" x2="-0.6" y2="2.5" width="0.1524" layer="21"/>
+<wire x1="-0.6" y1="2.5" x2="-2" y2="2.5" width="0.1524" layer="21"/>
+<text x="-2.286" y="2.794" size="1.016" layer="25" font="vector" ratio="18" rot="SR0">&gt;NAME</text>
+<text x="-2.794" y="-3.81" size="1.016" layer="27" font="vector" ratio="18" rot="SR0">&gt;VALUE</text>
+</package>
+<package name="8-SOIC">
+<smd name="P1" x="0" y="3.81" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P2" x="0" y="2.54" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P3" x="0" y="1.27" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P4" x="0" y="0" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P8" x="5.2" y="3.81" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P7" x="5.2" y="2.54" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P6" x="5.2" y="1.27" dx="2.2" dy="0.6" layer="1"/>
+<smd name="P5" x="5.2" y="0" dx="2.2" dy="0.6" layer="1"/>
+<wire x1="0" y1="4.3" x2="0" y2="5" width="0.127" layer="21"/>
+<wire x1="0" y1="5" x2="5.2" y2="5" width="0.127" layer="21"/>
+<wire x1="5.2" y1="5" x2="5.2" y2="4.3" width="0.127" layer="21"/>
+<wire x1="0" y1="-0.5" x2="0" y2="-1.1" width="0.127" layer="21"/>
+<wire x1="0" y1="-1.1" x2="5.2" y2="-1.1" width="0.127" layer="21"/>
+<wire x1="5.2" y1="-1.1" x2="5.2" y2="-0.5" width="0.127" layer="21"/>
+<circle x="1.8" y="3.9" radius="0.282840625" width="0.127" layer="21"/>
+<text x="2.54" y="1.27" size="0.762" layer="21" rot="R90" align="center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS793XX">
@@ -3603,6 +3546,38 @@ SMD inductor</description>
 <wire x1="1.27" y1="-2.54" x2="0" y2="-3.81" width="0.254" layer="94"/>
 <wire x1="0" y1="-3.81" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
 <pin name="GND_ISO" x="0" y="0" visible="pad" length="short" direction="sup" rot="R270"/>
+</symbol>
+<symbol name="ADN4663">
+<pin name="DOUT1+" x="15.24" y="10.16" length="middle" rot="R180"/>
+<pin name="DOUT1-" x="15.24" y="7.62" length="middle" rot="R180"/>
+<pin name="DOUT2+" x="15.24" y="2.54" length="middle" rot="R180"/>
+<pin name="DOUT2-" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="VCC" x="-2.54" y="17.78" length="middle" rot="R270"/>
+<pin name="GND" x="-2.54" y="-7.62" length="middle" rot="R90"/>
+<pin name="DIN1" x="-17.78" y="7.62" length="middle"/>
+<pin name="DIN2" x="-17.78" y="2.54" length="middle"/>
+<wire x1="-12.7" y1="12.7" x2="-12.7" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-2.54" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="0" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="12.7" x2="-12.7" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="7.62" y2="12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-2.54" x2="10.16" y2="0" width="0.254" layer="94"/>
+</symbol>
+<symbol name="ADN4664">
+<pin name="RIN1+" x="-17.78" y="7.62" length="middle"/>
+<pin name="RIN1-" x="-17.78" y="5.08" length="middle"/>
+<pin name="RIN2+" x="-17.78" y="0" length="middle"/>
+<pin name="RIN2-" x="-17.78" y="-2.54" length="middle"/>
+<pin name="ROUT1" x="15.24" y="5.08" length="middle" rot="R180"/>
+<pin name="ROUT2" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="VCC" x="-2.54" y="15.24" length="middle" rot="R270"/>
+<pin name="GND" x="-2.54" y="-10.16" length="middle" rot="R90"/>
+<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="10.16" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-2.54" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -3719,6 +3694,82 @@ SMD inductor</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="ADN4663" uservalue="yes">
+<description>Dual 3V3 CMOS to LVDS differential line driver</description>
+<gates>
+<gate name="G$1" symbol="ADN4663" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="8-SOIC">
+<connects>
+<connect gate="G$1" pin="DIN1" pad="P2"/>
+<connect gate="G$1" pin="DIN2" pad="P3"/>
+<connect gate="G$1" pin="DOUT1+" pad="P7"/>
+<connect gate="G$1" pin="DOUT1-" pad="P8"/>
+<connect gate="G$1" pin="DOUT2+" pad="P6"/>
+<connect gate="G$1" pin="DOUT2-" pad="P5"/>
+<connect gate="G$1" pin="GND" pad="P4"/>
+<connect gate="G$1" pin="VCC" pad="P1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SOIC" package="SOIC127P500X400-8N">
+<connects>
+<connect gate="G$1" pin="DIN1" pad="2"/>
+<connect gate="G$1" pin="DIN2" pad="3"/>
+<connect gate="G$1" pin="DOUT1+" pad="7"/>
+<connect gate="G$1" pin="DOUT1-" pad="8"/>
+<connect gate="G$1" pin="DOUT2+" pad="6"/>
+<connect gate="G$1" pin="DOUT2-" pad="5"/>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="VCC" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ADN4664" uservalue="yes">
+<description>Dual LVLDS to 3V3 CMOS differential line receiver</description>
+<gates>
+<gate name="G$1" symbol="ADN4664" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="8-SOIC">
+<connects>
+<connect gate="G$1" pin="GND" pad="P5"/>
+<connect gate="G$1" pin="RIN1+" pad="P2"/>
+<connect gate="G$1" pin="RIN1-" pad="P1"/>
+<connect gate="G$1" pin="RIN2+" pad="P3"/>
+<connect gate="G$1" pin="RIN2-" pad="P4"/>
+<connect gate="G$1" pin="ROUT1" pad="P7"/>
+<connect gate="G$1" pin="ROUT2" pad="P6"/>
+<connect gate="G$1" pin="VCC" pad="P8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_SOIC" package="SOIC127P500X400-8N">
+<connects>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="RIN1+" pad="2"/>
+<connect gate="G$1" pin="RIN1-" pad="1"/>
+<connect gate="G$1" pin="RIN2+" pad="3"/>
+<connect gate="G$1" pin="RIN2-" pad="4"/>
+<connect gate="G$1" pin="ROUT1" pad="7"/>
+<connect gate="G$1" pin="ROUT2" pad="6"/>
+<connect gate="G$1" pin="VCC" pad="8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -3739,12 +3790,12 @@ SMD inductor</description>
 <part name="U$5" library="SA_BB" deviceset="SMA_JACK_142-0701-201_DEV" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="U$1" library="open-ephys" deviceset="OPEN_EPHYS_LOGO" device=""/>
-<part name="U$3" library="open-ephys" deviceset="ADN4663" device=""/>
-<part name="U$6" library="open-ephys" deviceset="ADN4664" device=""/>
-<part name="U$7" library="open-ephys" deviceset="ADN4663" device=""/>
-<part name="U$9" library="open-ephys" deviceset="ADN4663" device=""/>
-<part name="U$8" library="open-ephys" deviceset="ADN4664" device=""/>
-<part name="U$10" library="open-ephys" deviceset="ADN4664" device=""/>
+<part name="U$3" library="jonnew" deviceset="ADN4663" device="_SOIC"/>
+<part name="U$6" library="jonnew" deviceset="ADN4664" device="_SOIC"/>
+<part name="U$7" library="jonnew" deviceset="ADN4663" device="_SOIC"/>
+<part name="U$9" library="jonnew" deviceset="ADN4663" device="_SOIC"/>
+<part name="U$8" library="jonnew" deviceset="ADN4664" device="_SOIC"/>
+<part name="U$10" library="jonnew" deviceset="ADN4664" device="_SOIC"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
@@ -3901,9 +3952,9 @@ SMD inductor</description>
 <instance part="R3" gate="R" x="134.62" y="317.5" rot="MR270"/>
 <instance part="R4" gate="R" x="134.62" y="332.74" rot="MR90"/>
 <instance part="C12" gate="C" x="243.84" y="203.2"/>
-<instance part="C13" gate="C" x="175.26" y="162.56"/>
-<instance part="C14" gate="C" x="162.56" y="124.46"/>
-<instance part="C15" gate="C" x="116.84" y="193.04"/>
+<instance part="C13" gate="C" x="157.48" y="165.1" rot="R90"/>
+<instance part="C14" gate="C" x="157.48" y="121.92" rot="R90"/>
+<instance part="C15" gate="C" x="88.9" y="215.9" rot="MR270"/>
 <instance part="C16" gate="C" x="200.66" y="190.5" rot="R180"/>
 <instance part="C17" gate="C" x="243.84" y="129.54"/>
 <instance part="C18" gate="C" x="264.16" y="185.42" rot="R90"/>
@@ -4004,11 +4055,11 @@ SMD inductor</description>
 <instance part="R7" gate="R" x="297.18" y="109.22" rot="R90"/>
 <instance part="GND9" gate="1" x="304.8" y="99.06"/>
 <instance part="GND11" gate="1" x="297.18" y="99.06"/>
-<instance part="U$33" gate="G$1" x="116.84" y="180.34"/>
-<instance part="U$34" gate="G$1" x="175.26" y="154.94"/>
-<instance part="U$35" gate="G$1" x="152.4" y="134.62"/>
-<instance part="U$36" gate="G$1" x="152.4" y="91.44"/>
-<instance part="U$37" gate="G$1" x="162.56" y="116.84"/>
+<instance part="U$33" gate="G$1" x="104.14" y="203.2" rot="MR0"/>
+<instance part="U$34" gate="G$1" x="165.1" y="162.56"/>
+<instance part="U$35" gate="G$1" x="149.86" y="134.62"/>
+<instance part="U$36" gate="G$1" x="149.86" y="88.9"/>
+<instance part="U$37" gate="G$1" x="165.1" y="119.38"/>
 </instances>
 <busses>
 </busses>
@@ -4021,7 +4072,7 @@ SMD inductor</description>
 <net name="MISO2+" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="DOUT1+"/>
-<wire x1="276.86" y1="177.8" x2="327.66" y2="177.8" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="177.8" x2="327.66" y2="177.8" width="0.1524" layer="91"/>
 <label x="304.8" y="177.8" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -4038,7 +4089,7 @@ SMD inductor</description>
 <net name="MISO2-" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="DOUT1-"/>
-<wire x1="276.86" y1="175.26" x2="327.66" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="175.26" x2="327.66" y2="175.26" width="0.1524" layer="91"/>
 <label x="304.8" y="175.26" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -4055,7 +4106,7 @@ SMD inductor</description>
 <net name="MISO1+" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="DOUT2+"/>
-<wire x1="276.86" y1="170.18" x2="327.66" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="170.18" x2="327.66" y2="170.18" width="0.1524" layer="91"/>
 <label x="304.8" y="170.18" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -4079,7 +4130,7 @@ SMD inductor</description>
 <net name="MISO1-" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="DOUT2-"/>
-<wire x1="276.86" y1="167.64" x2="327.66" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="281.94" y1="167.64" x2="327.66" y2="167.64" width="0.1524" layer="91"/>
 <label x="304.8" y="167.64" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -4120,13 +4171,13 @@ SMD inductor</description>
 <segment>
 <pinref part="U$6" gate="G$1" pin="ROUT1"/>
 <pinref part="U$11" gate="G$1" pin="VIA"/>
-<wire x1="209.55" y1="175.26" x2="213.36" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="214.63" y1="175.26" x2="213.36" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="MISO1_ISOLATED_SE" class="0">
 <segment>
 <pinref part="U$6" gate="G$1" pin="ROUT2"/>
-<wire x1="213.36" y1="172.72" x2="209.55" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="172.72" x2="214.63" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="U$11" gate="G$1" pin="VIB"/>
 </segment>
 <segment>
@@ -4317,7 +4368,7 @@ SMD inductor</description>
 </net>
 <net name="CS-_ISOLATED" class="0">
 <segment>
-<wire x1="137.16" y1="109.22" x2="104.14" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="109.22" x2="104.14" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="109.22" x2="104.14" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="U$9" gate="G$1" pin="DOUT1-"/>
 <pinref part="A_ISOLATED" gate="A" pin="!CS!-"/>
@@ -4363,7 +4414,7 @@ SMD inductor</description>
 <segment>
 <wire x1="109.22" y1="147.32" x2="109.22" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="U$7" gate="G$1" pin="DOUT2-"/>
-<wire x1="109.22" y1="144.78" x2="137.16" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="144.78" x2="132.08" y2="144.78" width="0.1524" layer="91"/>
 <pinref part="A_ISOLATED" gate="A" pin="SCLK-"/>
 <wire x1="109.22" y1="147.32" x2="96.52" y2="147.32" width="0.1524" layer="91"/>
 </segment>
@@ -4371,7 +4422,7 @@ SMD inductor</description>
 <net name="MOSI-_ISOLATED" class="0">
 <segment>
 <pinref part="U$7" gate="G$1" pin="DOUT1-"/>
-<wire x1="137.16" y1="152.4" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="152.4" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="A_ISOLATED" gate="A" pin="MOSI-"/>
 <wire x1="114.3" y1="152.4" x2="114.3" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="154.94" x2="96.52" y2="154.94" width="0.1524" layer="91"/>
@@ -4380,7 +4431,7 @@ SMD inductor</description>
 <net name="MOSI+_ISOLATED" class="0">
 <segment>
 <pinref part="U$7" gate="G$1" pin="DOUT1+"/>
-<wire x1="137.16" y1="154.94" x2="116.84" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="154.94" x2="116.84" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="A_ISOLATED" gate="A" pin="MOSI+"/>
 <wire x1="116.84" y1="154.94" x2="116.84" y2="157.48" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="157.48" x2="96.52" y2="157.48" width="0.1524" layer="91"/>
@@ -4395,7 +4446,7 @@ SMD inductor</description>
 <segment>
 <wire x1="241.3" y1="142.24" x2="251.46" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="U$8" gate="G$1" pin="ROUT2"/>
-<wire x1="251.46" y1="152.4" x2="261.62" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="152.4" x2="256.54" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="U$12" gate="G$1" pin="VID"/>
 </segment>
 <segment>
@@ -4410,7 +4461,7 @@ SMD inductor</description>
 <segment>
 <pinref part="U$8" gate="G$1" pin="ROUT1"/>
 <wire x1="246.38" y1="139.7" x2="254" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="254" y1="147.32" x2="261.62" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="254" y1="147.32" x2="256.54" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="139.7" x2="246.38" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="U$12" gate="G$1" pin="VIC"/>
 </segment>
@@ -4419,31 +4470,31 @@ SMD inductor</description>
 <segment>
 <pinref part="U$10" gate="G$1" pin="ROUT2"/>
 <wire x1="241.3" y1="137.16" x2="248.92" y2="137.16" width="0.1524" layer="91"/>
-<wire x1="248.92" y1="137.16" x2="256.54" y2="127" width="0.1524" layer="91"/>
+<wire x1="248.92" y1="137.16" x2="251.46" y2="127" width="0.1524" layer="91"/>
 <pinref part="U$12" gate="G$1" pin="VIB"/>
 </segment>
 </net>
 <net name="GND_ISO" class="0">
 <segment>
 <pinref part="A_ISOLATED" gate="A" pin="GND"/>
-<wire x1="116.84" y1="187.96" x2="116.84" y2="185.42" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="185.42" x2="104.14" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="215.9" x2="104.14" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="185.42" x2="104.14" y2="177.8" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="177.8" x2="96.52" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="C15" gate="C" pin="2"/>
 <pinref part="U$33" gate="G$1" pin="GND_ISO"/>
-<wire x1="116.84" y1="185.42" x2="116.84" y2="180.34" width="0.1524" layer="91"/>
-<junction x="116.84" y="185.42"/>
+<wire x1="93.98" y1="215.9" x2="104.14" y2="203.2" width="0.1524" layer="91"/>
+<junction x="93.98" y="215.9"/>
 </segment>
 <segment>
 <pinref part="U$9" gate="G$1" pin="GND"/>
-<wire x1="152.4" y1="93.98" x2="152.4" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="93.98" x2="149.86" y2="88.9" width="0.1524" layer="91"/>
 <pinref part="U$36" gate="G$1" pin="GND_ISO"/>
 </segment>
 <segment>
 <pinref part="U$34" gate="G$1" pin="GND_ISO"/>
 <pinref part="C13" gate="C" pin="2"/>
-<wire x1="175.26" y1="157.48" x2="175.26" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="165.1" x2="165.1" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="165.1" x2="165.1" y2="162.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C54" gate="C" pin="2"/>
@@ -4590,23 +4641,23 @@ SMD inductor</description>
 <segment>
 <pinref part="U$7" gate="G$1" pin="GND"/>
 <pinref part="U$35" gate="G$1" pin="GND_ISO"/>
-<wire x1="152.4" y1="134.62" x2="152.4" y2="137.16" width="0.1524" layer="91"/>
-<label x="154.94" y="147.32" size="1.778" layer="95" rot="R90"/>
+<wire x1="149.86" y1="134.62" x2="149.86" y2="137.16" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$37" gate="G$1" pin="GND_ISO"/>
 <pinref part="C14" gate="C" pin="2"/>
-<wire x1="162.56" y1="116.84" x2="162.56" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="119.38" x2="165.1" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="121.92" x2="162.56" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="+3V6_ISO" class="0">
 <segment>
-<wire x1="96.52" y1="198.12" x2="116.84" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="198.12" x2="116.84" y2="195.58" width="0.1524" layer="91"/>
-<label x="116.84" y="198.12" size="1.778" layer="95"/>
+<wire x1="99.06" y1="180.34" x2="81.28" y2="215.9" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="215.9" x2="86.36" y2="215.9" width="0.1524" layer="91"/>
+<label x="81.28" y="215.9" size="1.778" layer="95" rot="MR270"/>
 <pinref part="C15" gate="C" pin="1"/>
 <pinref part="A_ISOLATED" gate="A" pin="VDD"/>
-<wire x1="96.52" y1="198.12" x2="96.52" y2="180.34" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="180.34" x2="96.52" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <label x="104.14" y="340.36" size="1.778" layer="95" rot="MR0"/>
@@ -4635,7 +4686,7 @@ SMD inductor</description>
 <segment>
 <pinref part="U$3" gate="G$1" pin="GND"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="259.08" y1="160.02" x2="261.62" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="259.08" y1="160.02" x2="264.16" y2="160.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$8" gate="G$1" pin="GND"/>
@@ -4966,7 +5017,7 @@ SMD inductor</description>
 <wire x1="266.7" y1="190.5" x2="261.62" y2="190.5" width="0.1524" layer="91"/>
 <label x="266.7" y="190.5" size="1.778" layer="95"/>
 <pinref part="U$3" gate="G$1" pin="VCC"/>
-<wire x1="261.62" y1="185.42" x2="261.62" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="264.16" y1="185.42" x2="261.62" y2="190.5" width="0.1524" layer="91"/>
 <junction x="261.62" y="190.5"/>
 <pinref part="U$11" gate="G$1" pin="VDD2"/>
 <wire x1="241.3" y1="180.34" x2="241.3" y2="190.5" width="0.1524" layer="91"/>
@@ -4975,7 +5026,8 @@ SMD inductor</description>
 <wire x1="243.84" y1="198.12" x2="243.84" y2="190.5" width="0.1524" layer="91"/>
 <junction x="243.84" y="190.5"/>
 <pinref part="C18" gate="C" pin="1"/>
-<junction x="261.62" y="185.42"/>
+<junction x="264.16" y="185.42"/>
+<wire x1="261.62" y1="185.42" x2="264.16" y2="185.42" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$11" gate="G$1" pin="VE2"/>
@@ -5009,13 +5061,13 @@ SMD inductor</description>
 <segment>
 <pinref part="U$9" gate="G$1" pin="VCC"/>
 <pinref part="C14" gate="C" pin="1"/>
-<wire x1="152.4" y1="119.38" x2="152.4" y2="127" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="127" x2="162.56" y2="127" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="119.38" x2="149.86" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="121.92" x2="154.94" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$7" gate="G$1" pin="VCC"/>
-<wire x1="152.4" y1="162.56" x2="152.4" y2="165.1" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="165.1" x2="175.26" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="162.56" x2="149.86" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="165.1" x2="154.94" y2="165.1" width="0.1524" layer="91"/>
 <pinref part="C13" gate="C" pin="1"/>
 </segment>
 <segment>
@@ -5178,7 +5230,7 @@ SMD inductor</description>
 <net name="CS+_ISOLATED" class="0">
 <segment>
 <pinref part="A_ISOLATED" gate="A" pin="!CS!+"/>
-<wire x1="137.16" y1="111.76" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="111.76" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="U$9" gate="G$1" pin="DOUT1+"/>
 <wire x1="96.52" y1="142.24" x2="106.68" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="142.24" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
@@ -5188,7 +5240,7 @@ SMD inductor</description>
 <segment>
 <pinref part="A_ISOLATED" gate="A" pin="SCLK+"/>
 <pinref part="U$7" gate="G$1" pin="DOUT2+"/>
-<wire x1="137.16" y1="147.32" x2="111.76" y2="147.32" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="147.32" x2="111.76" y2="147.32" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="149.86" x2="111.76" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="149.86" x2="111.76" y2="147.32" width="0.1524" layer="91"/>
 </segment>
