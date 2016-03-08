@@ -13,25 +13,3 @@ https://open-ephys.atlassian.net/wiki/display/OEW/PCIe+acquisition+board
 
 For now, we should try to build a working proof-of-principle prototype that we
 can use as starting point to develop proper standards.
-
-## FMC Daughter Card TODOs
-
-- [ ] The PDS1-S12-S5-S DC-DC converter's operating frequency (100-300 kHz)
-  resides right in the minimum range of the TPS993\*'s PSRR spectrum. Bummer.
-  Consider using LDO regulator with better rejection in this range  or choosing
-  isolated DC-DC converter with a different switching frequency since this can
-  absolutely affect the effective resolution of the RHD chips.
-- [ ] The two LVDS to single-ended receivers (ADN4664) attached to the FMC
-  interface are probably not necessary because those lines might be able to be
-  natively single ended. Not sure.
-- [ ] A couple of the LVDS --> Single converters on the FPGA side have inverted
-  inputs on the LVDS side
-- [ ] TI's ISO7641 has better electrical characteristics in almost every 
-  single way compared to the ADUM3440 and is cheaper. Has the same pinout, 
-  footprint, and package, so we can just switch it.
-- [ ] Does the FPGA provide on-board termination for LVDS. Seems likely 
-  that it does and we don't need external 100 Ohm resistors next to the FMC connector 
-  which is pretty far from the FPGA anyway.
-- [ ] The power jacks seem unnessesary since we will have 12V (and maybe 5V?) 
-  from the dev board. I guess we can keep them as backup (jumper selectable), 
-  but our main power should be coming from the dev board. 
