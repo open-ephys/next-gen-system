@@ -3,6 +3,21 @@
 Will eventually connect the PCIE FPGA board to the probes and other
 peripherals. In its current stage, it is a rough proof of concept.
 
+FMC LPC pinout diagram at:
+https://docs.google.com/spreadsheets/d/1bgnBP1xqPFtFIQYF-BCybK1KkekfmRYwm2GDAU4D9lo/edit?usp=sharing
+
+## Features
+
+- 1x FMC connector (use LPC side, seems marginally easier to solder and we don't
+  need the high pin count right now)
+  https://forums.xilinx.com/t5/Xilinx-Boards-and-Kits/FMC-Where-to-buy/td-p/44218
+  https://www.samtec.com/standards/fmc#asicdevelopment
+- 1 isolated Omnmetics connector for Intan SPI cables to headstages.
+- 2 non-isolated Omnmetics connectors for Intan SPI cables to headstages as a temporary failsafe.
+- Testpoints & SMA connectors for probing things
+- At least ~4 (protected?) SMA or BNC inputs and outputs to/from the FPGA for
+  closed-loop tests.
+
 ## TODO
 
 - [ ] The PDS1-S12-S5-S DC-DC converter's operating frequency (100-300 kHz)
@@ -28,3 +43,5 @@ peripherals. In its current stage, it is a rough proof of concept.
       regulators, are likely to go away anyway so that will get rid of the one
       jack and once the isolated power supply proves functional, that will get
       rid of the other.
+- [ ] Do we want to add level shifters or anything that can drive more current
+  than the bare FPGA pins?
