@@ -26,3 +26,9 @@ can use as starting point to develop proper standards.
   natively single ended. Not sure.
 - [ ] A couple of the LVDS --> Single converters on the FPGA side have inverted
   inputs on the LVDS side
+- [ ] TI's ISO7641 has better electrical characteristics in almost every 
+  single way compared to the ADUM3440 and is cheaper. Has the same pinout, 
+  footprint, and package, so we can just switch it.
+- [ ] Does the FPGA provide on-board termination for LVDS. Seems likely 
+  that it does and we don't need external 100 Ohm resistors next to the FMC connector 
+  which is pretty far from the FPGA anyway.
