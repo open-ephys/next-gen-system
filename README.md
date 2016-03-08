@@ -32,3 +32,6 @@ can use as starting point to develop proper standards.
 - [ ] Does the FPGA provide on-board termination for LVDS. Seems likely 
   that it does and we don't need external 100 Ohm resistors next to the FMC connector 
   which is pretty far from the FPGA anyway.
+- [ ] The power jacks seem unnessesary since we will have 12V (and maybe 5V?) 
+  from the dev board. I guess we can keep them as backup (jumper selectable), 
+  but our main power should be coming from the dev board. 
