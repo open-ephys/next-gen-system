@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="$GND" color="2" fill="1" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -22,7 +22,7 @@
 <layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="$VCC" color="3" fill="1" visible="yes" active="yes"/>
+<layer number="15" name="$VCC" color="3" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -189,7 +189,7 @@ isolated</text>
 <text x="44.704" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">vdd33</text>
 <text x="41.91" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">3v_fpga</text>
 <text x="39.624" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">3.6v_hs</text>
-<text x="29.718" y="26.67" size="1.27" layer="25" font="vector" ratio="15">RHD headstages
+<text x="30.734" y="25.908" size="1.27" layer="25" font="vector" ratio="15">RHD headstages
 rev. 0.1</text>
 <text x="26.162" y="56.642" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_miso2+</text>
 <text x="24.13" y="59.436" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_miso1+</text>
@@ -3544,7 +3544,7 @@ design rules under a new name.
 <attribute name="NAME" x="58.166" y="18.542" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="58.166" y="17.526" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
 </element>
-<element name="U$16" library="RHD2000_eval_board" package="INTAN_LOGO" value="" x="32.512" y="30.48"/>
+<element name="U$16" library="RHD2000_eval_board" package="INTAN_LOGO" value="" x="31.242" y="29.21"/>
 <element name="TP5" library="testpad" package="P5-25-13" value="TP5P5-25-13" x="26.924" y="62.484" smashed="yes" rot="R90">
 <attribute name="TP_SIGNAL_NAME" value="" x="30.734" y="56.768996875" size="1" layer="37" rot="R90"/>
 </element>
@@ -3615,7 +3615,7 @@ design rules under a new name.
 <vertex x="69.342" y="72.39"/>
 <vertex x="69.342" y="-3.81"/>
 <vertex x="-10.16" y="-3.81"/>
-<vertex x="72.644" y="-9.398"/>
+<vertex x="-13.716" y="78.486"/>
 </polygon>
 <wire x1="62.2046" y1="42.291" x2="62.2046" y2="41.4274" width="0.4064" layer="1"/>
 <wire x1="62.2046" y1="41.4274" x2="62.992" y2="40.64" width="0.4064" layer="1"/>
@@ -4851,7 +4851,6 @@ design rules under a new name.
 <wire x1="51.562" y1="51.308" x2="51.562" y2="22.606" width="0.6096" layer="15"/>
 <wire x1="31.6865" y1="64.77" x2="30.988" y2="64.77" width="0.3048" layer="1"/>
 <via x="30.988" y="64.77" extent="1-16" drill="0.5"/>
-<wire x1="30.988" y1="64.77" x2="29.845" y2="64.897" width="0" layer="19" extent="1-16"/>
 <wire x1="38.1" y1="64.77" x2="30.988" y2="64.77" width="0.6096" layer="15"/>
 <contactref element="R12" pad="1"/>
 <wire x1="53.7464" y1="21.59" x2="53.7464" y2="23.368" width="0.4064" layer="1"/>
