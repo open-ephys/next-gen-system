@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0125" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="$GND" color="2" fill="1" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -147,7 +147,7 @@
 <wire x1="0" y1="69.84" x2="0" y2="0" width="0" layer="20"/>
 <text x="1.905" y="57.785" size="0.762" layer="21">CLK_N</text>
 <text x="1.905" y="44.45" size="0.762" layer="21">CLK_N</text>
-<text x="30.48" y="37.846" size="1.27" layer="25" font="vector" ratio="15">FMC prototype board
+<text x="12.954" y="41.91" size="1.27" layer="25" font="vector" ratio="15">FMC prototype board
 for</text>
 <text x="56.134" y="65.532" size="1.27" layer="25" font="vector" ratio="15" rot="R90">gnd</text>
 <text x="59.436" y="65.786" size="1.27" layer="25" font="vector" ratio="15" rot="R225">mosi+</text>
@@ -189,18 +189,19 @@ isolated</text>
 <text x="44.704" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">vdd33</text>
 <text x="41.91" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">3v_fpga</text>
 <text x="39.624" y="5.588" size="1.27" layer="25" font="vector" ratio="15" rot="R45">3.6v_hs</text>
-<text x="30.734" y="25.908" size="1.27" layer="25" font="vector" ratio="15">RHD headstages
+<text x="20.828" y="31.242" size="1.27" layer="25" font="vector" ratio="15">RHD headstages
 rev. 0.1</text>
 <text x="26.162" y="56.642" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_miso2+</text>
 <text x="24.13" y="59.436" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_miso1+</text>
 <text x="24.384" y="62.23" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_mosi+</text>
 <text x="24.384" y="64.516" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_sclk+</text>
 <text x="24.13" y="67.564" size="1.27" layer="25" font="vector" ratio="15" rot="R225">b_cs+</text>
-<text x="70.358" y="10.414" size="1.27" layer="25" font="vector" ratio="15">1_to_fpga</text>
-<text x="81.534" y="10.414" size="1.27" layer="25" font="vector" ratio="15">2_to_fpga</text>
-<text x="92.202" y="10.414" size="1.27" layer="25" font="vector" ratio="15">3_from_fpga</text>
+<text x="73.914" y="1.27" size="1.27" layer="25" font="vector" ratio="15" rot="R90">1_to_fpga</text>
+<text x="84.328" y="1.016" size="1.27" layer="25" font="vector" ratio="15" rot="R90">2_to_fpga</text>
+<text x="94.742" y="0.762" size="1.27" layer="25" font="vector" ratio="15" rot="R90">3_from_fpga</text>
 <text x="65.532" y="32.512" size="1.27" layer="25" font="vector" ratio="15">jack</text>
 <text x="53.594" y="27.432" size="1.27" layer="25" font="vector" ratio="15">fpga12&gt;5V DCDC</text>
+<rectangle x1="20.828" y1="20.066" x2="47.244" y2="29.972" layer="51"/>
 </plain>
 <libraries>
 <library name="open-ephys">
@@ -3396,13 +3397,31 @@ design rules under a new name.
 </autorouter>
 <elements>
 <element name="FMC" library="jonnew" package="FMC_LPC_MALE_WITH_SP601_BSILK" value="FMC_LPC_160_PIN" x="18.415" y="34.925" rot="R270"/>
-<element name="U$1" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="29.718" y="40.894"/>
-<element name="U11" library="jonnew" package="SOIC127P500X400-8N" value="ADN4663" x="59.182" y="54.737" rot="R180"/>
-<element name="U5" library="jonnew" package="SOIC127P500X400-8N" value="ADN4664" x="84.074" y="54.991" rot="R180"/>
-<element name="U3" library="jonnew" package="SOIC127P500X400-8N" value="ADN4663" x="83.82" y="46.99"/>
-<element name="U4" library="jonnew" package="SOIC127P500X400-8N" value="ADN4663" x="83.312" y="38.481"/>
-<element name="U9" library="jonnew" package="SOIC127P500X400-8N" value="ADN4664" x="57.15" y="38.481"/>
-<element name="U10" library="jonnew" package="SOIC127P500X400-8N" value="ADN4664" x="57.404" y="46.482"/>
+<element name="U$1" library="open-ephys" package="OPEN_EPHYS_LOGO" value="OPEN_EPHYS_LOGO" x="12.7" y="44.958"/>
+<element name="U11" library="jonnew" package="SOIC127P500X400-8N" value="ADN4663" x="59.182" y="54.737" smashed="yes" rot="R180">
+<attribute name="NAME" x="54.61" y="51.181" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<attribute name="VALUE" x="61.976" y="58.547" size="1.016" layer="27" font="vector" ratio="18" rot="SR180"/>
+</element>
+<element name="U5" library="jonnew" package="SOIC127P500X400-8N" value="ADN4664" x="84.074" y="54.991" smashed="yes" rot="R180">
+<attribute name="NAME" x="86.36" y="52.197" size="1.016" layer="25" font="vector" ratio="18" rot="SR180"/>
+<attribute name="VALUE" x="88.011" y="56.134" size="1.016" layer="27" font="vector" ratio="18" rot="SR270"/>
+</element>
+<element name="U3" library="jonnew" package="SOIC127P500X400-8N" value="ADN4663" x="83.82" y="46.99" smashed="yes">
+<attribute name="NAME" x="81.534" y="49.784" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<attribute name="VALUE" x="88.9" y="42.672" size="1.016" layer="27" font="vector" ratio="18" rot="SR90"/>
+</element>
+<element name="U4" library="jonnew" package="SOIC127P500X400-8N" value="ADN4663" x="83.312" y="38.481" smashed="yes">
+<attribute name="NAME" x="81.026" y="41.275" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<attribute name="VALUE" x="83.058" y="34.925" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
+</element>
+<element name="U9" library="jonnew" package="SOIC127P500X400-8N" value="ADN4664" x="57.15" y="38.481" smashed="yes">
+<attribute name="NAME" x="52.07" y="34.925" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<attribute name="VALUE" x="54.356" y="34.671" size="1.016" layer="27" font="vector" ratio="18" rot="SR0"/>
+</element>
+<element name="U10" library="jonnew" package="SOIC127P500X400-8N" value="ADN4664" x="57.404" y="46.482" smashed="yes">
+<attribute name="NAME" x="55.118" y="49.276" size="1.016" layer="25" font="vector" ratio="18" rot="SR0"/>
+<attribute name="VALUE" x="58.928" y="43.688" size="1.016" layer="27" font="vector" ratio="18" rot="SR90"/>
+</element>
 <element name="DI_ISO" library="jonnew" package="SOIC_WIDE_16" value="ISO7640" x="72.39" y="52.07" rot="R90"/>
 <element name="DO_ISO" library="jonnew" package="SOIC_WIDE_16" value="IS07640" x="70.485" y="40.64" rot="R270"/>
 <element name="C10" library="RHD2000_eval_board" package="0805" value="1.0u" x="78.613" y="29.845" smashed="yes" rot="R90">
@@ -3419,10 +3438,10 @@ design rules under a new name.
 </element>
 <element name="C17" library="RHD2000_eval_board" package="0805" value="1.0u" x="43.942" y="64.516" smashed="yes" rot="R90">
 <attribute name="NAME" x="42.672" y="64.262" size="1.016" layer="25" font="vector" rot="R90"/>
-<attribute name="VALUE" x="45.212" y="67.564" size="1.016" layer="27" font="vector" rot="R180"/>
+<attribute name="VALUE" x="41.656" y="63.754" size="1.016" layer="27" font="vector" rot="R270"/>
 </element>
 <element name="C20" library="RHD2000_eval_board" package="0603" value="10n" x="46.99" y="67.183" smashed="yes">
-<attribute name="NAME" x="48.26" y="65.659" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="NAME" x="47.244" y="68.707" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
 <attribute name="VALUE" x="49.149" y="65.786" size="0.762" layer="27" font="vector" ratio="10" rot="R90" align="center-left"/>
 </element>
 <element name="C24" library="RHD2000_eval_board" package="1206" value="22u" x="52.197" y="67.183" smashed="yes" rot="R180">
@@ -3447,8 +3466,8 @@ design rules under a new name.
 <attribute name="VALUE" x="99.06" y="33.909" size="1.016" layer="27" font="vector"/>
 </element>
 <element name="R6" library="RHD2000_eval_board" package="0603" value="30.9k" x="96.52" y="24.003" smashed="yes">
-<attribute name="NAME" x="98.298" y="24.003" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="98.298" y="22.987" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+<attribute name="NAME" x="98.298" y="24.257" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="98.298" y="23.495" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
 </element>
 <element name="R5" library="RHD2000_eval_board" package="0603" value="95.3k" x="96.52" y="25.781" smashed="yes">
 <attribute name="NAME" x="98.298" y="26.035" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
@@ -3458,14 +3477,23 @@ design rules under a new name.
 <attribute name="NAME" x="64.135" y="59.055" size="0.762" layer="25" font="vector" ratio="10" rot="R270" align="center-right"/>
 <attribute name="VALUE" x="63.881" y="58.293" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
 </element>
-<element name="C7" library="RHD2000_eval_board" package="0603" value="100n" x="81.661" y="51.054"/>
+<element name="C7" library="RHD2000_eval_board" package="0603" value="100n" x="81.661" y="51.054" smashed="yes">
+<attribute name="NAME" x="79.883" y="51.054" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="77.597" y="50.038" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
 <element name="C8" library="RHD2000_eval_board" package="0603" value="100n" x="84.328" y="43.053" smashed="yes">
-<attribute name="NAME" x="81.28" y="43.053" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="NAME" x="85.852" y="41.783" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
 <attribute name="VALUE" x="86.106" y="42.037" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
 </element>
 <element name="C6" library="RHD2000_eval_board" package="0603" value="100n" x="82.931" y="59.944"/>
-<element name="C14" library="RHD2000_eval_board" package="0603" value="100n" x="61.341" y="42.291" rot="R180"/>
-<element name="C21" library="RHD2000_eval_board" package="0603" value="100n" x="61.849" y="50.927"/>
+<element name="C14" library="RHD2000_eval_board" package="0603" value="100n" x="61.341" y="42.291" smashed="yes" rot="R180">
+<attribute name="NAME" x="63.119" y="42.291" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="63.627" y="43.561" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
+</element>
+<element name="C21" library="RHD2000_eval_board" package="0603" value="100n" x="61.849" y="50.927" smashed="yes">
+<attribute name="NAME" x="60.071" y="50.927" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="63.119" y="51.943" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
 <element name="A_ISOLATED" library="RHD2000_eval_board" package="OMNETICS_PZN-12-AA" value="RHD2000-CABLE-DAQ-SIDE" x="99.822" y="56.515" smashed="yes" rot="R270">
 <attribute name="NAME" x="104.5845" y="55.245" size="1.27" layer="25" font="vector"/>
 </element>
@@ -3518,19 +3546,19 @@ design rules under a new name.
 <attribute name="VALUE" x="45.466" y="18.034" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="U7" library="RHD2000_eval_board" package="SOT-23-6" value="TPS79301" x="54.356" y="16.764" smashed="yes" rot="R90">
-<attribute name="NAME" x="54.2766" y="16.8402" size="0.762" layer="25" font="vector" ratio="10" align="center"/>
+<attribute name="NAME" x="53.7686" y="16.8402" size="0.762" layer="25" font="vector" ratio="10" align="center"/>
 </element>
 <element name="C16" library="RHD2000_eval_board" package="0805" value="1.0u" x="53.848" y="13.462" smashed="yes" rot="R180">
 <attribute name="NAME" x="51.816" y="12.192" size="1.016" layer="25" font="vector" rot="R180"/>
 <attribute name="VALUE" x="51.816" y="13.462" size="1.016" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="R8" library="RHD2000_eval_board" package="0603" value="95.3k" x="54.61" y="19.812" smashed="yes" rot="R180">
-<attribute name="NAME" x="50.038" y="20.574" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
-<attribute name="VALUE" x="53.086" y="19.812" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
+<attribute name="NAME" x="51.562" y="20.066" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="51.054" y="20.32" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
 </element>
 <element name="C25" library="RHD2000_eval_board" package="0603" value="15p" x="54.61" y="21.59" smashed="yes">
-<attribute name="NAME" x="53.848" y="22.86" size="0.762" layer="25" font="vector" ratio="10" rot="R270" align="center-right"/>
-<attribute name="VALUE" x="55.372" y="22.86" size="0.762" layer="27" font="vector" ratio="10" rot="R90" align="center-left"/>
+<attribute name="NAME" x="52.832" y="21.59" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="50.292" y="21.59" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
 </element>
 <element name="C26" library="RHD2000_eval_board" package="1206" value="22u" x="50.8" y="16.764" smashed="yes" rot="R270">
 <attribute name="NAME" x="49.276" y="16.51" size="1.016" layer="25" font="vector" rot="R180"/>
@@ -3544,21 +3572,35 @@ design rules under a new name.
 <attribute name="NAME" x="58.166" y="18.542" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
 <attribute name="VALUE" x="58.166" y="17.526" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
 </element>
-<element name="U$16" library="RHD2000_eval_board" package="INTAN_LOGO" value="" x="31.242" y="29.21"/>
+<element name="U$16" library="RHD2000_eval_board" package="INTAN_LOGO" value="" x="15.24" y="34.29"/>
 <element name="TP5" library="testpad" package="P5-25-13" value="TP5P5-25-13" x="26.924" y="62.484" smashed="yes" rot="R90">
 <attribute name="TP_SIGNAL_NAME" value="" x="30.734" y="56.768996875" size="1" layer="37" rot="R90"/>
 </element>
 <element name="C18" library="jonnew" package="1206" value="2.2uF" x="63.754" y="14.986" smashed="yes" rot="R270">
-<attribute name="NAME" x="64.262" y="17.018" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
-<attribute name="VALUE" x="65.278" y="18.288" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
+<attribute name="NAME" x="61.976" y="15.24" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="62.23" y="14.224" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
 </element>
-<element name="U6" library="jonnew" package="PDS1" value="PDS1-S12-S5-S" x="72.898" y="13.208"/>
+<element name="U6" library="jonnew" package="PDS1" value="PDS1-S12-S5-S" x="72.898" y="13.208" smashed="yes">
+<attribute name="NAME" x="66.548" y="18.923" size="1.27" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="62.23" y="10.541" size="1.27" layer="27" font="vector" ratio="18"/>
+</element>
 <element name="U2" library="jonnew" package="SOT-23-5" value="TPS79333" x="96.774" y="16.51" rot="R180"/>
-<element name="U8" library="jonnew" package="SOT-23-5" value="TPS79333" x="47.244" y="62.23" rot="R180"/>
-<element name="R7" library="RHD2000_eval_board" package="0603" value="10k" x="82.042" y="33.782" rot="R90"/>
+<element name="U8" library="jonnew" package="SOT-23-5" value="TPS79333" x="47.244" y="62.23" smashed="yes" rot="R180">
+<attribute name="NAME" x="45.901" y="61.2394" size="1.27" layer="25" font="vector" rot="R180"/>
+</element>
+<element name="R7" library="RHD2000_eval_board" package="0603" value="10k" x="82.042" y="33.782" smashed="yes" rot="R90">
+<attribute name="NAME" x="83.312" y="32.258" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="83.312" y="33.274" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
 <element name="R11" library="RHD2000_eval_board" package="0603" value="10k" x="51.816" y="43.434" rot="R90"/>
-<element name="R10" library="RHD2000_eval_board" package="0603" value="10k" x="55.372" y="42.418" rot="R180"/>
-<element name="C23" library="RHD2000_eval_board" package="0603" value="100n" x="62.992" y="48.768"/>
+<element name="R10" library="RHD2000_eval_board" package="0603" value="10k" x="55.372" y="42.418" smashed="yes" rot="R180">
+<attribute name="NAME" x="59.182" y="42.418" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="53.086" y="43.942" size="0.762" layer="27" font="vector" ratio="10" rot="R270" align="center-left"/>
+</element>
+<element name="C23" library="RHD2000_eval_board" package="0603" value="100n" x="62.992" y="48.768" smashed="yes">
+<attribute name="NAME" x="63.754" y="47.498" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="64.262" y="47.498" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
 <element name="C22" library="RHD2000_eval_board" package="0603" value="100n" x="61.214" y="34.798"/>
 <element name="R14" library="RHD2000_eval_board" package="0603" value="0" x="18.288" y="34.29"/>
 <element name="R15" library="RHD2000_eval_board" package="0603" value="0" x="18.288" y="32.512"/>
@@ -3570,16 +3612,43 @@ design rules under a new name.
 <element name="R17" library="RHD2000_eval_board" package="0603" value="0" x="18.288" y="28.956"/>
 <element name="R22" library="RHD2000_eval_board" package="0603" value="0" x="18.288" y="20.066"/>
 <element name="R23" library="RHD2000_eval_board" package="0603" value="0" x="18.288" y="18.034"/>
-<element name="C13" library="RHD2000_eval_board" package="0603" value="100n" x="77.724" y="33.528" rot="R90"/>
-<element name="C12" library="RHD2000_eval_board" package="0603" value="100n" x="78.74" y="58.42"/>
-<element name="D3" library="jonnew" package="LED-0603" value="SML-D1" x="58.166" y="23.368" rot="R270"/>
-<element name="R12" library="RHD2000_eval_board" package="0603" value="820" x="54.61" y="23.368"/>
-<element name="D4" library="jonnew" package="LED-0603" value="SML-D1" x="50.546" y="63.246"/>
-<element name="R13" library="RHD2000_eval_board" package="0603" value="820" x="51.308" y="60.706"/>
+<element name="C13" library="RHD2000_eval_board" package="0603" value="100n" x="77.724" y="33.528" smashed="yes" rot="R90">
+<attribute name="NAME" x="76.708" y="32.004" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="76.962" y="33.02" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
+</element>
+<element name="C12" library="RHD2000_eval_board" package="0603" value="100n" x="78.74" y="58.42" smashed="yes">
+<attribute name="NAME" x="79.502" y="59.69" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="77.47" y="56.896" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
+<element name="D3" library="jonnew" package="LED-0603" value="SML-D1" x="58.166" y="23.368" smashed="yes" rot="R270">
+<attribute name="NAME" x="60.198" y="22.606" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="62.23" y="22.352" size="1.016" layer="27" font="vector" ratio="18"/>
+</element>
+<element name="R12" library="RHD2000_eval_board" package="0603" value="820" x="54.61" y="23.368" smashed="yes">
+<attribute name="NAME" x="52.832" y="23.368" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="48.26" y="23.368" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
+<element name="D4" library="jonnew" package="LED-0603" value="SML-D1" x="50.546" y="63.246" smashed="yes">
+<attribute name="NAME" x="52.324" y="63.754" size="1.016" layer="25" font="vector" ratio="18" rot="R90"/>
+<attribute name="VALUE" x="51.308" y="62.484" size="1.016" layer="27" font="vector" ratio="18"/>
+</element>
+<element name="R13" library="RHD2000_eval_board" package="0603" value="820" x="51.308" y="60.706" smashed="yes">
+<attribute name="NAME" x="52.07" y="59.182" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="53.086" y="60.706" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
 <element name="D2" library="jonnew" package="LED-0603" value="SML-D1" x="100.838" y="16.764"/>
-<element name="R2" library="RHD2000_eval_board" package="0603" value="820" x="100.076" y="13.97"/>
-<element name="D1" library="jonnew" package="LED-0603" value="SML-D1" x="96.52" y="22.098" rot="R270"/>
-<element name="R1" library="RHD2000_eval_board" package="0603" value="820" x="96.52" y="20.32" rot="R180"/>
+<element name="R2" library="RHD2000_eval_board" package="0603" value="820" x="100.076" y="13.97" smashed="yes">
+<attribute name="NAME" x="101.092" y="12.446" size="0.762" layer="25" font="vector" ratio="10" align="center-right"/>
+<attribute name="VALUE" x="101.854" y="13.97" size="0.762" layer="27" font="vector" ratio="10" align="center-left"/>
+</element>
+<element name="D1" library="jonnew" package="LED-0603" value="SML-D1" x="96.52" y="22.098" smashed="yes" rot="R270">
+<attribute name="NAME" x="93.218" y="21.59" size="1.016" layer="25" font="vector" ratio="18"/>
+<attribute name="VALUE" x="98.298" y="21.59" size="1.016" layer="27" font="vector" ratio="18"/>
+</element>
+<element name="R1" library="RHD2000_eval_board" package="0603" value="820" x="96.52" y="20.32" smashed="yes" rot="R180">
+<attribute name="NAME" x="96.774" y="19.05" size="0.762" layer="25" font="vector" ratio="10" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="94.742" y="20.32" size="0.762" layer="27" font="vector" ratio="10" rot="R180" align="center-left"/>
+</element>
 <element name="C10_DIR" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="4.572" y="8.128"/>
 <element name="C11_DIR" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="4.572" y="21.59"/>
 <element name="C14_DIR" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="4.572" y="35.306"/>
@@ -3589,7 +3658,10 @@ design rules under a new name.
 <element name="H22_ISO" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="78.74" y="4.826"/>
 <element name="G22_ISO" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="99.06" y="4.826"/>
 <element name="C11" library="jonnew" package="1206" value="10uF" x="80.772" y="13.462"/>
-<element name="L1" library="jonnew" package="0603" value="MPZ1608" x="74.168" y="21.082"/>
+<element name="L1" library="jonnew" package="0603" value="MPZ1608" x="74.168" y="21.082" smashed="yes">
+<attribute name="NAME" x="70.485" y="21.209" size="1.016" layer="25" font="vector" ratio="18" rot="R180" align="center-right"/>
+<attribute name="VALUE" x="68.961" y="19.685" size="1.016" layer="27" font="vector" ratio="18" align="center-left"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
