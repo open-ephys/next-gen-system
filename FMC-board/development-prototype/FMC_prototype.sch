@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4445,7 +4445,6 @@ Source: amp_227161.pdf</description>
 <part name="C26" library="RHD2000_eval_board" deviceset="C" device="_1206" value="22u"/>
 <part name="R9" library="RHD2000_eval_board" deviceset="R" device="_0603" value="30.9k"/>
 <part name="C19" library="RHD2000_eval_board" deviceset="C" device="_0603" value="10n"/>
-<part name="TP5" library="testpad" deviceset="TP5" device="P5-25-13"/>
 <part name="C18" library="jonnew" deviceset="C" device="_1206" value="2.2uF"/>
 <part name="U6" library="jonnew" deviceset="PDS1" device="" value="PDS1-S12-S5-S"/>
 <part name="U2" library="jonnew" deviceset="TPS79333" device=""/>
@@ -4537,6 +4536,7 @@ Source: amp_227161.pdf</description>
 <part name="PWR31" library="jonnew" deviceset="+5V" device="" value="3V_FPGA"/>
 <part name="C11" library="jonnew" deviceset="C" device="_1206" value="10uF"/>
 <part name="L1" library="jonnew" deviceset="L" device="_0603" value="MPZ1608"/>
+<part name="TP5" library="testpad" deviceset="TP5" device="P5-25-13"/>
 </parts>
 <sheets>
 <sheet>
@@ -4638,11 +4638,6 @@ Source: amp_227161.pdf</description>
 <instance part="C26" gate="C" x="322.58" y="322.58"/>
 <instance part="R9" gate="R" x="304.8" y="317.5" rot="R270"/>
 <instance part="C19" gate="C" x="292.1" y="322.58"/>
-<instance part="TP5" gate="A" x="474.98" y="121.92" rot="R180"/>
-<instance part="TP5" gate="B" x="482.6" y="121.92" rot="R180"/>
-<instance part="TP5" gate="C" x="490.22" y="121.92" rot="R180"/>
-<instance part="TP5" gate="D" x="497.84" y="121.92" rot="R180"/>
-<instance part="TP5" gate="E" x="505.46" y="121.92" rot="R180"/>
 <instance part="C18" gate="C" x="261.62" y="419.1"/>
 <instance part="U6" gate="G$1" x="228.6" y="416.56" rot="MR0"/>
 <instance part="U2" gate="A" x="160.02" y="284.48" rot="MR0"/>
@@ -4746,6 +4741,11 @@ Source: amp_227161.pdf</description>
 </instance>
 <instance part="C11" gate="C" x="198.12" y="419.1"/>
 <instance part="L1" gate="L" x="190.5" y="353.06"/>
+<instance part="TP5" gate="A" x="505.46" y="121.92" rot="R180"/>
+<instance part="TP5" gate="B" x="497.84" y="121.92" rot="R180"/>
+<instance part="TP5" gate="C" x="490.22" y="121.92" rot="R180"/>
+<instance part="TP5" gate="D" x="482.6" y="121.92" rot="R180"/>
+<instance part="TP5" gate="E" x="474.98" y="121.92" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -6017,7 +6017,7 @@ Source: amp_227161.pdf</description>
 <segment>
 <wire x1="474.98" y1="124.46" x2="474.98" y2="129.54" width="0.1524" layer="91"/>
 <label x="474.98" y="129.54" size="1.778" layer="95" rot="R90"/>
-<pinref part="TP5" gate="A" pin="TP"/>
+<pinref part="TP5" gate="E" pin="TP"/>
 </segment>
 </net>
 <net name="B_MISO2-" class="0">
@@ -6044,7 +6044,7 @@ Source: amp_227161.pdf</description>
 <segment>
 <wire x1="482.6" y1="124.46" x2="482.6" y2="129.54" width="0.1524" layer="91"/>
 <label x="482.6" y="129.54" size="1.778" layer="95" rot="R90"/>
-<pinref part="TP5" gate="B" pin="TP"/>
+<pinref part="TP5" gate="D" pin="TP"/>
 </segment>
 </net>
 <net name="B_MISO1-" class="0">
@@ -6098,7 +6098,7 @@ Source: amp_227161.pdf</description>
 <segment>
 <wire x1="497.84" y1="124.46" x2="497.84" y2="129.54" width="0.1524" layer="91"/>
 <label x="497.84" y="129.54" size="1.778" layer="95" rot="R90"/>
-<pinref part="TP5" gate="D" pin="TP"/>
+<pinref part="TP5" gate="B" pin="TP"/>
 </segment>
 </net>
 <net name="B_SCLK-" class="0">
@@ -6125,7 +6125,7 @@ Source: amp_227161.pdf</description>
 <segment>
 <wire x1="505.46" y1="124.46" x2="505.46" y2="129.54" width="0.1524" layer="91"/>
 <label x="505.46" y="129.54" size="1.778" layer="95" rot="R90"/>
-<pinref part="TP5" gate="E" pin="TP"/>
+<pinref part="TP5" gate="A" pin="TP"/>
 </segment>
 </net>
 <net name="B_CS-" class="0">
