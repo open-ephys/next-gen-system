@@ -3172,6 +3172,24 @@ http://www.bccomponents.com/</description>
 <rectangle x1="0.3175" y1="-1.397" x2="0.8255" y2="1.397" layer="51"/>
 <rectangle x1="-3.048" y1="-1.651" x2="-2.413" y2="1.651" layer="21"/>
 </package>
+<package name="569-011X-X00_LED_ARRAY">
+<pad name="C1" x="-8.89" y="0" drill="1.016" shape="octagon"/>
+<pad name="A1" x="-6.35" y="0" drill="1.016" shape="octagon"/>
+<pad name="C2" x="-3.81" y="0" drill="1.016" shape="octagon"/>
+<pad name="A2" x="-1.27" y="0" drill="1.016" shape="octagon"/>
+<wire x1="0" y1="1.651" x2="0" y2="-1.651" width="0.2032" layer="21"/>
+<wire x1="-14.859" y1="1.651" x2="-14.859" y2="-1.651" width="0.2032" layer="21"/>
+<wire x1="0" y1="-1.651" x2="-14.859" y2="-1.651" width="0.2032" layer="21"/>
+<wire x1="0" y1="1.651" x2="-14.859" y2="1.651" width="0.2032" layer="21"/>
+<wire x1="-14.859" y1="-1.651" x2="-16.51" y2="-1.651" width="0.2032" layer="21"/>
+<wire x1="-14.859" y1="1.651" x2="-16.51" y2="1.651" width="0.2032" layer="21"/>
+<wire x1="-16.51" y1="1.651" x2="-16.51" y2="-1.651" width="0.2032" layer="21" curve="180"/>
+<wire x1="-18.161" y1="1.651" x2="-19.812" y2="3.302" width="0.2032" layer="21"/>
+<wire x1="-18.542" y1="0" x2="-20.32" y2="0" width="0.2032" layer="21"/>
+<wire x1="-18.034" y1="-1.778" x2="-19.812" y2="-3.048" width="0.2032" layer="21"/>
+<text x="-8.89" y="2.54" size="1.016" layer="25" font="vector" ratio="18" align="center">&gt;NAME</text>
+<text x="-8.89" y="-2.54" size="1.016" layer="27" font="vector" ratio="18" align="center">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS793XX">
@@ -4601,6 +4619,25 @@ FMC MODULE</text>
 </device>
 </devices>
 </deviceset>
+<deviceset name="LED_2X" uservalue="yes">
+<gates>
+<gate name="1" symbol="LED" x="-10.16" y="-2.54"/>
+<gate name="2" symbol="LED" x="2.54" y="-2.54"/>
+</gates>
+<devices>
+<device name="_VERTICAL" package="569-011X-X00_LED_ARRAY">
+<connects>
+<connect gate="1" pin="A" pad="A1"/>
+<connect gate="1" pin="C" pad="C1"/>
+<connect gate="2" pin="A" pad="A2"/>
+<connect gate="2" pin="C" pad="C2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -4727,9 +4764,7 @@ FMC MODULE</text>
 <part name="D3" library="jonnew" deviceset="LED" device="_0603" value="SML-D1"/>
 <part name="R12" library="RHD2000_eval_board" deviceset="R" device="_0603" value="820"/>
 <part name="PWR22" library="jonnew" deviceset="+3V6" device=""/>
-<part name="D2" library="jonnew" deviceset="LED" device="_0603" value="SML-D1"/>
 <part name="R2" library="RHD2000_eval_board" deviceset="R" device="_0603" value="820"/>
-<part name="D1" library="jonnew" deviceset="LED" device="_0603" value="SML-D1"/>
 <part name="R1" library="RHD2000_eval_board" deviceset="R" device="_0603" value="820"/>
 <part name="C10_DIR" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
 <part name="C11_DIR" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
@@ -4751,7 +4786,7 @@ FMC MODULE</text>
 <part name="PWR1" library="jonnew" deviceset="+3V3" device=""/>
 <part name="U$2" library="jonnew" deviceset="FMC_SINGLE_WIDTH_MODULE" device=""/>
 <part name="PWR2" library="jonnew" deviceset="GND_ISO" device=""/>
-<part name="U$3" library="jonnew" deviceset="JP2E" device="_THRU-HOLE"/>
+<part name="VDD_AUX" library="jonnew" deviceset="JP2E" device="_THRU-HOLE"/>
 <part name="D4" library="jonnew" deviceset="Z-DIODE" device="_SOD-323" value="8V"/>
 <part name="U$4" library="jonnew" deviceset="P-MOSFET" device="_SOT23-GSD" value="SSM3J328R"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
@@ -4775,6 +4810,15 @@ FMC MODULE</text>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="GND30" library="supply1" deviceset="GND" device=""/>
 <part name="GND31" library="supply1" deviceset="GND" device=""/>
+<part name="C32" library="jonnew" deviceset="C-POL" device="_1206" value="10uF"/>
+<part name="GND33" library="jonnew" deviceset="GND_ISO" device=""/>
+<part name="C34" library="jonnew" deviceset="C-POL" device="_1206" value="10uF"/>
+<part name="GND34" library="jonnew" deviceset="GND_ISO" device=""/>
+<part name="C35" library="jonnew" deviceset="C-POL" device="_1206" value="10uF"/>
+<part name="C37" library="jonnew" deviceset="C-POL" device="_1206" value="10uF"/>
+<part name="GND35" library="supply1" deviceset="GND" device=""/>
+<part name="GND37" library="supply1" deviceset="GND" device=""/>
+<part name="U$3" library="jonnew" deviceset="LED_2X" device="_VERTICAL"/>
 </parts>
 <sheets>
 <sheet>
@@ -4914,9 +4958,7 @@ FMC MODULE</text>
 <instance part="D3" gate="G$1" x="332.74" y="322.58"/>
 <instance part="R12" gate="R" x="332.74" y="332.74" rot="R270"/>
 <instance part="PWR22" gate="PWR#" x="340.36" y="342.9"/>
-<instance part="D2" gate="G$1" x="106.68" y="271.78"/>
 <instance part="R2" gate="R" x="106.68" y="281.94" rot="R270"/>
-<instance part="D1" gate="G$1" x="106.68" y="322.58"/>
 <instance part="R1" gate="R" x="106.68" y="332.74" rot="R270"/>
 <instance part="C10_DIR" gate="G$1" x="533.4" y="266.7" rot="MR0"/>
 <instance part="C11_DIR" gate="G$1" x="533.4" y="254" rot="MR0"/>
@@ -4944,7 +4986,7 @@ FMC MODULE</text>
 <instance part="PWR1" gate="PWR1" x="459.74" y="198.12"/>
 <instance part="U$2" gate="G$1" x="441.96" y="335.28"/>
 <instance part="PWR2" gate="G$1" x="454.66" y="322.58"/>
-<instance part="U$3" gate="G$1" x="332.74" y="386.08" rot="R270"/>
+<instance part="VDD_AUX" gate="G$1" x="332.74" y="386.08" rot="R270"/>
 <instance part="D4" gate="G$1" x="299.72" y="381" rot="R90"/>
 <instance part="U$4" gate="G$1" x="312.42" y="386.08" rot="R90"/>
 <instance part="GND10" gate="1" x="330.2" y="355.6" rot="MR0"/>
@@ -4970,6 +5012,16 @@ FMC MODULE</text>
 <instance part="GND21" gate="1" x="464.82" y="142.24" rot="MR0"/>
 <instance part="GND30" gate="1" x="454.66" y="142.24" rot="MR0"/>
 <instance part="GND31" gate="1" x="444.5" y="142.24" rot="MR0"/>
+<instance part="C32" gate="C" x="144.78" y="210.82" rot="R270"/>
+<instance part="GND33" gate="G$1" x="137.16" y="208.28"/>
+<instance part="C34" gate="C" x="144.78" y="121.92" rot="R270"/>
+<instance part="GND34" gate="G$1" x="139.7" y="119.38"/>
+<instance part="C35" gate="C" x="276.86" y="208.28" rot="R270"/>
+<instance part="C37" gate="C" x="276.86" y="121.92" rot="R270"/>
+<instance part="GND35" gate="1" x="271.78" y="116.84"/>
+<instance part="GND37" gate="1" x="271.78" y="203.2"/>
+<instance part="U$3" gate="1" x="106.68" y="271.78"/>
+<instance part="U$3" gate="2" x="106.68" y="322.58"/>
 </instances>
 <busses>
 </busses>
@@ -5347,10 +5399,10 @@ FMC MODULE</text>
 <wire x1="147.32" y1="261.62" x2="134.62" y2="261.62" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="261.62" x2="134.62" y2="274.32" width="0.1524" layer="91"/>
 <pinref part="GND56" gate="G$1" pin="GND_ISO"/>
-<pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="106.68" y1="266.7" x2="106.68" y2="261.62" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="261.62" x2="106.68" y2="261.62" width="0.1524" layer="91"/>
 <junction x="134.62" y="261.62"/>
+<pinref part="U$3" gate="1" pin="C"/>
 </segment>
 <segment>
 <pinref part="U5" gate="G$1" pin="GND"/>
@@ -5418,10 +5470,10 @@ FMC MODULE</text>
 <pinref part="C9" gate="C" pin="2"/>
 <wire x1="182.88" y1="325.12" x2="182.88" y2="309.88" width="0.1524" layer="91"/>
 <pinref part="GND55" gate="G$1" pin="GND_ISO"/>
-<pinref part="D1" gate="G$1" pin="C"/>
 <wire x1="106.68" y1="317.5" x2="106.68" y2="309.88" width="0.1524" layer="91"/>
 <wire x1="116.84" y1="309.88" x2="106.68" y2="309.88" width="0.1524" layer="91"/>
 <junction x="116.84" y="309.88"/>
+<pinref part="U$3" gate="2" pin="C"/>
 </segment>
 <segment>
 <pinref part="GND53" gate="G$1" pin="GND_ISO"/>
@@ -5484,6 +5536,18 @@ FMC MODULE</text>
 <wire x1="454.66" y1="340.36" x2="454.66" y2="330.2" width="0.1524" layer="91"/>
 <junction x="454.66" y="330.2"/>
 <pinref part="PWR2" gate="G$1" pin="GND_ISO"/>
+</segment>
+<segment>
+<pinref part="C32" gate="C" pin="-"/>
+<wire x1="142.24" y1="210.82" x2="137.16" y2="210.82" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="210.82" x2="137.16" y2="208.28" width="0.1524" layer="91"/>
+<pinref part="GND33" gate="G$1" pin="GND_ISO"/>
+</segment>
+<segment>
+<pinref part="C34" gate="C" pin="-"/>
+<wire x1="142.24" y1="121.92" x2="139.7" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="121.92" x2="139.7" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="GND34" gate="G$1" pin="GND_ISO"/>
 </segment>
 </net>
 <net name="+3V6_ISO" class="0">
@@ -5960,7 +6024,7 @@ FMC MODULE</text>
 <pinref part="FMC" gate="G$1" pin="P$78"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="2"/>
+<pinref part="VDD_AUX" gate="G$1" pin="2"/>
 <wire x1="332.74" y1="383.54" x2="330.2" y2="383.54" width="0.1524" layer="91"/>
 <pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="330.2" y1="383.54" x2="330.2" y2="358.14" width="0.1524" layer="91"/>
@@ -6010,6 +6074,18 @@ FMC MODULE</text>
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="444.5" y1="172.72" x2="444.5" y2="170.18" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="C37" gate="C" pin="-"/>
+<wire x1="274.32" y1="121.92" x2="271.78" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="121.92" x2="271.78" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="GND35" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C35" gate="C" pin="-"/>
+<wire x1="274.32" y1="208.28" x2="271.78" y2="208.28" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="208.28" x2="271.78" y2="205.74" width="0.1524" layer="91"/>
+<pinref part="GND37" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -6021,6 +6097,8 @@ FMC MODULE</text>
 <pinref part="PWR28" gate="PWR1" pin="+3V3"/>
 <wire x1="292.1" y1="121.92" x2="299.72" y2="121.92" width="0.1524" layer="91"/>
 <junction x="292.1" y="121.92"/>
+<pinref part="C37" gate="C" pin="+"/>
+<wire x1="281.94" y1="121.92" x2="292.1" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="DO_ISO" gate="G$1" pin="VDD1"/>
@@ -6049,6 +6127,8 @@ FMC MODULE</text>
 <wire x1="289.56" y1="208.28" x2="289.56" y2="210.82" width="0.1524" layer="91"/>
 <wire x1="289.56" y1="208.28" x2="297.18" y2="208.28" width="0.1524" layer="91"/>
 <junction x="289.56" y="208.28"/>
+<pinref part="C35" gate="C" pin="+"/>
+<wire x1="281.94" y1="208.28" x2="289.56" y2="208.28" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="DI_ISO" gate="G$1" pin="VE2"/>
@@ -6136,6 +6216,9 @@ FMC MODULE</text>
 <wire x1="162.56" y1="119.38" x2="162.56" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="121.92" x2="167.64" y2="121.92" width="0.1524" layer="91"/>
 <label x="154.94" y="121.92" size="1.778" layer="95"/>
+<pinref part="C34" gate="C" pin="+"/>
+<wire x1="149.86" y1="121.92" x2="162.56" y2="121.92" width="0.1524" layer="91"/>
+<junction x="162.56" y="121.92"/>
 </segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="VCC"/>
@@ -6167,6 +6250,9 @@ FMC MODULE</text>
 <pinref part="U5" gate="G$1" pin="VCC"/>
 <wire x1="160.02" y1="205.74" x2="160.02" y2="210.82" width="0.1524" layer="91"/>
 <label x="152.4" y="210.82" size="1.778" layer="95"/>
+<pinref part="C32" gate="C" pin="+"/>
+<wire x1="149.86" y1="210.82" x2="160.02" y2="210.82" width="0.1524" layer="91"/>
+<junction x="160.02" y="210.82"/>
 </segment>
 <segment>
 <pinref part="DO_ISO" gate="G$1" pin="VDD2"/>
@@ -6742,15 +6828,15 @@ FMC MODULE</text>
 <net name="N$10" class="0">
 <segment>
 <pinref part="R2" gate="R" pin="2"/>
-<pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="106.68" y1="276.86" x2="106.68" y2="274.32" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="1" pin="A"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
 <pinref part="R1" gate="R" pin="2"/>
-<pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="106.68" y1="327.66" x2="106.68" y2="325.12" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="2" pin="A"/>
 </segment>
 </net>
 <net name="+5V0_EXT" class="0">
@@ -6798,7 +6884,7 @@ FMC MODULE</text>
 <segment>
 <pinref part="U$4" gate="G$1" pin="D"/>
 <wire x1="317.5" y1="386.08" x2="332.74" y2="386.08" width="0.1524" layer="91"/>
-<pinref part="U$3" gate="G$1" pin="1"/>
+<pinref part="VDD_AUX" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="AUX_VDD" class="0">
