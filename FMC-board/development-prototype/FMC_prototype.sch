@@ -3141,6 +3141,49 @@ Source: amp_227161.pdf</description>
 <text x="-26.67" y="-1.905" size="1.016" layer="21" font="vector" ratio="18" align="center">D</text>
 <text x="-26.67" y="-3.175" size="1.016" layer="21" font="vector" ratio="18" align="center">C</text>
 </package>
+<package name="FMC_SINGLE_WIDTH_MODULE">
+<wire x1="-10.9" y1="-3" x2="-10.9" y2="66" width="0.127" layer="20"/>
+<wire x1="-10.9" y1="66" x2="43.3" y2="66" width="0.127" layer="20"/>
+<wire x1="43.3" y1="66" x2="43.3" y2="64.4" width="0.127" layer="20"/>
+<wire x1="43.3" y1="64.4" x2="44.3" y2="63.4" width="0.127" layer="20" curve="90"/>
+<wire x1="44.3" y1="63.4" x2="54.1" y2="63.4" width="0.127" layer="20"/>
+<wire x1="54.1" y1="63.4" x2="54.1" y2="62.3" width="0.127" layer="20"/>
+<wire x1="54.1" y1="62.3" x2="55.1" y2="61.3" width="0.127" layer="20" curve="90"/>
+<wire x1="55.1" y1="61.3" x2="65.6" y2="61.3" width="0.127" layer="20"/>
+<wire x1="65.6" y1="61.3" x2="65.6" y2="0" width="0.127" layer="20"/>
+<wire x1="65.6" y1="0" x2="39.5" y2="0" width="0.127" layer="20"/>
+<wire x1="39.5" y1="0" x2="38.5" y2="-1" width="0.127" layer="20" curve="90"/>
+<wire x1="38.5" y1="-1" x2="38.5" y2="-3" width="0.127" layer="20"/>
+<wire x1="38.5" y1="-3" x2="-10.9" y2="-3" width="0.127" layer="20"/>
+<pad name="BEZ1" x="54.6" y="59.05" drill="2.7" diameter="4"/>
+<pad name="BEZ2" x="54.6" y="2.5" drill="2.7" diameter="4"/>
+<polygon width="0.127" layer="1">
+<vertex x="54.6" y="57"/>
+<vertex x="65.6" y="57"/>
+<vertex x="65.6" y="61.3"/>
+<vertex x="54.6" y="61.3"/>
+</polygon>
+<polygon width="0.127" layer="29">
+<vertex x="54.6" y="57"/>
+<vertex x="65.6" y="57"/>
+<vertex x="65.6" y="61.3"/>
+<vertex x="54.6" y="61.3"/>
+</polygon>
+<polygon width="0.127" layer="29">
+<vertex x="54.6" y="0"/>
+<vertex x="65.6" y="0"/>
+<vertex x="65.6" y="4.5"/>
+<vertex x="54.6" y="4.5"/>
+</polygon>
+<polygon width="0.127" layer="1">
+<vertex x="54.6" y="0"/>
+<vertex x="65.6" y="0"/>
+<vertex x="65.6" y="4.5"/>
+<vertex x="54.6" y="4.5"/>
+</polygon>
+<circle x="0" y="0" radius="0.282840625" width="0.127" layer="21"/>
+<text x="0" y="-1.27" size="1.016" layer="21" font="vector" ratio="18" align="center">ORIGIN</text>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS793XX">
@@ -3532,6 +3575,23 @@ Source: amp_227161.pdf</description>
 </symbol>
 <symbol name="GND">
 <pin name="GND" x="0" y="0" length="middle" direction="pwr"/>
+</symbol>
+<symbol name="FMC_BEZEL">
+<pin name="BEZ1" x="5.08" y="5.08" length="middle" rot="R180"/>
+<pin name="BEZ2" x="5.08" y="-5.08" length="middle" rot="R180"/>
+<wire x1="0" y1="-6.35" x2="0" y2="6.35" width="0.254" layer="94"/>
+<wire x1="0" y1="6.35" x2="-2.54" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="6.35" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="7.62" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="8.89" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="8.89" x2="-12.7" y2="8.89" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="8.89" x2="-12.7" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="-7.62" x2="-3.81" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-7.62" x2="-3.81" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-6.35" x2="0" y2="-6.35" width="0.254" layer="94"/>
+<text x="-10.16" y="1.27" size="1.016" layer="97" font="vector" ratio="18" rot="R90" align="center">SINGLE WIDTH 
+FMC MODULE</text>
+<text x="-8.89" y="10.16" size="1.778" layer="95" ratio="18" align="center">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4371,6 +4431,22 @@ Source: amp_227161.pdf</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FMC_SINGLE_WIDTH_MODULE">
+<gates>
+<gate name="G$1" symbol="FMC_BEZEL" x="5.08" y="0"/>
+</gates>
+<devices>
+<device name="" package="FMC_SINGLE_WIDTH_MODULE">
+<connects>
+<connect gate="G$1" pin="BEZ1" pad="BEZ1"/>
+<connect gate="G$1" pin="BEZ2" pad="BEZ2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -4528,6 +4604,8 @@ Source: amp_227161.pdf</description>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="PWR1" library="jonnew" deviceset="+3V3" device=""/>
+<part name="U$2" library="jonnew" deviceset="FMC_SINGLE_WIDTH_MODULE" device=""/>
+<part name="PWR2" library="jonnew" deviceset="GND_ISO" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4545,6 +4623,7 @@ Source: amp_227161.pdf</description>
 <text x="226.06" y="20.32" size="2.54" layer="97" rot="R90">HEADSTAGE SIDE</text>
 <text x="233.68" y="20.32" size="2.54" layer="97" rot="R90">AQ. BOARD SIDE</text>
 <text x="424.18" y="314.96" size="2.54" layer="97">FMC HEADER</text>
+<text x="424.18" y="350.52" size="2.54" layer="97">FMC MODULE</text>
 </plain>
 <instances>
 <instance part="FMC" gate="G$1" x="434.34" y="254" rot="R90"/>
@@ -4723,6 +4802,8 @@ Source: amp_227161.pdf</description>
 <instance part="GND13" gate="1" x="619.76" y="165.1" rot="MR0"/>
 <instance part="GND15" gate="1" x="434.34" y="200.66" rot="MR0"/>
 <instance part="PWR1" gate="PWR1" x="459.74" y="198.12"/>
+<instance part="U$2" gate="G$1" x="441.96" y="335.28"/>
+<instance part="PWR2" gate="G$1" x="454.66" y="322.58"/>
 </instances>
 <busses>
 </busses>
@@ -5282,6 +5363,16 @@ Source: amp_227161.pdf</description>
 <wire x1="68.58" y1="96.52" x2="91.44" y2="96.52" width="0.1524" layer="91"/>
 <junction x="91.44" y="96.52"/>
 <pinref part="GND64" gate="G$1" pin="GND_ISO"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="BEZ2"/>
+<wire x1="447.04" y1="330.2" x2="454.66" y2="330.2" width="0.1524" layer="91"/>
+<wire x1="454.66" y1="330.2" x2="454.66" y2="322.58" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="BEZ1"/>
+<wire x1="447.04" y1="340.36" x2="454.66" y2="340.36" width="0.1524" layer="91"/>
+<wire x1="454.66" y1="340.36" x2="454.66" y2="330.2" width="0.1524" layer="91"/>
+<junction x="454.66" y="330.2"/>
+<pinref part="PWR2" gate="G$1" pin="GND_ISO"/>
 </segment>
 </net>
 <net name="+3V6_ISO" class="0">
@@ -6568,4 +6659,10 @@ Source: amp_227161.pdf</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
