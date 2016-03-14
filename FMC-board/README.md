@@ -36,12 +36,18 @@ https://docs.google.com/spreadsheets/d/1bgnBP1xqPFtFIQYF-BCybK1KkekfmRYwm2GDAU4D
 - [ ] Does the FPGA provide on-board termination for LVDS? Seems likely
   that it does and we don't need external 100 Ohm resistors next to the FMC connector
   which is pretty far from the FPGA anyway.
-- [ ] The power jacks seem unnecessary since we will have 12V (and maybe 5V?)
+- [x] The power jacks seem unnecessary since we will have 12V (and maybe 5V?)
   from the dev board. I guess we can keep them as backup (jumper selectable),
   but our main power should be coming from the dev board.
-    - EDIT: Keep them for now as a failsafe. In the future, the non-isolated
+    - ~~EDIT: Keep them for now as a failsafe. In the future, the non-isolated
       regulators, are likely to go away anyway so that will get rid of the one
       jack and once the isolated power supply proves functional, that will get
-      rid of the other.
+      rid of the other~~
+    - EDIT: During movement to FMC standard compliance, they were replaced with
+      0.1" headers along with reverse polarity protection circuit.
 - [ ] Do we want to add level shifters or anything that can drive more current
   than the bare FPGA pins?
+- [ ] For the SMA connectors, add a simple series 10 ohm resistor into back to
+  back Schottky diodes with the anode of the 'top' tied to the appropriate VCC.
+  This will provide a fast input protection cicuit that will activate before
+  the PN diodes on the FPGA itself.
