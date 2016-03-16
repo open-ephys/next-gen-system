@@ -5086,7 +5086,6 @@ FMC MODULE</text>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
 <part name="PWR1" library="jonnew" deviceset="+3V3" device=""/>
 <part name="U$2" library="jonnew" deviceset="FMC_SINGLE_WIDTH_MODULE" device=""/>
-<part name="PWR2" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="VDD_AUX" library="jonnew" deviceset="JP2E" device="_THRU-HOLE"/>
 <part name="D4" library="jonnew" deviceset="Z-DIODE" device="_SOD-323" value="8V"/>
 <part name="U$4" library="jonnew" deviceset="P-MOSFET" device="_SOT23-GSD" value="SSM3J328R"/>
@@ -5249,7 +5248,6 @@ FMC MODULE</text>
 <instance part="GND15" gate="1" x="391.16" y="58.42" rot="MR0"/>
 <instance part="PWR1" gate="PWR1" x="452.12" y="63.5" rot="R90"/>
 <instance part="U$2" gate="G$1" x="414.02" y="193.04"/>
-<instance part="PWR2" gate="G$1" x="426.72" y="180.34"/>
 <instance part="VDD_AUX" gate="G$1" x="416.56" y="365.76" rot="R270"/>
 <instance part="D4" gate="G$1" x="383.54" y="360.68" rot="R90"/>
 <instance part="U$4" gate="G$1" x="396.24" y="365.76" rot="R90"/>
@@ -5534,16 +5532,6 @@ FMC MODULE</text>
 <wire x1="68.58" y1="96.52" x2="91.44" y2="96.52" width="0.1524" layer="91"/>
 <junction x="91.44" y="96.52"/>
 <pinref part="GND64" gate="G$1" pin="GND_ISO"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="BEZ2"/>
-<wire x1="419.1" y1="187.96" x2="426.72" y2="187.96" width="0.1524" layer="91"/>
-<wire x1="426.72" y1="187.96" x2="426.72" y2="180.34" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="BEZ1"/>
-<wire x1="419.1" y1="198.12" x2="426.72" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="426.72" y1="198.12" x2="426.72" y2="187.96" width="0.1524" layer="91"/>
-<junction x="426.72" y="187.96"/>
-<pinref part="PWR2" gate="G$1" pin="GND_ISO"/>
 </segment>
 <segment>
 <pinref part="C32" gate="C" pin="-"/>
@@ -6031,6 +6019,15 @@ FMC MODULE</text>
 <pinref part="POW_TP" gate="G$1" pin="3"/>
 <wire x1="459.74" y1="365.76" x2="459.74" y2="360.68" width="0.1524" layer="91"/>
 <label x="459.74" y="360.68" size="1.778" layer="95" rot="R270"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="BEZ2"/>
+<wire x1="419.1" y1="187.96" x2="426.72" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="426.72" y1="187.96" x2="426.72" y2="180.34" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="BEZ1"/>
+<wire x1="419.1" y1="198.12" x2="426.72" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="426.72" y1="198.12" x2="426.72" y2="187.96" width="0.1524" layer="91"/>
+<junction x="426.72" y="187.96"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
