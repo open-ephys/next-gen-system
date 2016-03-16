@@ -5091,7 +5091,7 @@ high speed</description>
 <part name="C8" library="RHD2000_eval_board" deviceset="C" device="_0603" value="100n"/>
 <part name="C6" library="RHD2000_eval_board" deviceset="C" device="_0603" value="100n"/>
 <part name="C14" library="RHD2000_eval_board" deviceset="C" device="_0603" value="100n"/>
-<part name="A_ISOLATED" library="RHD2000_eval_board" deviceset="RHD2000-CABLE-DAQ-SIDE" device=""/>
+<part name="C_ISOLATED" library="RHD2000_eval_board" deviceset="RHD2000-CABLE-DAQ-SIDE" device=""/>
 <part name="R3" library="RHD2000_eval_board" deviceset="R" device="_0603" value="100"/>
 <part name="R4" library="RHD2000_eval_board" deviceset="R" device="_0603" value="100"/>
 <part name="A" library="RHD2000_eval_board" deviceset="RHD2000-CABLE-DAQ-SIDE" device=""/>
@@ -5262,7 +5262,7 @@ high speed</description>
 <instance part="C8" gate="C" x="170.18" y="121.92" rot="R90"/>
 <instance part="C6" gate="C" x="170.18" y="210.82" rot="R90"/>
 <instance part="C14" gate="C" x="246.38" y="119.38" rot="R180"/>
-<instance part="A_ISOLATED" gate="A" x="88.9" y="160.02" rot="MR90"/>
+<instance part="C_ISOLATED" gate="A" x="88.9" y="160.02" rot="MR90"/>
 <instance part="R3" gate="R" x="119.38" y="170.18"/>
 <instance part="R4" gate="R" x="119.38" y="162.56"/>
 <instance part="A" gate="A" x="505.46" y="269.24"/>
@@ -5428,7 +5428,7 @@ high speed</description>
 <segment>
 <wire x1="132.08" y1="187.96" x2="132.08" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="167.64" x2="124.46" y2="167.64" width="0.1524" layer="91"/>
-<pinref part="A_ISOLATED" gate="A" pin="MISO2-"/>
+<pinref part="C_ISOLATED" gate="A" pin="MISO2-"/>
 <pinref part="R3" gate="R" pin="2"/>
 <wire x1="124.46" y1="167.64" x2="109.22" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="167.64" x2="109.22" y2="170.18" width="0.1524" layer="91"/>
@@ -5443,7 +5443,7 @@ high speed</description>
 <segment>
 <wire x1="134.62" y1="198.12" x2="134.62" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="165.1" x2="114.3" y2="165.1" width="0.1524" layer="91"/>
-<pinref part="A_ISOLATED" gate="A" pin="MISO1+"/>
+<pinref part="C_ISOLATED" gate="A" pin="MISO1+"/>
 <pinref part="R4" gate="R" pin="1"/>
 <wire x1="114.3" y1="165.1" x2="96.52" y2="165.1" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="162.56" x2="114.3" y2="165.1" width="0.1524" layer="91"/>
@@ -5456,7 +5456,7 @@ high speed</description>
 <segment>
 <wire x1="137.16" y1="195.58" x2="137.16" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="137.16" y1="160.02" x2="124.46" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="A_ISOLATED" gate="A" pin="MISO1-"/>
+<pinref part="C_ISOLATED" gate="A" pin="MISO1-"/>
 <pinref part="R4" gate="R" pin="2"/>
 <wire x1="124.46" y1="160.02" x2="109.22" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="109.22" y1="160.02" x2="109.22" y2="162.56" width="0.1524" layer="91"/>
@@ -5472,7 +5472,7 @@ high speed</description>
 <wire x1="96.52" y1="172.72" x2="114.3" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="172.72" x2="129.54" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="172.72" x2="129.54" y2="190.5" width="0.1524" layer="91"/>
-<pinref part="A_ISOLATED" gate="A" pin="MISO2+"/>
+<pinref part="C_ISOLATED" gate="A" pin="MISO2+"/>
 <pinref part="R3" gate="R" pin="1"/>
 <wire x1="114.3" y1="170.18" x2="114.3" y2="172.72" width="0.1524" layer="91"/>
 <junction x="114.3" y="172.72"/>
@@ -5485,7 +5485,7 @@ high speed</description>
 <wire x1="144.78" y1="109.22" x2="104.14" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="109.22" x2="104.14" y2="139.7" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="DOUT1-"/>
-<pinref part="A_ISOLATED" gate="A" pin="!CS!-"/>
+<pinref part="C_ISOLATED" gate="A" pin="!CS!-"/>
 <wire x1="104.14" y1="139.7" x2="96.52" y2="139.7" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -5501,7 +5501,7 @@ high speed</description>
 </net>
 <net name="GND_ISO" class="0">
 <segment>
-<pinref part="A_ISOLATED" gate="A" pin="GND"/>
+<pinref part="C_ISOLATED" gate="A" pin="GND"/>
 <wire x1="109.22" y1="177.8" x2="96.52" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="GND100" gate="G$1" pin="GND_ISO"/>
 <label x="99.06" y="177.8" size="1.778" layer="95"/>
@@ -5682,7 +5682,7 @@ high speed</description>
 <segment>
 <wire x1="96.52" y1="180.34" x2="109.22" y2="180.34" width="0.1524" layer="91"/>
 <label x="99.06" y="182.88" size="1.778" layer="95" rot="MR180"/>
-<pinref part="A_ISOLATED" gate="A" pin="VDD"/>
+<pinref part="C_ISOLATED" gate="A" pin="VDD"/>
 </segment>
 <segment>
 <wire x1="132.08" y1="429.26" x2="132.08" y2="431.8" width="0.1524" layer="91"/>
@@ -6360,7 +6360,7 @@ high speed</description>
 </net>
 <net name="CS+_ISOLATED" class="0">
 <segment>
-<pinref part="A_ISOLATED" gate="A" pin="!CS!+"/>
+<pinref part="C_ISOLATED" gate="A" pin="!CS!+"/>
 <wire x1="144.78" y1="111.76" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="DOUT1+"/>
 <wire x1="96.52" y1="142.24" x2="106.68" y2="142.24" width="0.1524" layer="91"/>
@@ -6898,7 +6898,7 @@ high speed</description>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="A_ISOLATED" gate="A" pin="MOSI+"/>
+<pinref part="C_ISOLATED" gate="A" pin="MOSI+"/>
 <pinref part="U3" gate="G$1" pin="DOUT1+"/>
 <wire x1="96.52" y1="157.48" x2="144.78" y2="157.48" width="0.1524" layer="91"/>
 </segment>
@@ -6907,12 +6907,12 @@ high speed</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="DOUT1-"/>
 <wire x1="144.78" y1="154.94" x2="96.52" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="A_ISOLATED" gate="A" pin="MOSI-"/>
+<pinref part="C_ISOLATED" gate="A" pin="MOSI-"/>
 </segment>
 </net>
 <net name="N$15" class="0">
 <segment>
-<pinref part="A_ISOLATED" gate="A" pin="SCLK+"/>
+<pinref part="C_ISOLATED" gate="A" pin="SCLK+"/>
 <pinref part="U3" gate="G$1" pin="DOUT2+"/>
 <wire x1="96.52" y1="149.86" x2="144.78" y2="149.86" width="0.1524" layer="91"/>
 </segment>
@@ -6921,7 +6921,7 @@ high speed</description>
 <segment>
 <pinref part="U3" gate="G$1" pin="DOUT2-"/>
 <wire x1="144.78" y1="147.32" x2="96.52" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="A_ISOLATED" gate="A" pin="SCLK-"/>
+<pinref part="C_ISOLATED" gate="A" pin="SCLK-"/>
 </segment>
 </net>
 <net name="H14_ISO" class="0">
