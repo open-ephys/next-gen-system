@@ -44,7 +44,7 @@ The bill of materials for this device can be found
     - NOTE: This issue will go away a bit when we get rid of non-isolated
       connections to FPGA. Still may want to consider buffering those singal
       with a clock driver though.
-- [ ] For the SMA connectors, add a simple series 10 ohm resistor into back to
+- [x] For the SMA connectors, add a simple series 10 ohm resistor into back to
   back Schottky diodes with the anode of the 'top' tied to the appropriate VCC.
   This will provide a fast input protection circuit that will activate before
   the PN diodes on the FPGA itself.
