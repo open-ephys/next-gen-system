@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5145,6 +5145,7 @@ FMC MODULE</text>
 <part name="GND5" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="POW_SEL" library="jonnew" deviceset="JP3E" device=""/>
+<part name="POW_TP" library="jonnew" deviceset="JP3E" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5314,6 +5315,7 @@ FMC MODULE</text>
 <instance part="GND5" gate="G$1" x="121.92" y="312.42"/>
 <instance part="GND6" gate="1" x="393.7" y="251.46"/>
 <instance part="POW_SEL" gate="G$1" x="358.14" y="370.84"/>
+<instance part="POW_TP" gate="G$1" x="452.12" y="365.76"/>
 </instances>
 <busses>
 </busses>
@@ -6025,6 +6027,11 @@ FMC MODULE</text>
 <wire x1="393.7" y1="256.54" x2="393.7" y2="254" width="0.1524" layer="91"/>
 <junction x="393.7" y="256.54"/>
 </segment>
+<segment>
+<pinref part="POW_TP" gate="G$1" pin="3"/>
+<wire x1="459.74" y1="365.76" x2="459.74" y2="360.68" width="0.1524" layer="91"/>
+<label x="459.74" y="360.68" size="1.778" layer="95" rot="R270"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -6098,6 +6105,11 @@ FMC MODULE</text>
 <pinref part="PWR8" gate="PWR1" pin="+3V3"/>
 <pinref part="FMC" gate="G$1" pin="P$159"/>
 <wire x1="505.46" y1="66.04" x2="518.16" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="POW_TP" gate="G$1" pin="1"/>
+<wire x1="454.66" y1="365.76" x2="454.66" y2="360.68" width="0.1524" layer="91"/>
+<label x="454.66" y="360.68" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
 <net name="+3V3_ISO" class="0">
@@ -6944,6 +6956,13 @@ FMC MODULE</text>
 <pinref part="G24" gate="G$1" pin="1"/>
 <wire x1="553.72" y1="91.44" x2="546.1" y2="91.44" width="0.1524" layer="91"/>
 <label x="546.1" y="91.44" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="POW_TP" gate="G$1" pin="2"/>
+<wire x1="457.2" y1="365.76" x2="457.2" y2="360.68" width="0.1524" layer="91"/>
+<label x="457.2" y="360.68" size="1.778" layer="95" rot="R270"/>
 </segment>
 </net>
 </nets>
