@@ -2775,13 +2775,13 @@ Source: amp_227161.pdf</description>
 <vertex x="-65.6" y="61.3"/>
 <vertex x="-54.6" y="61.3"/>
 </polygon>
-<polygon width="0.127" layer="30">
+<polygon width="0.127" layer="29">
 <vertex x="-54.6" y="57"/>
 <vertex x="-65.6" y="57"/>
 <vertex x="-65.6" y="61.3"/>
 <vertex x="-54.6" y="61.3"/>
 </polygon>
-<polygon width="0.127" layer="30">
+<polygon width="0.127" layer="29">
 <vertex x="-54.6" y="0"/>
 <vertex x="-65.6" y="0"/>
 <vertex x="-65.6" y="4.5"/>
@@ -3091,15 +3091,6 @@ http://www.bccomponents.com/</description>
 <text x="-1.27" y="-1.397" size="0.0254" layer="27">&gt;VALUE</text>
 <text x="-1.27" y="-3.175" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
 </package>
-<package name="P1-13">
-<description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
-<circle x="0" y="0" radius="0.762" width="0.1524" layer="51"/>
-<pad name="TP" x="0" y="0" drill="1.3208" diameter="2.159" shape="octagon"/>
-<text x="-1.016" y="1.27" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
-<text x="-1.27" y="-2.54" size="1" layer="37">&gt;TP_SIGNAL_NAME</text>
-<rectangle x1="-0.3302" y1="-0.3302" x2="0.3302" y2="0.3302" layer="51"/>
-</package>
 <package name="P1-13Y">
 <description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
 <circle x="0" y="0" radius="0.762" width="0.1524" layer="51"/>
@@ -3361,6 +3352,13 @@ http://www.bccomponents.com/</description>
 </package>
 <package name="4-40_PLATED">
 <pad name="P$1" x="0" y="0" drill="3.2639" diameter="6.35"/>
+</package>
+<package name="P1-13">
+<description>&lt;b&gt;TEST PAD&lt;/b&gt;</description>
+<circle x="0" y="0" radius="0.762" width="0.1524" layer="51"/>
+<pad name="TP" x="0" y="0" drill="1.3208" diameter="2.159" shape="octagon"/>
+<text x="1.778" y="0" size="1.016" layer="27" font="vector" ratio="18" align="center-left">&gt;VALUE</text>
+<rectangle x1="-0.3302" y1="-0.3302" x2="0.3302" y2="0.3302" layer="51"/>
 </package>
 </packages>
 <symbols>
@@ -5088,7 +5086,7 @@ FMC MODULE</text>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TP" prefix="TP">
+<deviceset name="TP" prefix="TP" uservalue="yes">
 <description>&lt;b&gt;Test pad&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="TP" x="0" y="0"/>
@@ -5761,7 +5759,7 @@ FMC MODULE</text>
 </classes>
 <parts>
 <part name="FMC" library="jonnew" deviceset="FMC_LPC_160_PIN" device=""/>
-<part name="U$3" library="open-ephys" deviceset="OPEN_EPHYS_LOGO" device=""/>
+<part name="U$1" library="open-ephys" deviceset="OPEN_EPHYS_LOGO" device=""/>
 <part name="U5" library="jonnew" deviceset="ADN4664" device="_SOIC" value="ADN4664"/>
 <part name="U3" library="jonnew" deviceset="ADN4663" device="_SOIC" value="ADN4663"/>
 <part name="U4" library="jonnew" deviceset="ADN4663" device="_SOIC" value="ADN4663"/>
@@ -5795,8 +5793,6 @@ FMC MODULE</text>
 <part name="R10" library="jonnew" deviceset="R" device="_0603" value="10k"/>
 <part name="GND56" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND51" library="jonnew" deviceset="GND_ISO" device=""/>
-<part name="GND53" library="jonnew" deviceset="GND_ISO" device=""/>
-<part name="GND52" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND62" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND100" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND59" library="jonnew" deviceset="GND_ISO" device=""/>
@@ -5922,26 +5918,29 @@ FMC MODULE</text>
 <part name="GND32" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND35" library="jonnew" deviceset="GND_ISO" device=""/>
 <part name="GND36" library="jonnew" deviceset="GND_ISO" device=""/>
-<part name="TP_H23" library="jonnew" deviceset="TP" device="TP06R" value="H23"/>
+<part name="TP_H1" library="jonnew" deviceset="TP" device="TP06R" value="H23"/>
 <part name="TP_CS" library="jonnew" deviceset="TP" device="TP06R" value="CS"/>
 <part name="TP_SCLK" library="jonnew" deviceset="TP" device="TP06R" value="SCLK"/>
 <part name="TP_MOSI" library="jonnew" deviceset="TP" device="TP06R" value="MOSI"/>
 <part name="TP_MISO1" library="jonnew" deviceset="TP" device="TP06R" value="MISO1"/>
 <part name="TP_MISO2" library="jonnew" deviceset="TP" device="TP06R" value="MISO2"/>
-<part name="TP_H14" library="jonnew" deviceset="TP" device="TP06R" value="H14"/>
-<part name="TP_H13" library="jonnew" deviceset="TP" device="TP06R" value="H13"/>
+<part name="TP_H2" library="jonnew" deviceset="TP" device="TP06R" value="H14"/>
+<part name="TP_H3" library="jonnew" deviceset="TP" device="TP06R" value="H13"/>
 <part name="PWR13" library="jonnew" deviceset="GND_ISO" device=""/>
-<part name="TP1" library="jonnew" deviceset="TP" device="TP06R" value="GND-ISO"/>
-<part name="TP3" library="jonnew" deviceset="TP" device="TP06R" value="MISO2+"/>
-<part name="TP4" library="jonnew" deviceset="TP" device="TP06R" value="MISO2-"/>
-<part name="TP5" library="jonnew" deviceset="TP" device="TP06R" value="MISO1+"/>
-<part name="TP6" library="jonnew" deviceset="TP" device="TP06R" value="MISO1-"/>
-<part name="TP7" library="jonnew" deviceset="TP" device="TP06R" value="MOSI+"/>
-<part name="TP8" library="jonnew" deviceset="TP" device="TP06R" value="MOSI-"/>
-<part name="TP9" library="jonnew" deviceset="TP" device="TP06R" value="SCLK+"/>
-<part name="TP10" library="jonnew" deviceset="TP" device="TP06R" value="SCLK-"/>
-<part name="TP11" library="jonnew" deviceset="TP" device="TP06R" value="CS+"/>
-<part name="TP12" library="jonnew" deviceset="TP" device="TP06R" value="CS-"/>
+<part name="TP1" library="jonnew" deviceset="TP" device="PAD1-13" value="GND-ISO"/>
+<part name="TP9" library="jonnew" deviceset="TP" device="TP06R" value="MISO2+"/>
+<part name="TP11" library="jonnew" deviceset="TP" device="TP06R" value="MISO2-"/>
+<part name="TP12" library="jonnew" deviceset="TP" device="TP06R" value="MISO1+"/>
+<part name="TP14" library="jonnew" deviceset="TP" device="TP06R" value="MISO1-"/>
+<part name="TP2" library="jonnew" deviceset="TP" device="TP06R" value="MOSI+"/>
+<part name="TP5" library="jonnew" deviceset="TP" device="TP06R" value="MOSI-"/>
+<part name="TP3" library="jonnew" deviceset="TP" device="TP06R" value="SCLK+"/>
+<part name="TP6" library="jonnew" deviceset="TP" device="TP06R" value="SCLK-"/>
+<part name="TP7" library="jonnew" deviceset="TP" device="TP06R" value="CS+"/>
+<part name="TP4" library="jonnew" deviceset="TP" device="TP06R" value="CS-"/>
+<part name="TP10" library="jonnew" deviceset="TP" device="TP06R" value="+3V6"/>
+<part name="TP13" library="jonnew" deviceset="TP" device="TP06R" value="+3V3"/>
+<part name="TP15" library="jonnew" deviceset="TP" device="TP06R" value="+5V0"/>
 </parts>
 <sheets>
 <sheet>
@@ -5964,7 +5963,7 @@ FMC MODULE</text>
 </plain>
 <instances>
 <instance part="FMC" gate="G$1" x="447.04" y="167.64"/>
-<instance part="U$3" gate="G$1" x="601.98" y="358.14"/>
+<instance part="U$1" gate="G$1" x="601.98" y="358.14"/>
 <instance part="U5" gate="G$1" x="162.56" y="190.5"/>
 <instance part="U3" gate="G$1" x="160.02" y="147.32" rot="MR0"/>
 <instance part="U4" gate="G$1" x="160.02" y="101.6" rot="MR0"/>
@@ -5998,8 +5997,6 @@ FMC MODULE</text>
 <instance part="R10" gate="R" x="185.42" y="96.52" rot="R90"/>
 <instance part="GND56" gate="G$1" x="147.32" y="259.08"/>
 <instance part="GND51" gate="G$1" x="205.74" y="406.4"/>
-<instance part="GND53" gate="G$1" x="116.84" y="429.26"/>
-<instance part="GND52" gate="G$1" x="162.56" y="429.26"/>
 <instance part="GND62" gate="G$1" x="185.42" y="88.9"/>
 <instance part="GND100" gate="G$1" x="109.22" y="177.8" rot="MR0"/>
 <instance part="GND59" gate="G$1" x="177.8" y="165.1"/>
@@ -6136,26 +6133,29 @@ FMC MODULE</text>
 <instance part="GND32" gate="G$1" x="40.64" y="111.76"/>
 <instance part="GND35" gate="G$1" x="40.64" y="167.64"/>
 <instance part="GND36" gate="G$1" x="25.4" y="167.64"/>
-<instance part="TP_H23" gate="G$1" x="269.24" y="144.78"/>
+<instance part="TP_H1" gate="G$1" x="269.24" y="144.78"/>
 <instance part="TP_CS" gate="G$1" x="274.32" y="142.24"/>
 <instance part="TP_SCLK" gate="G$1" x="279.4" y="139.7"/>
 <instance part="TP_MOSI" gate="G$1" x="284.48" y="137.16"/>
 <instance part="TP_MISO1" gate="G$1" x="269.24" y="177.8"/>
 <instance part="TP_MISO2" gate="G$1" x="274.32" y="175.26"/>
-<instance part="TP_H14" gate="G$1" x="279.4" y="172.72"/>
-<instance part="TP_H13" gate="G$1" x="284.48" y="170.18"/>
+<instance part="TP_H2" gate="G$1" x="279.4" y="172.72"/>
+<instance part="TP_H3" gate="G$1" x="284.48" y="170.18"/>
 <instance part="PWR13" gate="G$1" x="88.9" y="124.46"/>
 <instance part="TP1" gate="G$1" x="88.9" y="129.54"/>
-<instance part="TP3" gate="G$1" x="127" y="175.26"/>
-<instance part="TP4" gate="G$1" x="132.08" y="170.18"/>
-<instance part="TP5" gate="G$1" x="137.16" y="167.64"/>
-<instance part="TP6" gate="G$1" x="144.78" y="165.1" rot="R270"/>
-<instance part="TP7" gate="G$1" x="104.14" y="160.02"/>
-<instance part="TP8" gate="G$1" x="109.22" y="157.48"/>
-<instance part="TP9" gate="G$1" x="104.14" y="152.4"/>
-<instance part="TP10" gate="G$1" x="109.22" y="149.86"/>
-<instance part="TP11" gate="G$1" x="109.22" y="134.62" rot="R270"/>
-<instance part="TP12" gate="G$1" x="106.68" y="127" rot="R270"/>
+<instance part="TP9" gate="G$1" x="127" y="175.26"/>
+<instance part="TP11" gate="G$1" x="132.08" y="170.18"/>
+<instance part="TP12" gate="G$1" x="137.16" y="167.64"/>
+<instance part="TP14" gate="G$1" x="144.78" y="165.1" rot="R270"/>
+<instance part="TP2" gate="G$1" x="104.14" y="160.02"/>
+<instance part="TP5" gate="G$1" x="109.22" y="157.48"/>
+<instance part="TP3" gate="G$1" x="104.14" y="152.4"/>
+<instance part="TP6" gate="G$1" x="109.22" y="149.86"/>
+<instance part="TP7" gate="G$1" x="109.22" y="134.62" rot="R270"/>
+<instance part="TP4" gate="G$1" x="106.68" y="127" rot="R270"/>
+<instance part="TP10" gate="G$1" x="132.08" y="426.72" rot="R180"/>
+<instance part="TP13" gate="G$1" x="139.7" y="426.72" rot="R180"/>
+<instance part="TP15" gate="G$1" x="147.32" y="426.72" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -6184,7 +6184,7 @@ FMC MODULE</text>
 <junction x="124.46" y="167.64"/>
 <pinref part="U5" gate="G$1" pin="RIN2-"/>
 <wire x1="144.78" y1="187.96" x2="134.62" y2="187.96" width="0.1524" layer="91"/>
-<pinref part="TP4" gate="G$1" pin="TP"/>
+<pinref part="TP11" gate="G$1" pin="TP"/>
 <junction x="132.08" y="167.64"/>
 </segment>
 </net>
@@ -6200,7 +6200,7 @@ FMC MODULE</text>
 <junction x="114.3" y="165.1"/>
 <pinref part="U5" gate="G$1" pin="RIN1+"/>
 <wire x1="139.7" y1="198.12" x2="144.78" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="TP5" gate="G$1" pin="TP"/>
+<pinref part="TP12" gate="G$1" pin="TP"/>
 <junction x="137.16" y="165.1"/>
 </segment>
 </net>
@@ -6218,7 +6218,7 @@ FMC MODULE</text>
 <junction x="124.46" y="160.02"/>
 <pinref part="U5" gate="G$1" pin="RIN1-"/>
 <wire x1="142.24" y1="195.58" x2="144.78" y2="195.58" width="0.1524" layer="91"/>
-<pinref part="TP6" gate="G$1" pin="TP"/>
+<pinref part="TP14" gate="G$1" pin="TP"/>
 <junction x="142.24" y="165.1"/>
 </segment>
 </net>
@@ -6234,7 +6234,7 @@ FMC MODULE</text>
 <junction x="114.3" y="172.72"/>
 <pinref part="U5" gate="G$1" pin="RIN2+"/>
 <wire x1="144.78" y1="190.5" x2="129.54" y2="190.5" width="0.1524" layer="91"/>
-<pinref part="TP3" gate="G$1" pin="TP"/>
+<pinref part="TP9" gate="G$1" pin="TP"/>
 <junction x="127" y="172.72"/>
 </segment>
 </net>
@@ -6246,7 +6246,7 @@ FMC MODULE</text>
 <pinref part="C_ISO" gate="A" pin="!CS!-"/>
 <wire x1="104.14" y1="127" x2="104.14" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="104.14" y1="139.7" x2="96.52" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="TP12" gate="G$1" pin="TP"/>
+<pinref part="TP4" gate="G$1" pin="TP"/>
 <junction x="104.14" y="127"/>
 </segment>
 </net>
@@ -6317,12 +6317,6 @@ FMC MODULE</text>
 <wire x1="205.74" y1="114.3" x2="205.74" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="154.94" y1="429.26" x2="154.94" y2="434.34" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="434.34" x2="162.56" y2="434.34" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="434.34" x2="162.56" y2="429.26" width="0.1524" layer="91"/>
-<pinref part="GND52" gate="G$1" pin="GND_ISO"/>
-</segment>
-<segment>
 <wire x1="210.82" y1="419.1" x2="205.74" y2="419.1" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="419.1" x2="205.74" y2="411.48" width="0.1524" layer="91"/>
 <pinref part="U6" gate="G$1" pin="0V"/>
@@ -6332,12 +6326,6 @@ FMC MODULE</text>
 <junction x="205.74" y="411.48"/>
 <pinref part="C14" gate="C" pin="2"/>
 <wire x1="198.12" y1="411.48" x2="198.12" y2="414.02" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND53" gate="G$1" pin="GND_ISO"/>
-<wire x1="116.84" y1="429.26" x2="116.84" y2="434.34" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="434.34" x2="124.46" y2="434.34" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="434.34" x2="124.46" y2="429.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R10" gate="R" pin="1"/>
@@ -6468,6 +6456,7 @@ FMC MODULE</text>
 <segment>
 <wire x1="132.08" y1="429.26" x2="132.08" y2="431.8" width="0.1524" layer="91"/>
 <label x="132.08" y="431.8" size="1.778" layer="95" rot="MR90"/>
+<pinref part="TP10" gate="G$1" pin="TP"/>
 </segment>
 <segment>
 <pinref part="R5" gate="R" pin="1"/>
@@ -7049,6 +7038,7 @@ FMC MODULE</text>
 <segment>
 <wire x1="139.7" y1="429.26" x2="139.7" y2="431.8" width="0.1524" layer="91"/>
 <label x="139.7" y="431.8" size="1.778" layer="95" rot="MR90"/>
+<pinref part="TP13" gate="G$1" pin="TP"/>
 </segment>
 <segment>
 <pinref part="C8" gate="C" pin="1"/>
@@ -7085,10 +7075,11 @@ FMC MODULE</text>
 <label x="40.64" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="+5V0_ISO" class="0">
+<net name="+5V0" class="0">
 <segment>
 <wire x1="147.32" y1="429.26" x2="147.32" y2="431.8" width="0.1524" layer="91"/>
 <label x="147.32" y="431.8" size="1.778" layer="95" rot="MR90"/>
+<pinref part="TP15" gate="G$1" pin="TP"/>
 </segment>
 <segment>
 <pinref part="C11" gate="C" pin="1"/>
@@ -7141,7 +7132,7 @@ FMC MODULE</text>
 <pinref part="U4" gate="G$1" pin="DOUT1+"/>
 <wire x1="96.52" y1="142.24" x2="106.68" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="106.68" y1="142.24" x2="106.68" y2="134.62" width="0.1524" layer="91"/>
-<pinref part="TP11" gate="G$1" pin="TP"/>
+<pinref part="TP7" gate="G$1" pin="TP"/>
 <wire x1="106.68" y1="134.62" x2="106.68" y2="111.76" width="0.1524" layer="91"/>
 <junction x="106.68" y="134.62"/>
 </segment>
@@ -7590,7 +7581,7 @@ FMC MODULE</text>
 <segment>
 <pinref part="DO_ISO" gate="G$1" pin="VID"/>
 <label x="246.38" y="142.24" size="1.778" layer="95"/>
-<pinref part="TP_H23" gate="G$1" pin="TP"/>
+<pinref part="TP_H1" gate="G$1" pin="TP"/>
 <wire x1="246.38" y1="142.24" x2="269.24" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -7603,7 +7594,7 @@ FMC MODULE</text>
 <segment>
 <pinref part="DI_ISO" gate="G$1" pin="VOD"/>
 <label x="248.92" y="167.64" size="1.778" layer="95"/>
-<pinref part="TP_H13" gate="G$1" pin="TP"/>
+<pinref part="TP_H3" gate="G$1" pin="TP"/>
 <wire x1="246.38" y1="167.64" x2="284.48" y2="167.64" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -7635,7 +7626,7 @@ FMC MODULE</text>
 <segment>
 <pinref part="DI_ISO" gate="G$1" pin="VOC"/>
 <label x="248.92" y="170.18" size="1.778" layer="95"/>
-<pinref part="TP_H14" gate="G$1" pin="TP"/>
+<pinref part="TP_H2" gate="G$1" pin="TP"/>
 <wire x1="246.38" y1="170.18" x2="279.4" y2="170.18" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -7654,7 +7645,7 @@ FMC MODULE</text>
 <pinref part="C_ISO" gate="A" pin="MOSI+"/>
 <pinref part="U3" gate="G$1" pin="DOUT1+"/>
 <wire x1="96.52" y1="157.48" x2="104.14" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="TP7" gate="G$1" pin="TP"/>
+<pinref part="TP2" gate="G$1" pin="TP"/>
 <wire x1="104.14" y1="157.48" x2="144.78" y2="157.48" width="0.1524" layer="91"/>
 <junction x="104.14" y="157.48"/>
 </segment>
@@ -7664,7 +7655,7 @@ FMC MODULE</text>
 <pinref part="U3" gate="G$1" pin="DOUT1-"/>
 <wire x1="144.78" y1="154.94" x2="109.22" y2="154.94" width="0.1524" layer="91"/>
 <pinref part="C_ISO" gate="A" pin="MOSI-"/>
-<pinref part="TP8" gate="G$1" pin="TP"/>
+<pinref part="TP5" gate="G$1" pin="TP"/>
 <wire x1="109.22" y1="154.94" x2="96.52" y2="154.94" width="0.1524" layer="91"/>
 <junction x="109.22" y="154.94"/>
 </segment>
@@ -7674,7 +7665,7 @@ FMC MODULE</text>
 <pinref part="C_ISO" gate="A" pin="SCLK+"/>
 <pinref part="U3" gate="G$1" pin="DOUT2+"/>
 <wire x1="96.52" y1="149.86" x2="104.14" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="TP9" gate="G$1" pin="TP"/>
+<pinref part="TP3" gate="G$1" pin="TP"/>
 <wire x1="104.14" y1="149.86" x2="144.78" y2="149.86" width="0.1524" layer="91"/>
 <junction x="104.14" y="149.86"/>
 </segment>
@@ -7684,7 +7675,7 @@ FMC MODULE</text>
 <pinref part="U3" gate="G$1" pin="DOUT2-"/>
 <wire x1="144.78" y1="147.32" x2="109.22" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="C_ISO" gate="A" pin="SCLK-"/>
-<pinref part="TP10" gate="G$1" pin="TP"/>
+<pinref part="TP6" gate="G$1" pin="TP"/>
 <wire x1="109.22" y1="147.32" x2="96.52" y2="147.32" width="0.1524" layer="91"/>
 <junction x="109.22" y="147.32"/>
 </segment>
