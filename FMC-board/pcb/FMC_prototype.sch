@@ -5882,9 +5882,9 @@ FMC MODULE</text>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="POW_SEL" library="jonnew" deviceset="JP3E" device=""/>
 <part name="POW_TP" library="jonnew" deviceset="JP3E" device=""/>
-<part name="G21" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
-<part name="G22" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
 <part name="G24" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
+<part name="G25" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
+<part name="G27" library="jonnew" deviceset="COAX" device="_SMA-VERT" value="142-0701"/>
 <part name="D8" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="STPS0560Z"/>
 <part name="D9" library="jonnew" deviceset="S-DIODE" device="SOD-123" value="STPS0560Z"/>
 <part name="R16" library="jonnew" deviceset="R" device="_0603" value="100"/>
@@ -6097,9 +6097,9 @@ FMC MODULE</text>
 <instance part="GND6" gate="1" x="393.7" y="251.46"/>
 <instance part="POW_SEL" gate="G$1" x="358.14" y="370.84"/>
 <instance part="POW_TP" gate="G$1" x="378.46" y="398.78" rot="R180"/>
-<instance part="G21" gate="G$1" x="612.14" y="175.26" rot="MR0"/>
-<instance part="G22" gate="G$1" x="609.6" y="119.38" rot="MR0"/>
-<instance part="G24" gate="G$1" x="609.6" y="66.04" rot="MR0"/>
+<instance part="G24" gate="G$1" x="612.14" y="175.26" rot="MR0"/>
+<instance part="G25" gate="G$1" x="609.6" y="119.38" rot="MR0"/>
+<instance part="G27" gate="G$1" x="609.6" y="66.04" rot="MR0"/>
 <instance part="D8" gate="G$1" x="589.28" y="185.42" rot="R90"/>
 <instance part="D9" gate="G$1" x="589.28" y="167.64" rot="R90"/>
 <instance part="R16" gate="R" x="601.98" y="175.26"/>
@@ -6563,7 +6563,7 @@ FMC MODULE</text>
 <junction x="337.82" y="66.04"/>
 </segment>
 <segment>
-<pinref part="G21" gate="G$1" pin="2"/>
+<pinref part="G24" gate="G$1" pin="2"/>
 <wire x1="609.6" y1="172.72" x2="604.52" y2="172.72" width="0.1524" layer="91"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="604.52" y1="157.48" x2="604.52" y2="172.72" width="0.1524" layer="91"/>
@@ -6890,13 +6890,13 @@ FMC MODULE</text>
 <wire x1="589.28" y1="48.26" x2="589.28" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="G22" gate="G$1" pin="2"/>
+<pinref part="G25" gate="G$1" pin="2"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="607.06" y1="116.84" x2="601.98" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="601.98" y1="116.84" x2="601.98" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="G24" gate="G$1" pin="2"/>
+<pinref part="G27" gate="G$1" pin="2"/>
 <pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="607.06" y1="63.5" x2="601.98" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="601.98" y1="63.5" x2="601.98" y2="48.26" width="0.1524" layer="91"/>
@@ -7825,7 +7825,7 @@ FMC MODULE</text>
 <wire x1="68.58" y1="337.82" x2="68.58" y2="332.74" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="G21" class="0">
+<net name="G24" class="0">
 <segment>
 <label x="401.32" y="104.14" size="1.778" layer="95"/>
 <pinref part="FMC" gate="G$1" pin="P$64"/>
@@ -7844,7 +7844,7 @@ FMC MODULE</text>
 <wire x1="589.28" y1="175.26" x2="589.28" y2="180.34" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="G22" class="0">
+<net name="G25" class="0">
 <segment>
 <label x="401.32" y="101.6" size="1.778" layer="95"/>
 <pinref part="FMC" gate="G$1" pin="P$65"/>
@@ -7863,7 +7863,7 @@ FMC MODULE</text>
 <wire x1="589.28" y1="119.38" x2="589.28" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="G24" class="0">
+<net name="G27" class="0">
 <segment>
 <label x="401.32" y="96.52" size="1.778" layer="95"/>
 <pinref part="FMC" gate="G$1" pin="P$67"/>
@@ -7884,21 +7884,21 @@ FMC MODULE</text>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="G21" gate="G$1" pin="1"/>
+<pinref part="G24" gate="G$1" pin="1"/>
 <pinref part="R16" gate="R" pin="2"/>
 <wire x1="607.06" y1="175.26" x2="609.6" y2="175.26" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="G22" gate="G$1" pin="1"/>
+<pinref part="G25" gate="G$1" pin="1"/>
 <pinref part="R14" gate="R" pin="2"/>
 <wire x1="604.52" y1="119.38" x2="607.06" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$19" class="0">
 <segment>
-<pinref part="G24" gate="G$1" pin="1"/>
+<pinref part="G27" gate="G$1" pin="1"/>
 <pinref part="R15" gate="R" pin="2"/>
 <wire x1="604.52" y1="66.04" x2="607.06" y2="66.04" width="0.1524" layer="91"/>
 </segment>

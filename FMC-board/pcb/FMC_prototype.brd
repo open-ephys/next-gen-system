@@ -2876,15 +2876,15 @@ design rules under a new name.
 <attribute name="NAME" x="-12.573" y="26.416" size="1.016" layer="21" font="vector" ratio="18" rot="R90" align="center"/>
 <attribute name="VALUE" x="-13.97" y="30.226" size="1.016" layer="27" font="vector" ratio="18" rot="R270"/>
 </element>
-<element name="G21" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="-33.528" y="55.626" smashed="yes">
+<element name="G24" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="-33.528" y="55.626" smashed="yes">
 <attribute name="NAME" x="-33.528" y="62.23" size="1.016" layer="25" font="vector" ratio="18" align="center"/>
 <attribute name="VALUE" x="-33.655" y="60.96" size="1.016" layer="27" font="vector" ratio="18" rot="R180" align="center"/>
 </element>
-<element name="G22" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="-12.192" y="55.626" smashed="yes">
+<element name="G25" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="-12.192" y="55.626" smashed="yes">
 <attribute name="NAME" x="-12.192" y="62.23" size="1.016" layer="25" font="vector" ratio="18" align="center"/>
 <attribute name="VALUE" x="-12.065" y="60.96" size="1.016" layer="27" font="vector" ratio="18" align="center"/>
 </element>
-<element name="G24" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="-22.86" y="55.626" smashed="yes">
+<element name="G27" library="jonnew" package="SMA_JACK_142-0701-201" value="142-0701" x="-22.86" y="55.626" smashed="yes">
 <attribute name="NAME" x="-22.86" y="62.23" size="1.016" layer="25" font="vector" ratio="18" align="center"/>
 <attribute name="VALUE" x="-22.86" y="60.96" size="1.016" layer="27" font="vector" ratio="18" align="center"/>
 </element>
@@ -3330,10 +3330,10 @@ design rules under a new name.
 <wire x1="3.175" y1="49.276" x2="3.175" y2="49.3014" width="0.254" layer="16"/>
 <wire x1="3.175" y1="49.3014" x2="2.159" y2="49.3014" width="0.254" layer="16"/>
 <contactref element="POW_TP" pad="3"/>
-<contactref element="G21" pad="GND$4"/>
-<contactref element="G21" pad="GND$1"/>
-<contactref element="G21" pad="GND$3"/>
-<contactref element="G21" pad="GND$2"/>
+<contactref element="G24" pad="GND$4"/>
+<contactref element="G24" pad="GND$1"/>
+<contactref element="G24" pad="GND$3"/>
+<contactref element="G24" pad="GND$2"/>
 <contactref element="D9" pad="A"/>
 <contactref element="D11" pad="A"/>
 <contactref element="D13" pad="A"/>
@@ -3341,14 +3341,14 @@ design rules under a new name.
 <wire x1="-11.176" y1="44.958" x2="-9.398" y2="45.212" width="0.254" layer="2"/>
 <wire x1="-9.906" y1="39.9" x2="-9.73" y2="39.8" width="0.254" layer="1"/>
 <wire x1="-8.89" y1="39.878" x2="-9.398" y2="39.878" width="0.254" layer="2"/>
-<contactref element="G22" pad="GND$3"/>
-<contactref element="G22" pad="GND$4"/>
-<contactref element="G22" pad="GND$1"/>
-<contactref element="G22" pad="GND$2"/>
-<contactref element="G24" pad="GND$3"/>
-<contactref element="G24" pad="GND$4"/>
-<contactref element="G24" pad="GND$1"/>
-<contactref element="G24" pad="GND$2"/>
+<contactref element="G25" pad="GND$3"/>
+<contactref element="G25" pad="GND$4"/>
+<contactref element="G25" pad="GND$1"/>
+<contactref element="G25" pad="GND$2"/>
+<contactref element="G27" pad="GND$3"/>
+<contactref element="G27" pad="GND$4"/>
+<contactref element="G27" pad="GND$1"/>
+<contactref element="G27" pad="GND$2"/>
 <via x="-9.906" y="38.989" extent="1-16" drill="0.3048"/>
 <via x="-9.906" y="44.323" extent="1-16" drill="0.3048"/>
 <via x="-9.906" y="49.022" extent="1-16" drill="0.3048"/>
@@ -4623,7 +4623,7 @@ design rules under a new name.
 <wire x1="-48.768" y1="48.7426" x2="-51.5366" y2="48.7426" width="0.3048" layer="1"/>
 <wire x1="-51.5366" y1="48.7426" x2="-51.816" y2="49.022" width="0.3048" layer="1"/>
 </signal>
-<signal name="G21">
+<signal name="G24">
 <via x="1.016" y="35.941" extent="1-16" drill="0.3048"/>
 <contactref element="D9" pad="C"/>
 <contactref element="R16" pad="1"/>
@@ -4651,7 +4651,7 @@ design rules under a new name.
 <wire x1="-8.128" y1="36.322" x2="-7.747" y2="35.941" width="0.254" layer="16"/>
 <wire x1="-7.747" y1="35.941" x2="1.016" y2="35.941" width="0.254" layer="16"/>
 </signal>
-<signal name="G22">
+<signal name="G25">
 <via x="1.016" y="37.211" extent="1-16" drill="0.3048"/>
 <contactref element="D11" pad="C"/>
 <contactref element="D10" pad="A"/>
@@ -4678,7 +4678,7 @@ design rules under a new name.
 <wire x1="-8.382" y1="40.64" x2="-4.953" y2="37.211" width="0.254" layer="16"/>
 <wire x1="-4.953" y1="37.211" x2="1.016" y2="37.211" width="0.254" layer="16"/>
 </signal>
-<signal name="G24">
+<signal name="G27">
 <via x="1.016" y="39.751" extent="1-16" drill="0.3048"/>
 <contactref element="D13" pad="C"/>
 <contactref element="D12" pad="A"/>
@@ -4706,20 +4706,20 @@ design rules under a new name.
 <wire x1="0.127" y1="39.751" x2="1.016" y2="39.751" width="0.254" layer="1"/>
 </signal>
 <signal name="N$2">
-<contactref element="G21" pad="CLK"/>
+<contactref element="G24" pad="CLK"/>
 <contactref element="R16" pad="2"/>
 <wire x1="-28.194" y1="54.2036" x2="-29.0576" y2="54.2036" width="0.254" layer="1"/>
 <wire x1="-29.0576" y1="54.2036" x2="-30.48" y2="55.626" width="0.254" layer="1"/>
 <wire x1="-30.48" y1="55.626" x2="-33.528" y2="55.626" width="0.254" layer="1"/>
 </signal>
 <signal name="N$18">
-<contactref element="G22" pad="CLK"/>
+<contactref element="G25" pad="CLK"/>
 <contactref element="R14" pad="2"/>
 <wire x1="-12.192" y1="55.626" x2="-17.4244" y2="55.626" width="0.254" layer="1"/>
 <wire x1="-17.4244" y1="55.626" x2="-17.526" y2="55.7276" width="0.254" layer="1"/>
 </signal>
 <signal name="N$19">
-<contactref element="G24" pad="CLK"/>
+<contactref element="G27" pad="CLK"/>
 <contactref element="R15" pad="2"/>
 <wire x1="-22.86" y1="55.626" x2="-25.5524" y2="55.626" width="0.254" layer="1"/>
 <wire x1="-25.5524" y1="55.626" x2="-28.194" y2="58.0136" width="0.254" layer="1"/>
