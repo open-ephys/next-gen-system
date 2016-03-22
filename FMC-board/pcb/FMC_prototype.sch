@@ -3360,6 +3360,56 @@ http://www.bccomponents.com/</description>
 <text x="1.778" y="0" size="1.016" layer="27" font="vector" ratio="18" align="center-left">&gt;VALUE</text>
 <rectangle x1="-0.3302" y1="-0.3302" x2="0.3302" y2="0.3302" layer="51"/>
 </package>
+<package name="SOP65P490X110-9N">
+<wire x1="-1.5494" y1="0.7874" x2="-1.5494" y2="1.1684" width="0" layer="51"/>
+<wire x1="-1.5494" y1="1.1684" x2="-2.5146" y2="1.1684" width="0" layer="51"/>
+<wire x1="-2.5146" y1="1.1684" x2="-2.5146" y2="0.7874" width="0" layer="51"/>
+<wire x1="-2.5146" y1="0.7874" x2="-1.5494" y2="0.7874" width="0" layer="51"/>
+<wire x1="-1.5494" y1="0.127" x2="-1.5494" y2="0.508" width="0" layer="51"/>
+<wire x1="-1.5494" y1="0.508" x2="-2.5146" y2="0.508" width="0" layer="51"/>
+<wire x1="-2.5146" y1="0.508" x2="-2.5146" y2="0.127" width="0" layer="51"/>
+<wire x1="-2.5146" y1="0.127" x2="-1.5494" y2="0.127" width="0" layer="51"/>
+<wire x1="-1.5494" y1="-0.508" x2="-1.5494" y2="-0.127" width="0" layer="51"/>
+<wire x1="-1.5494" y1="-0.127" x2="-2.5146" y2="-0.127" width="0" layer="51"/>
+<wire x1="-2.5146" y1="-0.127" x2="-2.5146" y2="-0.508" width="0" layer="51"/>
+<wire x1="-2.5146" y1="-0.508" x2="-1.5494" y2="-0.508" width="0" layer="51"/>
+<wire x1="-1.5494" y1="-1.1684" x2="-1.5494" y2="-0.7874" width="0" layer="51"/>
+<wire x1="-1.5494" y1="-0.7874" x2="-2.5146" y2="-0.7874" width="0" layer="51"/>
+<wire x1="-2.5146" y1="-0.7874" x2="-2.5146" y2="-1.1684" width="0" layer="51"/>
+<wire x1="-2.5146" y1="-1.1684" x2="-1.5494" y2="-1.1684" width="0" layer="51"/>
+<wire x1="1.5494" y1="-0.7874" x2="1.5494" y2="-1.1684" width="0" layer="51"/>
+<wire x1="1.5494" y1="-1.1684" x2="2.5146" y2="-1.1684" width="0" layer="51"/>
+<wire x1="2.5146" y1="-1.1684" x2="2.5146" y2="-0.7874" width="0" layer="51"/>
+<wire x1="2.5146" y1="-0.7874" x2="1.5494" y2="-0.7874" width="0" layer="51"/>
+<wire x1="1.5494" y1="-0.127" x2="1.5494" y2="-0.508" width="0" layer="51"/>
+<wire x1="1.5494" y1="-0.508" x2="2.5146" y2="-0.508" width="0" layer="51"/>
+<wire x1="2.5146" y1="-0.508" x2="2.5146" y2="-0.127" width="0" layer="51"/>
+<wire x1="2.5146" y1="-0.127" x2="1.5494" y2="-0.127" width="0" layer="51"/>
+<wire x1="1.5494" y1="0.508" x2="1.5494" y2="0.127" width="0" layer="51"/>
+<wire x1="1.5494" y1="0.127" x2="2.5146" y2="0.127" width="0" layer="51"/>
+<wire x1="2.5146" y1="0.127" x2="2.5146" y2="0.508" width="0" layer="51"/>
+<wire x1="2.5146" y1="0.508" x2="1.5494" y2="0.508" width="0" layer="51"/>
+<wire x1="1.5494" y1="1.1684" x2="1.5494" y2="0.7874" width="0" layer="51"/>
+<wire x1="1.5494" y1="0.7874" x2="2.5146" y2="0.7874" width="0" layer="51"/>
+<wire x1="2.5146" y1="0.7874" x2="2.5146" y2="1.1684" width="0" layer="51"/>
+<wire x1="2.5146" y1="1.1684" x2="1.5494" y2="1.1684" width="0" layer="51"/>
+<wire x1="-1.5494" y1="-1.5494" x2="1.5494" y2="-1.5494" width="0.1524" layer="21"/>
+<wire x1="1.5494" y1="1.5494" x2="0.3302" y2="1.5494" width="0.1524" layer="21"/>
+<wire x1="0.3302" y1="1.5494" x2="-0.3302" y2="1.5494" width="0.1524" layer="21"/>
+<wire x1="-0.3302" y1="1.5494" x2="-1.5494" y2="1.5494" width="0.1524" layer="21"/>
+<wire x1="0.3302" y1="1.5494" x2="-0.3302" y2="1.5494" width="0.1524" layer="21" curve="-180"/>
+<smd name="1" x="-2.1844" y="0.9652" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="2" x="-2.1844" y="0.3302" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="3" x="-2.1844" y="-0.3302" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="4" x="-2.1844" y="-0.9652" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="5" x="2.1844" y="-0.9652" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="6" x="2.1844" y="-0.3302" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="7" x="2.1844" y="0.3302" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="8" x="2.1844" y="0.9652" dx="1.4224" dy="0.4318" layer="1"/>
+<smd name="9" x="0" y="0" dx="1.5748" dy="1.8796" layer="1"/>
+<text x="-3.4544" y="2.54" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-3.4544" y="-4.445" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
+</package>
 </packages>
 <symbols>
 <symbol name="TPS793XX">
@@ -3368,10 +3418,10 @@ http://www.bccomponents.com/</description>
 <wire x1="-10.16" y1="-7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
 <wire x1="-10.16" y1="7.62" x2="7.62" y2="7.62" width="0.254" layer="94"/>
 <pin name="EN" x="-12.7" y="0" length="short" direction="in"/>
-<pin name="GND" x="-12.7" y="-5.08" length="short" direction="pwr"/>
-<pin name="IN" x="-12.7" y="5.08" length="short" direction="pwr"/>
+<pin name="GND" x="-12.7" y="-5.08" length="short" direction="pas"/>
+<pin name="IN" x="-12.7" y="5.08" length="short" direction="pas"/>
 <pin name="NR" x="10.16" y="-5.08" length="short" direction="pas" rot="R180"/>
-<pin name="OUT" x="10.16" y="5.08" length="short" direction="pwr" rot="R180"/>
+<pin name="OUT" x="10.16" y="5.08" length="short" direction="pas" rot="R180"/>
 <text x="-10.16" y="8.89" size="1.778" layer="95" font="vector">&gt;NAME</text>
 <text x="-10.16" y="-10.16" size="1.778" layer="96" font="vector">&gt;VALUE</text>
 </symbol>
@@ -4045,6 +4095,23 @@ FMC MODULE</text>
 <wire x1="0" y1="-1.524" x2="-0.762" y2="-0.762" width="0.254" layer="94"/>
 <text x="0" y="1.27" size="1.778" layer="95" rot="R90" align="center-left">&gt;NAME</text>
 <pin name="TP" x="0" y="-2.54" visible="off" length="short" direction="in" rot="R90"/>
+</symbol>
+<symbol name="TPS7A4901DGNR">
+<wire x1="-12.7" y1="15.24" x2="-12.7" y2="-20.32" width="0.4064" layer="94"/>
+<wire x1="-12.7" y1="-20.32" x2="12.7" y2="-20.32" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="-20.32" x2="12.7" y2="15.24" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="15.24" x2="-12.7" y2="15.24" width="0.4064" layer="94"/>
+<pin name="DNC" x="-17.78" y="-7.62" length="middle" direction="nc"/>
+<pin name="EN" x="-17.78" y="2.54" length="middle" direction="in"/>
+<pin name="EP" x="-17.78" y="-15.24" length="middle" direction="pas"/>
+<pin name="FB" x="17.78" y="-5.08" length="middle" direction="in" rot="R180"/>
+<pin name="GND" x="-17.78" y="-12.7" length="middle" direction="pas"/>
+<pin name="IN" x="-17.78" y="10.16" length="middle" direction="pas"/>
+<pin name="NC" x="-17.78" y="-5.08" length="middle" direction="nc"/>
+<pin name="NR/SS" x="-17.78" y="0" length="middle" direction="in"/>
+<pin name="OUT" x="17.78" y="10.16" length="middle" direction="pas" rot="R180"/>
+<text x="-5.461" y="17.8308" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
+<text x="-4.0386" y="-24.5364" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -5498,6 +5565,36 @@ FMC MODULE</text>
 </device>
 </devices>
 </deviceset>
+<deviceset name="TPS7A4901DGNR" prefix="U" uservalue="yes">
+<description>?36V, ?200mA, Ultralow-Noise, Negative LINEAR REGULATOR</description>
+<gates>
+<gate name="A" symbol="TPS7A4901DGNR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOP65P490X110-9N">
+<connects>
+<connect gate="A" pin="DNC" pad="7"/>
+<connect gate="A" pin="EN" pad="5"/>
+<connect gate="A" pin="EP" pad="9"/>
+<connect gate="A" pin="FB" pad="2"/>
+<connect gate="A" pin="GND" pad="4"/>
+<connect gate="A" pin="IN" pad="8"/>
+<connect gate="A" pin="NC" pad="3"/>
+<connect gate="A" pin="NR/SS" pad="6"/>
+<connect gate="A" pin="OUT" pad="1"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MPN" value="TPS7A4901DGNR" constant="no"/>
+<attribute name="OC_FARNELL" value="-" constant="no"/>
+<attribute name="OC_NEWARK" value="01T0879" constant="no"/>
+<attribute name="PACKAGE" value="MSOP-8" constant="no"/>
+<attribute name="SUPPLIER" value="Texas Instruments" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="puggleboard">
@@ -5572,58 +5669,6 @@ FMC MODULE</text>
 <rectangle x1="-1.6002" y1="-0.8128" x2="-1.0922" y2="0.8128" layer="51"/>
 <rectangle x1="1.0922" y1="-0.8128" x2="1.6002" y2="0.8128" layer="51"/>
 </package>
-<package name="SOP65P490X110-9N">
-<smd name="1" x="-2.1844" y="0.9652" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="2" x="-2.1844" y="0.3302" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="3" x="-2.1844" y="-0.3302" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="4" x="-2.1844" y="-0.9652" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="5" x="2.1844" y="-0.9652" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="6" x="2.1844" y="-0.3302" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="7" x="2.1844" y="0.3302" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="8" x="2.1844" y="0.9652" dx="1.4224" dy="0.4318" layer="1"/>
-<smd name="9" x="0" y="0" dx="1.5748" dy="1.8796" layer="1"/>
-<wire x1="-1.5494" y1="0.7874" x2="-1.5494" y2="1.1684" width="0" layer="51"/>
-<wire x1="-1.5494" y1="1.1684" x2="-2.5146" y2="1.1684" width="0" layer="51"/>
-<wire x1="-2.5146" y1="1.1684" x2="-2.5146" y2="0.7874" width="0" layer="51"/>
-<wire x1="-2.5146" y1="0.7874" x2="-1.5494" y2="0.7874" width="0" layer="51"/>
-<wire x1="-1.5494" y1="0.127" x2="-1.5494" y2="0.508" width="0" layer="51"/>
-<wire x1="-1.5494" y1="0.508" x2="-2.5146" y2="0.508" width="0" layer="51"/>
-<wire x1="-2.5146" y1="0.508" x2="-2.5146" y2="0.127" width="0" layer="51"/>
-<wire x1="-2.5146" y1="0.127" x2="-1.5494" y2="0.127" width="0" layer="51"/>
-<wire x1="-1.5494" y1="-0.508" x2="-1.5494" y2="-0.127" width="0" layer="51"/>
-<wire x1="-1.5494" y1="-0.127" x2="-2.5146" y2="-0.127" width="0" layer="51"/>
-<wire x1="-2.5146" y1="-0.127" x2="-2.5146" y2="-0.508" width="0" layer="51"/>
-<wire x1="-2.5146" y1="-0.508" x2="-1.5494" y2="-0.508" width="0" layer="51"/>
-<wire x1="-1.5494" y1="-1.1684" x2="-1.5494" y2="-0.7874" width="0" layer="51"/>
-<wire x1="-1.5494" y1="-0.7874" x2="-2.5146" y2="-0.7874" width="0" layer="51"/>
-<wire x1="-2.5146" y1="-0.7874" x2="-2.5146" y2="-1.1684" width="0" layer="51"/>
-<wire x1="-2.5146" y1="-1.1684" x2="-1.5494" y2="-1.1684" width="0" layer="51"/>
-<wire x1="1.5494" y1="-0.7874" x2="1.5494" y2="-1.1684" width="0" layer="51"/>
-<wire x1="1.5494" y1="-1.1684" x2="2.5146" y2="-1.1684" width="0" layer="51"/>
-<wire x1="2.5146" y1="-1.1684" x2="2.5146" y2="-0.7874" width="0" layer="51"/>
-<wire x1="2.5146" y1="-0.7874" x2="1.5494" y2="-0.7874" width="0" layer="51"/>
-<wire x1="1.5494" y1="-0.127" x2="1.5494" y2="-0.508" width="0" layer="51"/>
-<wire x1="1.5494" y1="-0.508" x2="2.5146" y2="-0.508" width="0" layer="51"/>
-<wire x1="2.5146" y1="-0.508" x2="2.5146" y2="-0.127" width="0" layer="51"/>
-<wire x1="2.5146" y1="-0.127" x2="1.5494" y2="-0.127" width="0" layer="51"/>
-<wire x1="1.5494" y1="0.508" x2="1.5494" y2="0.127" width="0" layer="51"/>
-<wire x1="1.5494" y1="0.127" x2="2.5146" y2="0.127" width="0" layer="51"/>
-<wire x1="2.5146" y1="0.127" x2="2.5146" y2="0.508" width="0" layer="51"/>
-<wire x1="2.5146" y1="0.508" x2="1.5494" y2="0.508" width="0" layer="51"/>
-<wire x1="1.5494" y1="1.1684" x2="1.5494" y2="0.7874" width="0" layer="51"/>
-<wire x1="1.5494" y1="0.7874" x2="2.5146" y2="0.7874" width="0" layer="51"/>
-<wire x1="2.5146" y1="0.7874" x2="2.5146" y2="1.1684" width="0" layer="51"/>
-<wire x1="2.5146" y1="1.1684" x2="1.5494" y2="1.1684" width="0" layer="51"/>
-<wire x1="-1.5494" y1="-1.5494" x2="1.5494" y2="-1.5494" width="0.1524" layer="21"/>
-<wire x1="1.5494" y1="1.5494" x2="0.3302" y2="1.5494" width="0.1524" layer="21"/>
-<wire x1="0.3302" y1="1.5494" x2="0.3048" y2="1.5494" width="0.1524" layer="21"/>
-<wire x1="0.3048" y1="1.5494" x2="-0.3048" y2="1.5494" width="0.1524" layer="21"/>
-<wire x1="-0.3048" y1="1.5494" x2="-0.3302" y2="1.5494" width="0.1524" layer="21"/>
-<wire x1="-0.3302" y1="1.5494" x2="-1.5494" y2="1.5494" width="0.1524" layer="21"/>
-<text x="-3.4544" y="2.54" size="2.0828" layer="25" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-3.4544" y="-4.445" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
-<wire x1="0.3302" y1="1.5494" x2="-0.3302" y2="1.5494" width="0.1524" layer="21" curve="-180"/>
-</package>
 </packages>
 <symbols>
 <symbol name="C">
@@ -5635,23 +5680,6 @@ FMC MODULE</text>
 <rectangle x1="-2.032" y1="-2.032" x2="2.032" y2="-1.524" layer="94"/>
 <pin name="1" x="0" y="2.54" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
 <pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
-</symbol>
-<symbol name="TPS7A4901DGNR">
-<pin name="IN" x="-17.78" y="10.16" length="middle" direction="pwr"/>
-<pin name="FB" x="17.78" y="-5.08" length="middle" direction="in" rot="R180"/>
-<pin name="EN" x="-17.78" y="2.54" length="middle" direction="in"/>
-<pin name="NR/SS" x="-17.78" y="0" length="middle" direction="in"/>
-<pin name="NC" x="-17.78" y="-5.08" length="middle" direction="nc"/>
-<pin name="DNC" x="-17.78" y="-7.62" length="middle" direction="nc"/>
-<pin name="GND" x="-17.78" y="-12.7" length="middle" direction="pas"/>
-<pin name="EP" x="-17.78" y="-15.24" length="middle" direction="pas"/>
-<pin name="OUT" x="17.78" y="10.16" length="middle" direction="out" rot="R180"/>
-<wire x1="-12.7" y1="15.24" x2="-12.7" y2="-20.32" width="0.4064" layer="94"/>
-<wire x1="-12.7" y1="-20.32" x2="12.7" y2="-20.32" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="-20.32" x2="12.7" y2="15.24" width="0.4064" layer="94"/>
-<wire x1="12.7" y1="15.24" x2="-12.7" y2="15.24" width="0.4064" layer="94"/>
-<text x="-5.461" y="17.8308" size="2.0828" layer="95" ratio="10" rot="SR0">&gt;NAME</text>
-<text x="-4.0386" y="-24.5364" size="2.0828" layer="96" ratio="10" rot="SR0">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -5709,36 +5737,6 @@ FMC MODULE</text>
 </connects>
 <technologies>
 <technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TPS7A4901DGNR" prefix="U" uservalue="yes">
-<description>?36V, ?200mA, Ultralow-Noise, Negative LINEAR REGULATOR</description>
-<gates>
-<gate name="A" symbol="TPS7A4901DGNR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOP65P490X110-9N">
-<connects>
-<connect gate="A" pin="DNC" pad="7"/>
-<connect gate="A" pin="EN" pad="5"/>
-<connect gate="A" pin="EP" pad="9"/>
-<connect gate="A" pin="FB" pad="2"/>
-<connect gate="A" pin="GND" pad="4"/>
-<connect gate="A" pin="IN" pad="8"/>
-<connect gate="A" pin="NC" pad="3"/>
-<connect gate="A" pin="NR/SS" pad="6"/>
-<connect gate="A" pin="OUT" pad="1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MPN" value="TPS7A4901DGNR" constant="no"/>
-<attribute name="OC_FARNELL" value="-" constant="no"/>
-<attribute name="OC_NEWARK" value="01T0879" constant="no"/>
-<attribute name="PACKAGE" value="MSOP-8" constant="no"/>
-<attribute name="SUPPLIER" value="Texas Instruments" constant="no"/>
-</technology>
 </technologies>
 </device>
 </devices>
@@ -5860,7 +5858,7 @@ FMC MODULE</text>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="C20" library="puggleboard" deviceset="C" device="_1206" value="10uF"/>
 <part name="C24" library="puggleboard" deviceset="C" device="_1206" value="10uF"/>
-<part name="U7" library="puggleboard" deviceset="TPS7A4901DGNR" device="" value="4901"/>
+<part name="U7" library="jonnew" deviceset="TPS7A4901DGNR" device="" value="4901"/>
 <part name="R12" library="jonnew" deviceset="R" device="_0603" value="20k"/>
 <part name="R13" library="jonnew" deviceset="R" device="_0603" value="10k"/>
 <part name="C23" library="jonnew" deviceset="C" device="_0603" value="10nF"/>
@@ -5871,7 +5869,7 @@ FMC MODULE</text>
 <part name="PWR16" library="jonnew" deviceset="+3V6" device=""/>
 <part name="C12" library="puggleboard" deviceset="C" device="_1206" value="10uF"/>
 <part name="C1" library="puggleboard" deviceset="C" device="_1206" value="10uF"/>
-<part name="U1" library="puggleboard" deviceset="TPS7A4901DGNR" device="" value="4901"/>
+<part name="U1" library="jonnew" deviceset="TPS7A4901DGNR" device="" value="4901"/>
 <part name="R5" library="jonnew" deviceset="R" device="_0603" value="20k"/>
 <part name="R6" library="jonnew" deviceset="R" device="_0603" value="10k"/>
 <part name="C2" library="jonnew" deviceset="C" device="_0603" value="10nF"/>
@@ -7929,20 +7927,10 @@ FMC MODULE</text>
 </sheets>
 <errors>
 <approved hash="104,1,96.52,177.8,C_ISO,GND,GND_ISO,,,"/>
-<approved hash="104,1,172.72,279.4,U2,GND,GND_ISO,,,"/>
-<approved hash="104,1,172.72,289.56,U2,IN,+5V0_ISO,,,"/>
-<approved hash="104,1,149.86,289.56,U2,OUT,+3V3_ISO,,,"/>
-<approved hash="104,1,375.92,294.64,U7,IN,VDD_POST_LC,,,"/>
-<approved hash="104,1,139.7,353.06,U1,IN,+5V0_ISO,,,"/>
-<approved hash="208,1,525.78,281.94,+3V6,sup,,,,"/>
-<approved hash="208,1,607.06,281.94,+3V6,sup,,,,"/>
-<approved hash="208,1,373.38,421.64,+3V6,sup,,,,"/>
-<approved hash="208,1,411.48,294.64,+3V6,out,,,,"/>
-<approved hash="208,1,447.04,299.72,+3V6,sup,,,,"/>
 <approved hash="113,1,431.8,279.296,FRAME1,,,,,"/>
-<approved hash="113,1,421.974,365.371,VDD_AUX,,,,,"/>
-<approved hash="113,1,362.339,376.397,POW_SEL,,,,,"/>
-<approved hash="113,1,374.261,393.999,POW_TP,,,,,"/>
+<approved hash="113,1,422.037,365.371,VDD_AUX,,,,,"/>
+<approved hash="113,1,362.339,376.473,POW_SEL,,,,,"/>
+<approved hash="113,1,374.261,393.941,POW_TP,,,,,"/>
 <approved hash="115,1,360.68,369.57,12V_FPGA,,,,,"/>
 <approved hash="115,1,511.81,71.12,12V_FPGA,,,,,"/>
 <approved hash="115,1,546.1,344.17,12V_FPGA,,,,,"/>
