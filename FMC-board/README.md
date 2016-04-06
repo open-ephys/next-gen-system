@@ -1,8 +1,7 @@
 # FMC Daughter Board
 
 ### Pinout
-FMC LPC pinout can be found [here](
-https://docs.google.com/spreadsheets/d/1bgnBP1xqPFtFIQYF-BCybK1KkekfmRYwm2GDAU4D9lo/edit?usp=sharing)
+FMC LPC pinout can be found [here](https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin-nnEgUCs/edit#gid=584734392)
 
 ### BOM
 The bill of materials for this device can be found
