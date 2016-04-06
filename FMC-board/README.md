@@ -1,5 +1,8 @@
 # FMC Daughter Board
 
+### Documentation
+The overall proposed architecture of the system is outlined [here](https://open-ephys.atlassian.net/wiki/display/OEW/PCIe+acquisition+board)
+
 ### Pinout
 FMC LPC pinout can be found [here](https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin-nnEgUCs/edit#gid=584734392)
 
