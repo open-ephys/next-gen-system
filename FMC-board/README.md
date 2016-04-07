@@ -1,6 +1,16 @@
 # FMC Daughter Board
 
 ### Documentation
+
+This board roughly conforms to the VITA 57 standard for LPC (low pin count) FMCs (FPGA Mezzanine Card).
+
+It contains:
+- 3x direct SMA connectors to the fpga, with overvoltage diode protection.
+- 2x intan compatible 12pin omnetics connectors (A & B) for the intan headstage SPI standard, wired directly to the fpga, with a power supply.
+- 1x isolated intan compatible connector (C) isolated through LVDS to CMOS converters and galvanic isolators. This headstage has its own power supply that is fed through am isolated DC-DC converter.
+- 3x directional SMA connectors (on the card front edge) that are routed through the same isolation circuit as headstage connector C
+
+
 The overall proposed architecture of the system is outlined [here](https://open-ephys.atlassian.net/wiki/display/OEW/PCIe+acquisition+board)
 
 ### Pinout
@@ -15,7 +25,9 @@ The bill of materials for this device can be found
 - 8mil trace width & spacing
 - 12mil min. drill
 
-There is one 0.05" pitch BGA connector and a few omnetics connectors with inacessible pins on the board, so a stencil and reflow soldering need to be used.
+There is one 0.05" pitch BGA connector (the samtech FMC connector) and a few omnetics connectors with inacessible pins on the board, so a stencil and reflow soldering need to be used.
+
+Importantly, the samtech FMC connector needs to be clamped or held down with some force during reflow soldering. There is a round pad of kapton tape on the connector to provide a clamping surface for this purpose. We have had good success with using a steel paperclip that we modified to exert less force by cutting two slots into the spring. The original paper clips push down too hard and can warp the conenctor. Possibly just weighting it down woth a suitable object could also work. Finally, the size and need for push down of the connector means that it heats up pretty slowly, so expect it to reflow after everything else on the board, and if possible use proper pre-heating.
 
 In order to meet approximately correct trace impedances, the design further is assuming:
  - 1oz copper
@@ -39,7 +51,7 @@ In order to meet approximately correct trace impedances, the design further is a
 - [x] TI's ISO7641 has better electrical characteristics in almost every
   single way compared to the ADUM3440 and is cheaper. Has the same pinout,
   footprint, and package, so we can just switch it.
-- [ ] Does the FPGA provide on-board termination for LVDS? Seems likely
+- [x] Does the FPGA provide on-board termination for LVDS? Seems likely
   that it does and we don't need external 100 Ohm resistors next to the FMC connector
   which is pretty far from the FPGA anyway.
 - [x] The power jacks seem unnecessary since we will have 12V (and maybe 5V?)
