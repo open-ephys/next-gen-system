@@ -27,7 +27,7 @@ The bill of materials for this device can be found
 
 There is one 0.05" pitch BGA connector (the samtech FMC connector) and a few omnetics connectors with inacessible pins on the board, so a stencil and reflow soldering need to be used.
 
-The samtech FMC connector might need needs to be clamped or held down during reflow soldering. The samtec docs state that they should settle on their own during reflow though, so trying that first seems like a good idea (  http://suddendocs.samtec.com/processing/searay_soldering1.pdf ).
+The samtech FMC connector might need to be clamped or held down during reflow soldering. The samtec docs state that they should settle on their own during reflow though, so trying that first seems like a good idea (  http://suddendocs.samtec.com/processing/searay_soldering1.pdf ).
 
 There is a round pad of kapton tape on the connector to provide a clamping surface for this purpose. We have had good success with using a steel paperclip that we modified to exert less force by cutting two slots into the spring. The original paper clips push down too hard and can warp the conenctor. Possibly just weighting it down with a suitable object could also work. Finally, the size of the connector means that it heats up pretty slowly, so expect it to reflow after everything else on the board, and if possible use proper pre-heating.
 
