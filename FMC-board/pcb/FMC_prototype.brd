@@ -4747,6 +4747,11 @@ design rules under a new name.
 <contactref element="H13" pad="CLK"/>
 <wire x1="-61.214" y1="21.082" x2="-56.4896" y2="21.082" width="0.254" layer="16"/>
 </signal>
+<signal name="TDI-TDO">
+<contactref element="FMC" pad="P$110"/>
+<contactref element="FMC" pad="P$111"/>
+<wire x1="3.937" y1="44.831" x2="3.937" y2="43.561" width="0.254" layer="1"/>
+</signal>
 </signals>
 <errors>
 <approved hash="3,1,09b9d181d1c909f1"/>
