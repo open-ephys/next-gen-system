@@ -7922,6 +7922,18 @@ FMC MODULE</text>
 <pinref part="H13" gate="G$1" pin="1"/>
 </segment>
 </net>
+<net name="TDI-TDO" class="0">
+<segment>
+<pinref part="FMC" gate="G$1" pin="P$110"/>
+<wire x1="467.36" y1="88.9" x2="454.66" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="FMC" gate="G$1" pin="P$111"/>
+<wire x1="454.66" y1="88.9" x2="449.58" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="467.36" y1="86.36" x2="454.66" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="454.66" y1="86.36" x2="454.66" y2="88.9" width="0.1524" layer="91"/>
+<junction x="454.66" y="88.9"/>
+<label x="449.58" y="88.9" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
