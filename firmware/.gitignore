@@ -1,3 +1,5 @@
+# Vivado vomit. To load project, use run TCL script and run the TCL scrip in
+# this directory
 *.jou
 *.pb
 *.rpt
@@ -22,7 +24,7 @@
 *.edif
 *.prj
 *.mem
-*svtype
+*.svtype
 *.dbg
 *.reloc
 *.type
@@ -34,14 +36,7 @@
 *.vh
 *.vhd
 
+# Simulation results
+xsimk
 
-#*
-#!.gitignore
-#!*.vhd
-#!**/*.v
-#!*.upgrade_log
-#!*.xci
-#!*.xdc
-#!*.tcl
-#!*.c
-#!*.h
+

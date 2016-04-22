@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2014.3.1              -->
+<!--                                                         -->
+<!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
+
+<Project Version="7" Minor="2" Path="/home/oe/Desktop/oe_xillybus_test_firmware_01/oe_xillybus_test_firmware_01.xpr">
+  <DefaultLaunch Dir="$PRUNDIR"/>
+  <Configuration>
+    <Option Name="Id" Val="48b11b1370024986aa3890332299cf3d"/>
+    <Option Name="Part" Val="xc7k325tffg900-2"/>
+    <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
+    <Option Name="BoardPart" Val=""/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
+    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="DefaultLib" Val="xil_defaultlib"/>
+  </Configuration>
+  <FileSets Version="1" Minor="31">
+    <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/verilog/src/xillydemo.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/verilog/src/xillydemo.v"/>
+          <Attr Name="ImportTime" Val="1461162381"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/verilog/src/xillybus.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/verilog/src/xillybus.v"/>
+          <Attr Name="ImportTime" Val="1421274790"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/verilog/src/xillybus_core.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/verilog/src/xillybus_core.v"/>
+          <Attr Name="ImportTime" Val="1421274790"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_8x.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_8x.v"/>
+          <Attr Name="ImportTime" Val="1421274790"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_8x_pipe_clock.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_8x_pipe_clock.v"/>
+          <Attr Name="ImportTime" Val="1421274790"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/vivado-essentials/fifo_32x512/fifo_32x512.upgrade_log">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/fifo_32x512/fifo_32x512.upgrade_log"/>
+          <Attr Name="ImportTime" Val="1461110085"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/vivado-essentials/fifo_8x2048/fifo_8x2048.upgrade_log">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/fifo_8x2048/fifo_8x2048.upgrade_log"/>
+          <Attr Name="ImportTime" Val="1461110087"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_vivado/pcie_k7_vivado.upgrade_log">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_vivado/pcie_k7_vivado.upgrade_log"/>
+          <Attr Name="ImportTime" Val="1461110088"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_vivado_pipe_clock.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_vivado_pipe_clock.v"/>
+          <Attr Name="ImportTime" Val="1461110092"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="xillydemo"/>
+        <Option Name="ExtraSearchPath" Val="/home/oe/Downloads/xillybus-eval-kintex7-1.2d/core"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+      <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/vivado-essentials/xillydemo.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/xillydemo.xdc"/>
+          <Attr Name="ImportTime" Val="1461198904"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="ConstrsType" Val="XDC"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="xillydemo"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.simulate.runtime" Val="1000 ns"/>
+        <Option Name="xsim.simulate.uut" Val="UUT"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fifo_8x2048" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fifo_8x2048">
+      <File Path="$PSRCDIR/fifo_8x2048/ip/fifo_8x2048/fifo_8x2048.xci">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/fifo_8x2048/fifo_8x2048.xci"/>
+          <Attr Name="ImportTime" Val="1461110087"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="fifo_8x2048"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="fifo_32x512" Type="BlockSrcs" RelSrcDir="$PSRCDIR/fifo_32x512">
+      <File Path="$PSRCDIR/fifo_32x512/ip/fifo_32x512/fifo_32x512.xci">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/fifo_32x512/fifo_32x512.xci"/>
+          <Attr Name="ImportTime" Val="1461110085"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/shft_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/output_blk.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/input_blk.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_extdepth.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_prim.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512.veo"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/axi_reg_slice.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/reset_blk_ramfifo.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/bram_fifo_rstlogic.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_dc_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/fifo_generator_v12_0_builtin.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/dmem.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_extdepth_low_latency.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_extdepth_v6.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_prim_v6.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/reset_builtin.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_top.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_width.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_wrapper_init.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_prim_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_mux.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_bindec.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_min_area_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_getinit_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_pkg.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_defaults.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_synth_comp.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="sim/fifo_32x512.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0_top.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0_synth.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_top_bi_sim.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512.dcp"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="synth/fifo_32x512.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_top.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/fifo_generator_ramfifo.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_logic.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/async_fifo.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/logic_sshft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_pe_sshft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/fifo_generator_v12_0_comps_builtin.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_status_flags_sshft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/dc_ss.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_dc_fwft_ext_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_pf_sshft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_handshaking_flags.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_status_flags_ss.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_status_flags_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/clk_x_pntrs.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_logic_pkt_fifo.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_fwft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/dc_ss_fwft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_logic.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_logic_pkt_fifo.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/updn_cntr.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_status_flags_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_status_flags_ss.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_handshaking_flags.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_status_flags_sshft.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_dc_fwft_ext_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/rd_bin_cntr.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_bin_cntr.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/compare.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/memory.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/wr_dc_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/fifo_generator_v12_0_defaults.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512/fifo_32x512.xdc"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_v8_2_synth.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_top.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_regs_fwd.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_write_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_write_fsm.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_read_wrapper.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_axi_read_fsm.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_output_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_input_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_ecc_decoder.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_ecc_encoder.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="blk_mem_gen_v8_2/hdl/blk_mem_gen_generic_cstr.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512_stub.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/simulation/fifo_generator_vlog_beh.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512_funcsim.v"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512_funcsim.vhdl"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_32x512.xml"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/builtin_top_v6.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/shft_ram.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/ramfifo/bram_sync_reg.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/wr_pf_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/wr_pf_ss.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/rd_pe_as.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/rd_pe_ss.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/common/synchronizer_ff.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/delay.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/bin_cntr.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/clk_x_pntrs_builtin.vhd"/>
+        <CompFileExtendedInfo CompFileName="fifo_32x512.xci" FileRelPathName="fifo_generator_v12_0/hdl/builtin/logic_builtin.vhd"/>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="fifo_32x512"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="pcie_k7_vivado" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pcie_k7_vivado">
+      <File Path="$PSRCDIR/pcie_k7_vivado/ip/pcie_k7_vivado/pcie_k7_vivado.xci">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/pcie_k7_vivado/pcie_k7_vivado.xci"/>
+          <Attr Name="ImportTime" Val="1461110088"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="pcie_k7_vivado"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+  </FileSets>
+  <Simulators>
+    <Simulator Name="XSim">
+      <Option Name="Description" Val="Vivado Simulator"/>
+    </Simulator>
+    <Simulator Name="ModelSim">
+      <Option Name="Description" Val="QuestaSim/ModelSim Simulator"/>
+    </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
+  </Simulators>
+  <Runs Version="1" Minor="9">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7k325tffg900-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fifo_8x2048_synth_1" Type="Ft3:Synth" SrcSet="fifo_8x2048" Part="xc7k325tffg900-2" ConstrsSet="fifo_8x2048" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fifo_8x2048_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fifo_32x512_synth_1" Type="Ft3:Synth" SrcSet="fifo_32x512" Part="xc7k325tffg900-2" ConstrsSet="fifo_32x512" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/fifo_32x512_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="pcie_k7_vivado_synth_1" Type="Ft3:Synth" SrcSet="pcie_k7_vivado" Part="xc7k325tffg900-2" ConstrsSet="pcie_k7_vivado" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/pcie_k7_vivado_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2014"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7k325tffg900-2" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design" EnableStepBool="1"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design" EnableStepBool="1"/>
+        <Step Id="write_bitstream" PreStepTclHook="$PPRDIR/../../Downloads/xillybus-eval-kintex7-1.2d/vivado-essentials/showstopper.tcl"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+    </Run>
+    <Run Id="fifo_8x2048_impl_1" Type="Ft2:EntireDesign" Part="xc7k325tffg900-2" ConstrsSet="fifo_8x2048" Description="Vivado Implementation Defaults" SynthRun="fifo_8x2048_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="fifo_32x512_impl_1" Type="Ft2:EntireDesign" Part="xc7k325tffg900-2" ConstrsSet="fifo_32x512" Description="Vivado Implementation Defaults" SynthRun="fifo_32x512_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+    <Run Id="pcie_k7_vivado_impl_1" Type="Ft2:EntireDesign" Part="xc7k325tffg900-2" ConstrsSet="pcie_k7_vivado" Description="Vivado Implementation Defaults" SynthRun="pcie_k7_vivado_synth_1">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+  </Runs>
+  <HWSession Dir="hw_1" File="hw.xml"/>
+</Project>
