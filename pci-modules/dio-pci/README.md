@@ -10,6 +10,7 @@ which is outlined
 [here](https://open-ephys.atlassian.net/wiki/display/OEW/PCIe+acquisition+board)
 
 ### Features
+- See TODO item on isolation...
 - 2x isolated intan compatible 12pin omnetics connectors (A & B) for the intan headstage SPI standard, isolated through LVDS to CMOS converters and galvanic isolators. This headstage has its own power supply that is fed through am isolated DC-DC converter.
 - 4x directional SMA connectors (on the card front edge) that are routed through the same isolation circuit as headstage connectors
 
@@ -67,4 +68,11 @@ In order to meet approximately correct trace impedances, the design further is a
 - [ ] For galvanically isolated IO module, we should conform to human use
   standards. Jakob has some info on what is required for this.
 - [ ] SMA input jacks should optionally terminate in 50 Ohms via a transistor switch
-- [ ] SMA outputs should have 50 ohm characteristic impedance and use line drivers
+- [ ] SMA outputs should have 50 ohm characteristic impedance and use line
+  drivers capable of reaching TTL logic levels (>2V) when driving 50 Ohm load
+- [ ] What does isolation mean in the context of being inside a computer
+  chassis? I have a feeling that it does not mean much because the case of the
+  computer is tied to earth. Isolation will probably need to happen outside the
+  computer case. Perhaps keeping the digital IO isolation in place is a good
+  idea to prevent users from destroying things, but power/ground isolation
+  inside the computer is probably mute.
