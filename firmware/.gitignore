@@ -36,6 +36,12 @@
 *.vh
 *.vhd
 
+hardware_test/oe_xillybus_test_firmware_02/*
+!/**/Sources
+!/**/Other
+!/**/*.tcl
+!**/README.*
+
 # Simulation results
 xsimk
 
