@@ -9,6 +9,18 @@ This card is part of the overall proposed architecture of the next-gen system
 which is outlined
 [here](https://open-ephys.atlassian.net/wiki/display/OEW/PCIe+acquisition+board)
 
+## Design Notes and Ideas
+- This card serves as a rugged digital breakout for the FMC connector on the KC705 board.
+- Six dedicated lines are broken out to immediate programmable GPIO accessible via SMA connectors
+- The reset of the signals are buffered and sent via LVDS over twisted pairs in the VHDCI cable.
+    - VHDCI pinout should probably conform to that of NI's digital cables
+    - See this for reference: http://zone.ni.com/reference/en-XX/help/370520K-01/hsdio/hfrontpanel_6545/
+    - EDIT:Perhaps the VHDCI should not be buffered, but instead, daughter boards should
+      recondition LVDS lines in an application specific way. That way we don't have
+      to to determine in/out at such a base level
+
+![concept](../resources/pci-breakout-concept.png)
+
 ### Features
 - See TODO item on isolation...
 - 2x isolated intan compatible 12pin omnetics connectors (A & B) for the intan headstage SPI standard, isolated through LVDS to CMOS converters and galvanic isolators. This headstage has its own power supply that is fed through am isolated DC-DC converter.
@@ -20,6 +32,7 @@ FMC LPC pinout can be found [here](https://docs.google.com/spreadsheets/d/18Wfmb
 ### BOM
 The bill of materials for this device can be found
 [here](https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin-nnEgUCs/edit?usp=sharing).
+
 
 ## Manufacturing requirements
 
@@ -43,6 +56,7 @@ There is a round pad of kapton tape on the connector to provide a clamping surfa
 In order to meet approximately correct trace impedances, the design further is assuming:
  - 1oz copper
  - ~1.2mm total board height, ~0.25mm per layer, dielectric ER = 4.5
+
 
 ## TODO (Rev 1.0)
 - [ ] Instead of conforming to VITA 57, PCB footprint should be made to fit in
