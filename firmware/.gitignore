@@ -37,6 +37,7 @@
 *.vhd
 
 hardware_test/oe_xillybus_test_firmware_02/*
+hardware_test/clock_gen_test/*
 !/**/Sources
 !/**/Other
 !/**/*.tcl
