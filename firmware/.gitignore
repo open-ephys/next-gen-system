@@ -38,6 +38,7 @@
 
 hardware_test/oe_xillybus_test_firmware_02/*
 hardware_test/clock_gen_test/*
+hardware_test/oe_pcie_rhythm_01/*
 !/**/Sources
 !/**/Other
 !/**/*.tcl
