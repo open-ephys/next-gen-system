@@ -54,7 +54,7 @@ module xillybus(PCIE_TX_P, PCIE_TX_N, PCIE_RX_P, PCIE_RX_N, PCIE_REFCLK_P,
   output  user_w_control_regs_16_wren;
   output [15:0] user_w_control_regs_16_data;
   output  user_w_control_regs_16_open;
-  output [15:0] user_control_regs_16_addr;
+  output [4:0] user_control_regs_16_addr;
   output  user_control_regs_16_addr_update;
   output  user_r_status_regs_16_rden;
   output  user_r_status_regs_16_open;

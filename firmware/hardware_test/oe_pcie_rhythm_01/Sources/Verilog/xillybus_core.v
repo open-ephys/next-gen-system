@@ -47,7 +47,7 @@ module xillybus_core
   output  user_auxcmd3_membank_16_addr_update_w,
   output [15:0] user_auxcmd3_membank_16_addr_w,
   output  user_control_regs_16_addr_update_w,
-  output [15:0] user_control_regs_16_addr_w,
+  output [4:0] user_control_regs_16_addr_w,
   output  user_r_control_regs_16_open_w,
   output  user_r_control_regs_16_rden_w,
   output  user_r_neural_data_32_open_w,

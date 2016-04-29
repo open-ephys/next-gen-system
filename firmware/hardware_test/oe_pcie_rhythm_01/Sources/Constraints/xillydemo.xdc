@@ -1,4 +1,5 @@
 create_clock -name sys_clk -period 10 [get_pins -match_style ucf */pcieclk_ibuf/O]
+create_clock -name board_clk -period 10 [get_nets clk1]
 
 set_false_path -to [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pclk_i1/S0]
 set_false_path -to [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pclk_i1/S1]

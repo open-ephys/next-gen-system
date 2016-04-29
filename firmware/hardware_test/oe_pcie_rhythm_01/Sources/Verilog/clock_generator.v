@@ -27,8 +27,8 @@ input rst,
 input [7:0] O,
 input [3:0] D,
 input [6:0] M,
-input start,
-output reg program_done,
+input start_sig,
+output ready,
 output locked,
 output clk_out
     );
@@ -77,6 +77,10 @@ output clk_out
     wire [39:0] lock_lookup;
     wire [9:0]  filter_lookup;
     
+    wire        start;
+    reg        program_done;
+    wire        cdc_busy;
+    
     wire unused1, unused2, unused3, unused4, unused5;
     
     assign locked = pll_locked;
@@ -91,6 +95,15 @@ output clk_out
        .CE(1'b1),
        .CLR(rst)
        );
+       
+       flag_cdc start_cd  (
+        .clkA(config_clk_in),
+        .clkB(config_clk),
+        .in(start_sig),
+        .out(start),
+        .busy(cdc_busy));
+        
+        assign ready = program_done & ~cdc_busy;
     
     pll_timer_values m_values (
         .pll_value(pll_M),
