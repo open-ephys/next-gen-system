@@ -13,6 +13,12 @@ module rhythm_pcie (
    
    output RESET_LED,
    output SPI_LED,
+   output OVERFLOW_LED,
+   
+   output sma_out_isol_H23,
+   output sma_direct_G24,
+   output sma_direct_G25,
+   output sma_direct_G27,
     
     input MISO_C1_PORT,
     input MISO_C2_PORT,
@@ -50,6 +56,12 @@ module rhythm_pcie (
     
     assign RESET_LED = reset;
     assign SPI_LED = SPI_running;
+    
+    reg [15:0] aux_output;
+    assign sma_direct_G24 = aux_output[0];
+    assign sma_direct_G25 = aux_output[1];
+    assign sma_direct_G27 = aux_output[2];
+    assign sma_out_isol_H23 = aux_output[3];
 
     wire 				clk1;				// buffered 200 MHz clock
 	wire				dataclk;			// programmable frequency clock (f = 2800 * per-channel amplifier sampling rate)
@@ -97,6 +109,7 @@ module rhythm_pcie (
     reg [31:0]         timestamp;             
     reg [31:0]        max_timestep;
     reg [31:0]        max_timestep_in;
+    wire [31:0]        max_timestep_dataclk;
     wire [31:0]     data_stream_timestamp;
     wire [63:0]        header_magic_number;
     wire [15:0]        data_stream_filler;
@@ -131,6 +144,8 @@ module rhythm_pcie (
     
     wire                reset, SPI_start;
     reg                  SPI_run_continuous;
+    reg                  SPI_run_continuous_in;
+    wire                  SPI_run_continuous_dataclk;
     reg                SPI_running;
 
     reg [3:0]         dataclk_D;      
@@ -303,7 +318,7 @@ module rhythm_pcie (
                     user_r_control_regs_16_data <= 16'b0;
             end 
           //Fill other reset conditions here   
-          SPI_run_continuous <= 1'b0;
+          SPI_run_continuous_in <= 1'b0;
           DSP_settle <= 1'b0; 
           max_timestep_in <= 32'h00;
           delay_A <= 4'b0;
@@ -370,6 +385,8 @@ module rhythm_pcie (
           dataclk_O <= 8'd25;
           dataclk_M <= 7'd42;
           dataclk_D <= 4'd04;
+          
+          aux_output <= 16'b0;
           end
           else
           begin
@@ -378,7 +395,7 @@ module rhythm_pcie (
                 case(user_control_regs_16_addr)
                     5'h00:
                     begin
-                        SPI_run_continuous <= user_w_control_regs_16_data[1];
+                        SPI_run_continuous_in <= user_w_control_regs_16_data[1];
                         DSP_settle <= user_w_control_regs_16_data[2];
                     end
                     5'h01: max_timestep_in[15:0] <= user_w_control_regs_16_data;
@@ -471,6 +488,7 @@ module rhythm_pcie (
                             data_stream_15_en_in <= user_w_control_regs_16_data[14];
                             data_stream_16_en_in <= user_w_control_regs_16_data[15];
                         end
+                    5'h17: aux_output <= user_w_control_regs_16_data;
                     5'h1F:
                         SPI_start_trigger <= user_w_control_regs_16_data[0];
                 endcase
@@ -478,7 +496,7 @@ module rhythm_pcie (
             if (user_r_control_regs_16_rden)
                 begin
                     case(user_control_regs_16_addr)
-                        5'h00: user_r_control_regs_16_data <= {13'b0, DSP_settle, SPI_run_continuous, 1'b0};
+                        5'h00: user_r_control_regs_16_data <= {13'b0, DSP_settle, SPI_run_continuous_in, 1'b0};
                         5'h01: user_r_control_regs_16_data <= max_timestep_in[15:0];
                         5'h02: user_r_control_regs_16_data <= max_timestep_in[31:16];
                         5'h03: user_r_control_regs_16_data <= {dataclk_D[3], dataclk_M, dataclk_O};
@@ -514,6 +532,7 @@ module rhythm_pcie (
                         data_stream_2_en_in,
                         data_stream_1_en_in
                         };
+                        5'h17: user_r_control_regs_16_data <= aux_output;
                         default:  user_r_control_regs_16_data <= 16'b0;
                     endcase
                 end
@@ -566,6 +585,18 @@ module rhythm_pcie (
               .out(SPI_start),
               .busy(unused_spi_cdc)
               );
+              
+     bus_cdc SPI_cont_cdc (
+        .clkDst(dataclk),
+        .in(SPI_run_continuous_in),
+        .out(SPI_run_continuous_dataclk)
+        );
+        
+      bus_cdc #( .WIDTH(32) ) max_timestep_cdc (
+        .clkDst(dataclk),
+        .in(max_timestep_in),
+        .out(max_timestep_dataclk)
+      ); 
               
               
      // MOSI auxiliary command sequence RAM banks
@@ -763,6 +794,7 @@ module rhythm_pcie (
                   FIFO_write_to <= 1'b0; 
                   max_timestep <= 32'b0;   
                   SPI_running <= 1'b0;
+                  SPI_run_continuous <= 1'b0;
               end else begin
                   CS_b <= 1'b0;
                   SCLK <= 1'b0;
@@ -850,7 +882,8 @@ module rhythm_pcie (
                           
                           SPI_running <= 1'b0;
                           
-                          max_timestep <= max_timestep_in;
+                          max_timestep <= max_timestep_dataclk;
+                          SPI_run_continuous <= SPI_run_continuous_dataclk;
       
                           if (SPI_start) begin
                               main_state <= ms_cs_n;
@@ -858,7 +891,8 @@ module rhythm_pcie (
                       end
       
                       ms_cs_n: begin
-                          max_timestep <= max_timestep_in; //Sample timestep at the start of the cycle  
+                          max_timestep <= max_timestep_dataclk; //Sample timestep at the start of the cycle
+                          SPI_run_continuous <= SPI_run_continuous_dataclk;  
                           SPI_running <= 1'b1;
                           MOSI_cmd_A <= MOSI_cmd_selected_A;
                           MOSI_cmd_B <= MOSI_cmd_selected_B;
@@ -2192,22 +2226,43 @@ module rhythm_pcie (
           
         
           wire [31:0] data_reverse;
+          wire fifo_full;
+          wire fifo_reset;
+          wire fifo_wen;
+          reg fifo_overflow;
+          
+          assign fifo_reset = reset | ~user_r_neural_data_32_open;  //reset the fifo when the pipe closes even if the interface is opened
+          assign fifo_wen = FIFO_write_to & ~fifo_overflow; //If the fifo overflows, stop writing to it
+          
           //Data FIFO 
        fifo_w16_4096_r32_2048 data_fifo (
-            .rst(reset | ~user_r_neural_data_32_open), //reset the fifo when the pipe closes even if the interface is opened
+            .rst(fifo_reset),
             .wr_clk(dataclk), 
             .rd_clk(bus_clk), 
             .din(FIFO_data_in), 
-            .wr_en(FIFO_write_to), 
+            .wr_en(fifo_wen), 
             .rd_en(user_r_neural_data_32_rden), 
             .dout(data_reverse), 
-            .full(), 
+            .full(fifo_full), 
             .empty(user_r_neural_data_32_empty), 
             .rd_data_count(), 
             .wr_data_count()
             );
-        assign user_r_neural_data_32_eof = 1'b0;
-        assign user_r_neural_data_32_data = {data_reverse[15:0], data_reverse[31:16]};
+        assign user_r_neural_data_32_eof = fifo_overflow & user_r_neural_data_32_empty; //Generate EOF after overflow (this helps signal overflow to the host)
+        assign user_r_neural_data_32_data = {data_reverse[15:0], data_reverse[31:16]}; //To keep a "16-bit endianess"-like format, to avoid rewriting the existing Rhythm API, which used 16bit words for transmission
+        
+        //fifo_overflow goes to 1 when there the fifo is full and only resets on fifo reset (file close or global reset)
+        always @(posedge dataclk or posedge fifo_reset)
+        begin
+            if (fifo_reset)
+                fifo_overflow <= 1'b0;
+            else
+            begin
+                if (fifo_full & fifo_wen)
+                    fifo_overflow <= 1'b1;
+            end
+        end
+        assign OVERFLOW_LED = fifo_overflow;
               
       // MISO phase selectors (to compensate for headstage cable delays)
               

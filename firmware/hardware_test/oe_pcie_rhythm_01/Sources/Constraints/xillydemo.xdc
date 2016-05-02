@@ -38,6 +38,9 @@ set_property IOSTANDARD LVCMOS25 [get_ports RESET_LED]
 set_property PACKAGE_PIN E18 [get_ports SPI_LED]
 set_property IOSTANDARD LVCMOS25 [get_ports SPI_LED]
 
+set_property PACKAGE_PIN G19 [get_ports OVERFLOW_LED]
+set_property IOSTANDARD LVCMOS25 [get_ports OVERFLOW_LED]
+
 set_property PACKAGE_PIN AD12 [get_ports SYSCLK_P]
 set_property IOSTANDARD LVDS [get_ports SYSCLK_P]
 set_property PACKAGE_PIN AD11 [get_ports SYSCLK_N]
