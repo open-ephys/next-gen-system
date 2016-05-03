@@ -1,17 +1,15 @@
-create_clock -name sys_clk -period 10 [get_pins -match_style ucf */pcieclk_ibuf/O]
-create_clock -name board_clk -period 5 [get_ports SYSCLK_P]
-create_generated_clock -name dataclk -multiply_by 42 -divide_by 100 -source [get_ports SYSCLK_P] [get_nets dataclk]
+create_clock -period 10.000 -name sys_clk [get_pins -match_style ucf */pcieclk_ibuf/O]
+create_clock -period 5.000 -name board_clk [get_ports SYSCLK_P]
+create_generated_clock -name dataclk -source [get_ports SYSCLK_P] -divide_by 100 -multiply_by 42 [get_nets dataclk]
 
-set_clock_groups -name async_pcie_data -asynchronous \
-    -group "[get_clocks -include_generated_clocks board_clk] dataclk"\ 
-    -group "[get_clocks -include_generated_clocks sys_clk] [get_clocks -of_objects [get_nets bus_clk]]"
-    
+set_clock_groups -name async_pcie_data -asynchronous -group {board_clk dataclk clkfbout clk_buf_out dataclk} -group {sys_clk userclk1}
+
 set_false_path -from [get_pins clkgen/start_cd/toggleA*/*] -to [get_pins clkgen/start_cd/syncA*/*]
 set_false_path -from [get_pins xillybus_ins/xillybus_core_ins/unitr_2_ins/user_w_control_regs_16_open/C] -to [get_pins -match_style ucf clkgen/*]
 
-set_multicycle_path -from [get_pins dataclk_O*/*] -to [get_pins clkgen/pll_O*/*] -hold -end 1
-set_multicycle_path -from [get_pins dataclk_M*/*] -to [get_pins clkgen/pll_M*/*] -hold -end 1
-set_multicycle_path -from [get_pins dataclk_D*/*] -to [get_pins clkgen/pll_D*/*] -hold -end 1
+set_multicycle_path -hold -end -from [get_pins dataclk_O*/*] -to [get_pins clkgen/pll_O*/*] 1
+set_multicycle_path -hold -end -from [get_pins dataclk_M*/*] -to [get_pins clkgen/pll_M*/*] 1
+set_multicycle_path -hold -end -from [get_pins dataclk_D*/*] -to [get_pins clkgen/pll_D*/*] 1
 
 set_false_path -to [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pclk_i1/S0]
 set_false_path -to [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pclk_i1/S1]
@@ -19,18 +17,20 @@ set_case_analysis 1 [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pcl
 set_case_analysis 0 [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pclk_i1/S1]
 
 set_property DONT_TOUCH true [get_cells -of [get_nets -of [get_pins -match_style ucf */pipe_clock/pclk_i1_bufgctrl.pclk_i1/S0]]]
-set_property DONT_TOUCH true [get_cells -hier -filter {name=~*/pipe_clock/pclk_sel*}]
+set_property DONT_TOUCH true [get_cells -hier -filter name=~*/pipe_clock/pclk_sel*]
 
 set_false_path -from [get_ports PCIE_PERST_B_LS]
 
 set_property LOC IBUFDS_GTE2_X0Y1 [get_cells -match_style ucf */pcieclk_ibuf]
 
-set_property -dict "PACKAGE_PIN G25 IOSTANDARD LVCMOS25 PULLUP true" [get_ports PCIE_PERST_B_LS]
+set_property PACKAGE_PIN G25 [get_ports PCIE_PERST_B_LS]
+set_property IOSTANDARD LVCMOS25 [get_ports PCIE_PERST_B_LS]
+set_property PULLUP true [get_ports PCIE_PERST_B_LS]
 
-set_property -dict "PACKAGE_PIN AB8 IOSTANDARD LVCMOS15" [get_ports "GPIO_LED[0]"]
-set_property -dict "PACKAGE_PIN AA8 IOSTANDARD LVCMOS15" [get_ports "GPIO_LED[1]"]
-set_property -dict "PACKAGE_PIN AC9 IOSTANDARD LVCMOS15" [get_ports "GPIO_LED[2]"]
-set_property -dict "PACKAGE_PIN AB9 IOSTANDARD LVCMOS15" [get_ports "GPIO_LED[3]"]
+set_property -dict {PACKAGE_PIN AB8 IOSTANDARD LVCMOS15} [get_ports {GPIO_LED[0]}]
+set_property -dict {PACKAGE_PIN AA8 IOSTANDARD LVCMOS15} [get_ports {GPIO_LED[1]}]
+set_property -dict {PACKAGE_PIN AC9 IOSTANDARD LVCMOS15} [get_ports {GPIO_LED[2]}]
+set_property -dict {PACKAGE_PIN AB9 IOSTANDARD LVCMOS15} [get_ports {GPIO_LED[3]}]
 
 set_property PACKAGE_PIN F16 [get_ports RESET_LED]
 set_property IOSTANDARD LVCMOS25 [get_ports RESET_LED]
@@ -41,31 +41,27 @@ set_property IOSTANDARD LVCMOS25 [get_ports SPI_LED]
 set_property PACKAGE_PIN G19 [get_ports OVERFLOW_LED]
 set_property IOSTANDARD LVCMOS25 [get_ports OVERFLOW_LED]
 
-set_property PACKAGE_PIN AD12 [get_ports SYSCLK_P]
 set_property IOSTANDARD LVDS [get_ports SYSCLK_P]
 set_property PACKAGE_PIN AD11 [get_ports SYSCLK_N]
+set_property PACKAGE_PIN AD12 [get_ports SYSCLK_P]
 set_property IOSTANDARD LVDS [get_ports SYSCLK_N]
 
-# isolated output from FPGA 
+# isolated output from FPGA
 set_property PACKAGE_PIN AK26 [get_ports sma_out_isol_H23]
 set_property IOSTANDARD LVCMOS33 [get_ports sma_out_isol_H23]
 
-# isolated inputs to FPGA 
-set_property PACKAGE_PIN AG25 [get_ports sma_in_isol_H13]
-set_property IOSTANDARD LVCMOS33 [get_ports sma_in_isol_H13]
+# isolated inputs to FPGA
 
-set_property PACKAGE_PIN AH25 [get_ports sma_in_isol_H14]
-set_property IOSTANDARD LVCMOS33 [get_ports sma_in_isol_H14]
 
 # direct SMAs (G24, 25, 27)
 set_property PACKAGE_PIN AJ27 [get_ports sma_direct_G24]
-set_property IOSTANDARD LVCMOS33 [get_ports sma_direct_G24] 
+set_property IOSTANDARD LVCMOS33 [get_ports sma_direct_G24]
 
 set_property PACKAGE_PIN AK28 [get_ports sma_direct_G25]
-set_property IOSTANDARD LVCMOS33 [get_ports sma_direct_G25] 
+set_property IOSTANDARD LVCMOS33 [get_ports sma_direct_G25]
 
 set_property PACKAGE_PIN AC26 [get_ports sma_direct_G27]
-set_property IOSTANDARD LVCMOS33 [get_ports sma_direct_G27] 
+set_property IOSTANDARD LVCMOS33 [get_ports sma_direct_G27]
 
 
 # C spi port (isolated, simple cmos33 logic, gets translated to lvds after isolator)
@@ -109,3 +105,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports CS_C_PORT]
 #set_property PACKAGE_PIN Y30 [get_ports CS_B_p]
 #set_property PACKAGE_PIN AA30 [get_ports CS_B_n]
 #set_property IOSTANDARD LVDS_25 [get_ports {CS_B_p CS_B_n}]
+
+
+set_property CONFIG_MODE BPI16 [current_design]
