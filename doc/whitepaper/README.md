@@ -4,13 +4,13 @@ This whitepaper outlines an instrumentation system for neuroscience (and other f
 
 ![Example hardware configuration of a Open Instruments system with three connected data source 'breakout boards'. In addition to the DIO board that provides direct electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected directly to the FPGA trhough the seconds FMC connector.](imgs/system_overview.png)
 
-We have built a prototype of the system that delivers full use of the PCIe bus (12Gbps troughput currently, up to 100Gbps with other FPGA boards) for >10.000 channels sampled at 30kHz, and low latency of  <100μs round trip to and from the host PC, so that high level languages and libraries can be used for closed-loop experiments. The same system could also be used for dynamic clamp applications using a real-time OS, adding <10μs closed loop capability to existing and novel amplifier systems.
+We have built a prototype of the system that delivers full use of the PCIe bus (12Gbps throughput currently, up to 100Gbps with other FPGA boards) for >10.000 channels sampled at 30kHz, and low latency of  <100μs round trip to and from the host PC, so that high level languages and libraries can be used for closed-loop experiments. The same system could also be used for dynamic clamp applications using a real-time OS, adding <10μs closed loop capability to existing and novel amplifier systems.
 
 The open instruments standard does not specify or constrain the design of either the data sources, nor the software used for data acquisition, but specifies a flexible interconnect between the two. 
 
 To implement a system based on new type of data source, only two or three components need to be designed: 
 
-(__1__) A hardware interface that connects to the data source and to FPGA pins directly trough a standardized high-speed digital interconnect via generic VHDCI connectors and via the ubiquitous FMC connectors and an intermediate DIO board as mechanical interconnect.
+(__1__) A hardware interface that connects to the data source and to FPGA pins directly through a standardized high-speed digital interconnect via generic VHDCI connectors and via the ubiquitous FMC connectors and an intermediate DIO board as mechanical interconnect.
 
 (__2__) A firmware module for the FPGA that drives the hardware, but does not need to be able to communicate with the host PC, or be developed with drivers in mind.
 
