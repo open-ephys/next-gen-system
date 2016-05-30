@@ -8,11 +8,11 @@ We have built a prototype of the system that delivers full use of the PCIe bus (
 
 The open instruments standard does not specify or constrain the design of either the data sources, nor the software used for data acquisition, but specifies a flexible interconnect between the two. 
 
-To implement a system based on new type of data source, only two or three components need to be designed: 
+To implement a system based on a new type of data source, only two or three components need to be designed: 
 
-(__1__) A hardware interface that connects to the data source and to FPGA pins directly through a standardized high-speed digital interconnect via generic VHDCI connectors and via the ubiquitous FMC connectors and an intermediate DIO board as mechanical interconnect.
+(__1__) A hardware interface that connects to the data source and to FPGA pins on the open instruments board directly through a standardized high-speed digital interconnect via generic VHDCI connectors and via the ubiquitous FMC connectors and an intermediate DIO board as mechanical interconnect.
 
-(__2__) A firmware module for the FPGA that drives the hardware, but does not need to be able to communicate with the host PC, or be developed with drivers in mind.
+(__2__) A firmware module for the FPGA that drives the hardware (via any interface standard directly trough FPGA pins), but does not need to be able to interface with the host PC, or be developed with specific drivers in mind.
 
 (__3__, optional) Data-source specific software that communicates with the hardware through the open instruments API which provides a generic interface to the hardware via data transfers and device registers, and can be used with no knowledge of the underlying interconnect (PCIe, USB, or Ethernet).
 
