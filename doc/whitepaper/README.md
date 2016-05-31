@@ -1,6 +1,6 @@
 # Open Instruments Whitepaper
 
-This whitepaper outlines an instrumentation system for neuroscience (and other fields) that makes full use of existing technologies and industry standards (PCIe and FMC connectors) to deliver the highest possible performance and modularity. The system can be used as a platform for any existing and future data sources and integrate into existing data sources, reducing development overhead, without imposing any performance or usability drawbacks. This also result in extendability to future interface technology generations without the need for device specific re-engineering.
+This whitepaper outlines an instrumentation system for neuroscience (and other fields) that makes full use of existing technologies and industry standards (PCIe and FMC connectors) to deliver the highest possible performance and modularity. The system can be used as a platform for any existing and future data sources, reducing development overhead, without imposing any performance or usability drawbacks. This also result in extendability to future interface technology generations without the need for device specific re-engineering.
 
 ![Example hardware configuration of a Open Instruments system with three connected data source 'breakout boards'. In addition to the DIO board that provides direct electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected directly to the FPGA trhough the seconds FMC connector.](imgs/system_overview.png)
 
