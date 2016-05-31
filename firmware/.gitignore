@@ -20,7 +20,6 @@
 *.rpx
 *.bdi
 *.wdf
-*.bit
 *.edif
 *.prj
 *.mem
