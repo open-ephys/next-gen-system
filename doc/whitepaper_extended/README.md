@@ -24,9 +24,9 @@ To implement a system based on new type of probe, only two or three components n
 
 By removing and standardizing the intermediate components of hardware-software interfaces, the development effort required for this is vastly reduced, and different data sources can be operated together in one system.
 
-## Progress & Proof of Principle
+## Progress & Proof of principle
 
-The main design constraints behind this specification are high throughput and low latency. In terms of throughput, most current interfaces can achieve or exceed 10Gb/s. PCIe, which is used as the basic for almost all other existing interfaces can currently acieve around ~100Gb/s, which is not needed for any current or mid-term electrophysiology applications, but could be useful eventually. By contrast, latency varies widely across interfaces, and PCIe can achieve far shorter closed-loop delays than any other interface.
+The main design constraints behind this specification are high throughput and low latency. In terms of throughput, most current interfaces can achieve or exceed 10Gb/s. PCIe, which is used as the basic for almost all other existing interfaces can currently achieve around ~100Gb/s, which is not needed for any current or mid-term electrophysiology applications, but could be useful eventually. By contrast, latency varies widely across interfaces, and PCIe can achieve far shorter closed-loop delays than any other interface.
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured latencies, bar plots reflect estimates.](imgs/latencies_log_scale.png)
 
