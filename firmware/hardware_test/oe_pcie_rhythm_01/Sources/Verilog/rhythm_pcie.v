@@ -17,7 +17,7 @@ module rhythm_pcie (
    
    output sma_out_isol_H23,
    output sma_direct_G24,
-   output sma_direct_G25,
+   input sma_direct_G25,
    output sma_direct_G27,
     
     input MISO_C1_PORT,
@@ -58,10 +58,11 @@ module rhythm_pcie (
     assign SPI_LED = SPI_running;
     
     reg [15:0] aux_output;
+    reg [1:0] aux_input = 2'b0;
     assign sma_direct_G24 = aux_output[0];
-    assign sma_direct_G25 = aux_output[1];
-    assign sma_direct_G27 = aux_output[2];
-    assign sma_out_isol_H23 = aux_output[3];
+    //assign sma_direct_G25 = aux_output[1];
+    assign sma_direct_G27 = aux_output[1];
+    assign sma_out_isol_H23 = aux_output[2];
 
     wire 				clk1;				// buffered 200 MHz clock
 	wire				dataclk;			// programmable frequency clock (f = 2800 * per-channel amplifier sampling rate)
@@ -305,6 +306,12 @@ module rhythm_pcie (
     );
       
       assign reset = ~user_w_control_regs_16_open;
+      
+      always @(posedge bus_clk)
+      begin
+        aux_input[1] <= sma_direct_G25;
+        aux_input[0] <= aux_input[1];
+      end
       
       //Control registers
       always @(posedge bus_clk)
@@ -556,6 +563,7 @@ module rhythm_pcie (
                     5'h04: user_r_status_regs_16_data <= {14'b0, PLL_prog_done, dataclk_locked };
                     5'h05: user_r_status_regs_16_data <= BOARD_ID;
                     5'h06: user_r_status_regs_16_data <= BOARD_VERSION;
+                    5'h07: user_r_status_regs_16_data <= {15'b0, aux_input[0]};
                     default: user_r_status_regs_16_data <= 16'h00;
                 endcase
              end
