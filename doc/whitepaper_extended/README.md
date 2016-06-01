@@ -25,6 +25,8 @@ By removing and standardizing the intermediate components of hardware-software i
 
 Latency mesaurements
 
+![Overview of latencies across hardware interfaces. Histograms reflect measured latencies, bar plots reflect estimates.](imgs/latencies_log_scale.png)
+
 Computational tractability
 
 ## Specification overview
@@ -55,13 +57,12 @@ Principle
 
 API
 
-## 
+## Next steps
 
-Baseline HW modules
+Make baseline HW modules
 
-DIO module
+Make DIO card
 
-Interfaces to commercial systems
+Implement API around an existing PCIe  firmware&driver
 
-
-Implement
+Interfaces to commercial systems via generic firmware module
