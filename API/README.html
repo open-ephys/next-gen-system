@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Aaron Cuevas Lopez" />
+  <meta name="author" content="Goncalo Lopes" />
+  <meta name="author" content="Jon Newman" />
+  <meta name="author" content="Jakob Voigts" />
+  <title>Proposed Open Instruments (OI) API Specification</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  
+  
+  
+</head>
+<body>
+<div id="header">
+<h1 class="title">Proposed Open Instruments (OI) API Specification</h1>
+<h2 class="author">Aaron Cuevas Lopez</h2>
+<h2 class="author">Goncalo Lopes</h2>
+<h2 class="author">Jon Newman</h2>
+<h2 class="author">Jakob Voigts</h2>
+</div>
+<h2 id="proposed-license">Proposed License</h2>
+<p><a href="https://en.wikipedia.org/wiki/MIT_License">MIT</a></p>
+<h2 id="participating-projects-and-organizations">Participating Projects and Organizations</h2>
+<ul>
+<li>Bonsai</li>
+<li>Open Ephys</li>
+<li>RTXI</li>
+</ul>
+<h2 id="potential-adopting-organizations">Potential Adopting Organizations</h2>
+<ul>
+<li>Intan</li>
+<li>Spike Gadgets</li>
+<li>NeuroPixels</li>
+<li>NeuroSeeker</li>
+<li>Leaf Labs</li>
+</ul>
+<h2 id="specification">Specification</h2>
+<p><strong>NOTE</strong>: This interface specification is a work in progress and will change to support input from the community and to deal with the realities of implementation.</p>
+<h3 id="oicreatecontext">oiCreateContext</h3>
+<p>Create open instruments hardware context. A context is an opaque handle to a structure which specifies transport type (e.g. PCIe, UDP, etc.), requisite transport configuration, and a small finite state machine to manage port and stream connectivity.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiCreateContext(<span class="dt">const</span> <span class="dt">char</span> *spec, <span class="dt">void</span> **c)</code></pre></div>
+<h4 id="arguments">Arguments</h4>
+<ul>
+<li><code>spec</code> <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">URI</a> context specification string</li>
+<li><code>c</code> pointer to created context</li>
+</ul>
+<h4 id="returns-int">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>During successful context creation the following actions take place</p>
+<ol style="list-style-type: decimal">
+<li>Physical transport is defined (e.g. PCIe, socket, etc)</li>
+<li>The context state machine enters the INITIALIZED state</li>
+</ol>
+<p>Tentatively, context specification is provided via URI string. This may change.</p>
+<h3 id="oidestroycontext">oiDestroyContext</h3>
+<p>Terminate a open instruments context and frees bound resources.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiDestroyContext(oiContext c)</code></pre></div>
+<h4 id="arguments-1">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+</ul>
+<h4 id="returns-int-1">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<p><strong>Description</strong></p>
+<p>Context termination is performed in the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Any blocking operations will return immediately with error code TERMINATE</li>
+<li>Attached port resources are released</li>
+<li>The context state machine enters the UNINITIALIZED state</li>
+</ol>
+<h3 id="oiopenport">oiOpenPort</h3>
+<p>Open a physical port within an open instruments context.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiOpenPort(oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> flags=OI_DEFAULT_FLAG)</code></pre></div>
+<h4 id="arguments-2">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>flags</code> port specification flags</li>
+</ul>
+<h4 id="returns-int-2">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oicloseport">oiClosePort</h3>
+<p>Close a physical port within an open instruments context and free associated resources.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiClosePort(oiContext c, <span class="dt">int</span> port)</code></pre></div>
+<h4 id="arguments-3">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+</ul>
+<h4 id="returns-int-3">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oireadconfig">oiReadConfig</h3>
+<p>Read a configuration register from a device on a connected port.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiReadConfig(<span class="dt">const</span> oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> key, <span class="dt">int</span> *value)</code></pre></div>
+<h4 id="arguments-4">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>key</code> key of register to read</li>
+<li><code>value</code> currently set register value</li>
+</ul>
+<h4 id="returns-int-4">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oiwriteconfig">oiWriteConfig</h3>
+<p>Set a configuration register on a device on a connected port</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiWriteConfig(<span class="dt">const</span> oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> key, <span class="dt">int</span> value, <span class="dt">int</span> mask=<span class="bn">0xFFFFFFFF</span>)</code></pre></div>
+<h4 id="arguments-5">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>key</code> key of register to write to</li>
+<li><code>value</code> value to write to register</li>
+<li><code>mask</code> bit mask applied to value before it is written</li>
+</ul>
+<h4 id="returns-int-5">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oiopenstream">oiOpenStream</h3>
+<p>Open a data stream on a connected port. The context's state machine is updated to include the presence and direction specification of the stream.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiOpenStream(oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> stream=<span class="dv">0</span>)</code></pre></div>
+<h4 id="arguments-6">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>stream</code> stream number</li>
+</ul>
+<h4 id="returns-int-6">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oiclosestream">oiCloseStream</h3>
+<p>Close data stream on a connected port</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiCloseStream(oiContext c, <span class="dt">int</span> port)</code></pre></div>
+<h4 id="arguments-7">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+</ul>
+<h4 id="returns-int-7">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oigetstreamattributes">oiGetStreamAttributes</h3>
+<p>Get stream input/output attributes.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiGetStreamAttributes(<span class="dt">const</span> oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> stream, oiStreamAttributes *a)</code></pre></div>
+<h4 id="arguments-8">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>stream</code> stream index on port</li>
+<li><code>a</code> stream attributes structure</li>
+</ul>
+<h4 id="returns-int-8">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oisetstreamattributes">oiSetStreamAttributes</h3>
+<p>Set stream input/output attributes</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiSetStreamAttributes(oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> stream, <span class="dt">const</span> oiStreamAttributes *a)</code></pre></div>
+<h4 id="arguments-9">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>stream</code> stream index on port</li>
+<li><code>a</code> stream attributes structure</li>
+</ul>
+<h4 id="returns-int-9">Returns <code>int</code></h4>
+<ul>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oireadstream">oiReadStream</h3>
+<p>Read data from an open stream</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiReadStream(oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> stream, <span class="dt">int</span> nbytes, <span class="dt">void</span> *data)</code></pre></div>
+<h4 id="arguments-10">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>stream</code> stream index on port</li>
+<li><code>data</code> buffer to read data into</li>
+</ul>
+<h4 id="returns-int-10">Returns <code>int</code></h4>
+<ul>
+<li>Greater than or equal to 0: number of bytes read</li>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oiwritestream">oiWriteStream</h3>
+<p>Write data to an open stream</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiWriteStream(oiContext c, <span class="dt">int</span> port, <span class="dt">int</span> stream, <span class="dt">int</span> nbytes, <span class="dt">const</span> <span class="dt">void</span> *data)</code></pre></div>
+<h4 id="arguments-11">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+<li><code>port</code> physical port number</li>
+<li><code>stream</code> stream index on port</li>
+<li><code>data</code> buffer to write to stream</li>
+</ul>
+<h4 id="returns-int-11">Returns <code>int</code></h4>
+<ul>
+<li>Greater than or equal to 0: number of bytes written</li>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oigetnumports">oiGetNumPorts</h3>
+<p>Get the number of physical ports associated with a context</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiGetNumPorts(<span class="dt">const</span> oiContext c)</code></pre></div>
+<h4 id="arguments-12">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+</ul>
+<h4 id="returns-int-12">Returns <code>int</code></h4>
+<ul>
+<li>Greater than or equal to 0: number of physical ports</li>
+<li>Less than 0: <code>oiError</code></li>
+</ul>
+<h3 id="oigetdevicetype">oiGetDeviceType</h3>
+<p>Query the device type (EEPROM specified) of breakout board attached to a port.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> oiGetDeviceType(<span class="dt">const</span> oiContext c)</code></pre></div>
+<h4 id="arguments-13">Arguments</h4>
+<ul>
+<li><code>c</code> context</li>
+</ul>
+<h4 id="returns">Returns</h4>
+<ul>
+<li>0 if no device on port</li>
+<li>Positive number indicating <code>oiDeviceType</code></li>
+<li>Negative number indicating <code>oiError</code></li>
+</ul>
+<h2 id="public-types">Public Types</h2>
+<h3 id="oicontext">oiContext</h3>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="dt">void</span> * oiContext</code></pre></div>
+<h3 id="oidevicetype">oiDeviceType</h3>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">enum</span> device {
+    PASSTHROUGH,
+    OE_DIO_BOARD,
+    OE_AIO_BOARD,
+    OE_ADIO_BOARD,
+    OE_BASIC_INTAN_BOARD,
+    OE_NEUROPIXEL_BOARD,
+} oiDeviceType</code></pre></div>
+<h3 id="oierror">oiError</h3>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">enum</span> error {
+    TERMINATE,
+    ATTEMPT_WRITE_TO_INPUT_STREAM,
+    ATTEMPT_READ_FROM_OUTPUT_STREAM,
+    NO_DEVICE_ON_PORT,
+    STREAM_DOES_NOT_EXIST,
+    PORT_DOES_NOT_EXIST,
+    CONTEXT_DOES_NOT_EXIST,
+} oiError</code></pre></div>
+<h3 id="oistreamattributes">oiStreamAttributes</h3>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">struct</span> {
+    size_t buffer_size;
+    size_t timeout_msec;
+    <span class="dt">int</span> flags;
+} oiStreamAttributes</code></pre></div>
+<h2 id="private-types">Private Types</h2>
+<p>Two types are used to define an oiContext.</p>
+<h3 id="oicontextimpl">oiContextImpl</h3>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">struct</span> oiContextIml {
+    <span class="co">//TODO: members</span>
+    oiContextStateMachine *s;
+}</code></pre></div>
+<h3 id="oistatemachine">oiStateMachine</h3>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">struct</span> oiContextStateMachine {
+    <span class="co">// TODO: members</span>
+}</code></pre></div>
+</body>
+</html>
