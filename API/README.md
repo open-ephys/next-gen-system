@@ -1,24 +1,3 @@
----
-author:
-- Aaron Cuevas Lopez
-- Goncalo Lopes
-- Jon Newman
-- Jakob Voigts
-date: '\today{}'
-geometry: margin=2cm
-header-includes:
-- '\usepackage{setspace}'
-- '\setlength{\parskip}{0em}'
-- '\linespread{1.0}'
-title: 'Proposed Open Instruments (OI) API Specification'
-...
-
-\usepackage{setspace}
-
-\setlength{\parskip}{0em}
-
-\linespread{1.0}
-
 Proposed License
 ----------------
 
