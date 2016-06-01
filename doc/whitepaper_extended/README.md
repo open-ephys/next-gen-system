@@ -38,6 +38,11 @@ In addition to verifying the feasability of low-latency feedback via PCIe, we te
 
 ## Specification overview
 
+![Overview of the components and interfaces of the system. Only the interconnect infrastructure between the data source and the software are defined by the open instruments standard.](imgs/hardware_architecture_sketch.png)
+
+_Overview of the components and interfaces of the system. Only the interconnect infrastructure between the data source and the software are defined by the open instruments standard._
+
+
 ### Interface for hardware modules
 
 This specification does not apply any constraints to the data source other than the presence of a standardized VHDCI conector. This makes it posible for almost any hardware to integrate into the system with minimal engineering effort, and without sacrifices in performance.
