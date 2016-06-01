@@ -7,6 +7,9 @@ This whitepaper outlines an instrumentation system for neuroscience (and other f
 
 ![Example hardware configuration of a Open Instruments system with three connected breakout boards. In addition to the DIO board that provides the electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected to the FPGA trhough the seconds FMC connector.](imgs/system_overview.png)
 
+_Example hardware configuration of a Open Instruments system with three connected breakout boards. In addition to the DIO board that provides the electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected to the FPGA trhough the seconds FMC connector._
+
+
 We have built a prototype system based on parts of these specifications that delivers full use of the PCIe bus (12Gbps troughput currently, up to 100Gbps with other FPGA boards) for >10.000 channels sampled at 30kHz, and low latency of  <100μs round trip to and from host PC, so that high level languages and libraries can be used for closed-loop experiments. The same system could also be used for dynamic clamp applications using a real-time OS, delivering <10μs loop capability. 
 
 The open instruments standard does not specify or constrain the design of either the data sources, nor the software used for data acquisition, but specifies a flexible interconnect between the two. 
@@ -26,6 +29,8 @@ By removing and standardizing the intermediate components of hardware-software i
 The main design constraints behind this specification are high throughput and low latency. In terms of throughput, most current interfaces can achieve or exceed 10Gb/s. PCIe, which is used as the basic for almost all other existing interfaces can currently acieve around ~100Gb/s, which is not needed for any current or mid-term electrophysiology applications, but could be useful eventually. By contrast, latency varies widely across interfaces, and PCIe can achieve far shorter closed-loop delays than any other interface.
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured latencies, bar plots reflect estimates.](imgs/latencies_log_scale.png)
+
+_Overview of latencies across hardware interfaces. Histograms reflect measured latencies, bar plots reflect estimates._
 
 We have designed a prototype system based on a PCIe FPGA evaluation card (latency measurements are shown above) and used it to verify the feasability of low-latency feedback on commodity PC hardware. 
 
