@@ -29,34 +29,42 @@ The main design constraints behind this specification are high throughput and lo
 
 We have designed a prototype system based on a PCIe FPGA evaluation card (latency measurements are shown above) and used it to verify the feasability of low-latency feedback on commodity PC hardware. 
 
-Computational tractability
+In addition to verifying the feasability of low-latency feedback via PCIe, we tested the computational tractability of closed-loop experiments on a commodity PC. By performing low-latency computations in a separate real-time thread, we were able to detect spikes and perform significant additional computations on each of 512 channels while reacting to spikes in <100μs.
 
 ## Specification overview
 
 ### Interface for hardware modules
 
-This specification does not apply any constraints to the data source other than the presence of a standardized VHDCI conector. This makes it posible for almost any hardware to integrate into the system with minimal engineering effort without sacrifices in performance.
+This specification does not apply any constraints to the data source other than the presence of a standardized VHDCI conector. This makes it posible for almost any hardware to integrate into the system with minimal engineering effort, and without sacrifices in performance.
+
 Most pins on the cable are connected directly to the FPGA, arranged in 21 LVDS pairs that can be used in any way (including as non-LVDS signals). A few other pins are specified as an i2c bus, ground and VCC. The VHDCI cable is very widely available in low cost or very high quality variants, and is very robust and rated for many cycles.
+
+Examples of hardware modules are:
+- A simple Analog/Digital frontend with ADCs DACs and line receivers and drivers for digital input/output.
+- A interface to standard Intan headstages.
 
 ### Hardware: DIO card & FPGA eval card
 
 There are only two hardware components of the system that are defined by this specification:
-- An off-the shelf FPGA eval board (Kintex 7)
-- A very simple DIO card that directly connects pins on the FPGA to connnectors on the back of the host PC
-
-overview
+- An off-the shelf FPGA eval board (Kintex 7). This board hosts the FPGA that holds the device-specific firmware, as well as a piece of firmware that connects to the software, via the open instruments API.
+- A very simple DIO card that directly connects pins on the FPGA to connnectors on the back of the host PC. The main role of this card is to provide direct electrical access to the pins of the FPGA.
 
 ### Interfaces for firmware module 
 
-IP core interfaces
+This specification does not impose any limitations on the firmware / IP cores used to interact with specific data sources. It does however provide a standardized interface to a piece of firmware / IP core on the FPGA that provides a flexible, bidirectional interconnect to the software. This minimizes development efforts for new data sources by eliminating the redundant task of driver and API development.
 
-Generic HW interface module
+Examples of data source specific IP are:
+- An Analog/Digital io driver that connects to a the Analog/Digital frontend, handling the ADCs etc.
+- An Intan firmware IP core that replicates the existing Intan Rhythm firmware. 
+- A generic SPI interface module that can connect to data sources that already include an FPGA that can implement an SPI interconnect. This could for instance allow electrophysiology systems to be extended with very low latency capability if needed.
 
 ### Software interfaces
 
-Principle
+This specification does not impose any limitations on the software used to operate the hardware modules, but specifies a very flexible interface by which the software communicates with the hardware. This means that bot the IP cores and the software can now be independent of the actual interconnect implementation.
 
-API
+Every communication between the software and the hardware can be cast as either (i) a read or write from/to a register (of arbitrary size) on the hardware, for example for configurations, state read-outs etc. or (ii) a read or write from/to one of possibly many streams, for example for neural data or control signal streaming.
+
+The API also specifies how devices connected to the FPGA can be discovered and identified by software, and keeps track of connection status.
 
 ## Next steps
 
