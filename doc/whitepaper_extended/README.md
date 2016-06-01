@@ -1,5 +1,5 @@
 # Open Instruments Whitepaper
-(extended version)
+Extended version, contains interface specification overview and progress report.
 
 ## Overview
 
@@ -23,9 +23,11 @@ By removing and standardizing the intermediate components of hardware-software i
 
 ## Progress & Proof of Principle
 
-Latency mesaurements
+The main design constraints behind this specification are high throughput and low latency. In terms of throughput, most current interfaces can achieve or exceed 10Gb/s. PCIe, which is used as the basic for almost all other existing interfaces can currently acieve around ~100Gb/s, which is not needed for any current or mid-term electrophysiology applications, but could be useful eventually. By contrast, latency varies widely across interfaces, and PCIe can achieve far shorter closed-loop delays than any other interface.
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured latencies, bar plots reflect estimates.](imgs/latencies_log_scale.png)
+
+We have designed a prototype system based on a PCIe FPGA evaluation card (latency measurements are shown above) and used it to verify the feasability of low-latency feedback on commodity PC hardware. 
 
 Computational tractability
 
@@ -33,9 +35,8 @@ Computational tractability
 
 ### Interface for hardware modules
 
-Principle
-
-VHDCI spec
+This specification does not apply any constraints to the data source other than the presence of a standardized VHDCI conector. This makes it posible for almost any hardware to integrate into the system with minimal engineering effort without sacrifices in performance.
+Most pins on the cable are connected directly to the FPGA, arranged in 21 LVDS pairs that can be used in any way (including as non-LVDS signals). A few other pins are specified as an i2c bus, ground and VCC. The VHDCI cable is very widely available in low cost or very high quality variants, and is very robust and rated for many cycles.
 
 ### Hardware: DIO card & FPGA eval card
 
