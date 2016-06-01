@@ -5,12 +5,12 @@ Extended version, contains interface specification overview and progress report.
 
 This whitepaper outlines an instrumentation system for neuroscience (and other fields) that makes full use of existing technologies and industry standards to deliver the highest possible performance and modularity. The system can be used as a platform for any existing and future data sources, reducing development overhead, without imposing any performance or usability drawbacks. This also result in extendability to future interface technology generations without the need for device specific re-engineering.
 
-![Example hardware configuration of a Open Instruments system with three connected breakout boards. In addition to the DIO board that provides the electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected to the FPGA trhough the seconds FMC connector.](imgs/system_overview.png)
+![Example hardware configuration of a Open Instruments system with three connected breakout boards. In addition to the DIO board that provides the electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected to the FPGA through the second FMC connector.](imgs/system_overview.png)
 
-_Example hardware configuration of a Open Instruments system with three connected breakout boards. In addition to the DIO board that provides the electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected to the FPGA trhough the seconds FMC connector._
+_Example hardware configuration of a Open Instruments system with three connected breakout boards. In addition to the DIO board that provides the electrical connections between the FPGA and the breakout boards, a 3rd party FMC board is shown, connected to the FPGA through the second FMC connector._
 
 
-We have built a prototype system based on parts of these specifications that delivers full use of the PCIe bus (12Gbps troughput currently, up to 100Gbps with other FPGA boards) for >10.000 channels sampled at 30kHz, and low latency of  <100μs round trip to and from host PC, so that high level languages and libraries can be used for closed-loop experiments. The same system could also be used for dynamic clamp applications using a real-time OS, delivering <10μs loop capability. 
+We have built a prototype system based on parts of these specifications that delivers full use of the PCIe bus (12Gbps troughput currently, up to 100Gbps with other FPGA boards) for >10.000 channels sampled at 30kHz, and low latency of  <100μs round trip to and from host PC, so that high level languages and libraries can be used for closed-loop experiments. The same system could also be used for dynamic clamp applications using a real-time OS, delivering <10μs loop capability.
 
 The open instruments standard does not specify or constrain the design of either the data sources, nor the software used for data acquisition, but specifies a flexible interconnect between the two. 
 
@@ -24,9 +24,9 @@ To implement a system based on new type of probe, only two or three components n
 
 By removing and standardizing the intermediate components of hardware-software interfaces, the development effort required for this is vastly reduced, and different data sources can be operated together in one system.
 
-## Progress & Proof of Principle
+## Progress & Proof of principle
 
-The main design constraints behind this specification are high throughput and low latency. In terms of throughput, most current interfaces can achieve or exceed 10Gb/s. PCIe, which is used as the basic for almost all other existing interfaces can currently acieve around ~100Gb/s, which is not needed for any current or mid-term electrophysiology applications, but could be useful eventually. By contrast, latency varies widely across interfaces, and PCIe can achieve far shorter closed-loop delays than any other interface.
+The main design constraints behind this specification are high throughput and low latency. In terms of throughput, most current interfaces can achieve or exceed 10Gb/s. PCIe, which is used as the basic for almost all other existing interfaces can currently achieve around ~100Gb/s, which is not needed for any current or mid-term electrophysiology applications, but could be useful eventually. By contrast, latency varies widely across interfaces, and PCIe can achieve far shorter closed-loop delays than any other interface.
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured latencies, bar plots reflect estimates.](imgs/latencies_log_scale.png)
 
@@ -38,34 +38,40 @@ In addition to verifying the feasability of low-latency feedback via PCIe, we te
 
 ## Specification overview
 
+![Overview of the components and interfaces of the system. Only the interconnect infrastructure between the data source and the software are defined by the open instruments standard.](imgs/hardware_architecture_sketch.png)
+
+_Overview of the components and interfaces of the system. Only the interconnect infrastructure between the data source and the software are defined by the open instruments standard._
+
+
 ### Interface for hardware modules
 
 This specification does not apply any constraints to the data source other than the presence of a standardized VHDCI conector. This makes it posible for almost any hardware to integrate into the system with minimal engineering effort, and without sacrifices in performance.
 
-Most pins on the cable are connected directly to the FPGA, arranged in 21 LVDS pairs that can be used in any way (including as non-LVDS signals). A few other pins are specified as an i2c bus, ground and VCC. The VHDCI cable is very widely available in low cost or very high quality variants, and is very robust and rated for many cycles.
+Most pins on the cable are connected directly to the FPGA, arranged in 21 LVDS pairs that can be used in any way (including as 42 non-LVDS signals, depending on the device-specific firmware). A few pins are specified as an i2c bus, ground and VCC. VHDCI cables are very widely available in low cost or very high quality variants, and are very robust and rated for many cycles.
 
 Examples of hardware modules are:
-- A simple Analog/Digital frontend with ADCs DACs and line receivers and drivers for digital input/output.
-- A interface to standard Intan headstages.
+- A simple Analog/Digital frontend with ADCs DACs and line receivers and drivers for digital input/output. This would also be the only piece of hardware needed to use the system in a dynamic clamp whole-cell experiment.
+- An interface to standard Intan headstages.
+- A specialized digital interface connecting to high density CMOS probes.
 
 ### Hardware: DIO card & FPGA eval card
 
 There are only two hardware components of the system that are defined by this specification:
-- An off-the shelf FPGA eval board (Kintex 7). This board hosts the FPGA that holds the device-specific firmware, as well as a piece of firmware that connects to the software, via the open instruments API.
-- A very simple DIO card that directly connects pins on the FPGA to connnectors on the back of the host PC. The main role of this card is to provide direct electrical access to the pins of the FPGA.
+- An off-the shelf FPGA eval board (Kintex 7). This board hosts the FPGA that holds the device-specific firmware, as well as a piece of firmware that connects to the software, via the open instruments API. Exchanging this board for other FPGA carrier boards is relatively simple because we use industry standard FMC connectors to connect to the DIO board.
+- A very simple DIO card that directly connects pins on the FPGA to connnectors on the back of the host PC (via a FMC connector on the FPGA carrier board). The main role of this card is to provide direct electrical access to the pins of the FPGA. The FPGA pins on the FMC connector are broken out into 4 VHDCI connectors.
 
-### Interfaces for firmware module 
+### Interfaces for firmware module
 
-This specification does not impose any limitations on the firmware / IP cores used to interact with specific data sources. It does however provide a standardized interface to a piece of firmware / IP core on the FPGA that provides a flexible, bidirectional interconnect to the software. This minimizes development efforts for new data sources by eliminating the redundant task of driver and API development.
+The open instruments standard does not specify the firmware / IP cores used to interact with specific data sources. It does however provide a standardized interface to a piece of firmware / IP core on the FPGA that provides a flexible, bidirectional interconnect to the software. This minimizes development efforts for new data sources by eliminating the redundant task of driver and API development.
 
 Examples of data source specific IP are:
 - An Analog/Digital io driver that connects to a the Analog/Digital frontend, handling the ADCs etc.
 - An Intan firmware IP core that replicates the existing Intan Rhythm firmware. 
-- A generic SPI interface module that can connect to data sources that already include an FPGA that can implement an SPI interconnect. This could for instance allow electrophysiology systems to be extended with very low latency capability if needed.
+- A generic SPI interface module that can connect to data sources that already include an FPGA that can implement an SPI interconnect. This could for instance allow electrophysiology systems to be extended with very low latency capability.
 
 ### Software interfaces
 
-This specification does not impose any limitations on the software used to operate the hardware modules, but specifies a very flexible interface by which the software communicates with the hardware. This means that bot the IP cores and the software can now be independent of the actual interconnect implementation.
+This specification does not impose any limitations on the software used to operate the hardware modules, but specifies a very flexible interface by which the software communicates with the hardware. This means that both the IP cores and the software can be independent of the actual interconnect implementation.
 
 Every communication between the software and the hardware can be cast as either (i) a read or write from/to a register (of arbitrary size) on the hardware, for example for configurations, state read-outs etc. or (ii) a read or write from/to one of possibly many streams, for example for neural data or control signal streaming.
 
@@ -73,10 +79,14 @@ The API also specifies how devices connected to the FPGA can be discovered and i
 
 ## Next steps
 
-Make baseline HW modules
+Even though we have developed most of the specification and implemented a working prototype system, there are a number of tasks that we will need to complete in order to make the system practically funcitonal and usable by other developers:
 
-Make DIO card
+- Design and fabricate the DIO card to interface hardware modules to the FPGA.
 
-Implement API around an existing PCIe  firmware&driver
+- We will also develop two very simple core hardware modules: An Intan amplifier chip interface identical to current basic intan systems, and an Analog/Digital frontend.
 
-Interfaces to commercial systems via generic firmware module
+- Implement the open instruments API around an existing PCIe firmware and driver, possibly using the existing xillybus driver as a short-term solution, and port some existing software packages (Bonsai, Open Ephys) to use the API to acquire neural data.
+
+- Implement the generic digital interconnect to commercial systems and implement some basic data streaming functionality.
+
+- We will need to move the PCIe interface to a firmware and driver that are fully open and do not impose licensing restrictions. This is especially important for use of the system as component of commercial systems.
