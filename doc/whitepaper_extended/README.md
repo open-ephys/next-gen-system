@@ -193,6 +193,4 @@ developers:
     use the API to acquire neural data.
   - Implement the generic digital interconnect to commercial systems and
     implement some basic data streaming functionality.
-  - We will need to move the PCIe interface to a firmware and driver that are
-    fully open and do not impose licensing restrictions. This is especially
-    important for use of the system as component of commercial systems.
+  - We will need to move the PCIe interface to a firmware and driver that do not impose licensing restrictions. This is especially important for use of the system as component of commercial systems.
