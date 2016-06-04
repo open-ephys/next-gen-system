@@ -25,7 +25,7 @@ FMC board is shown, connected to the FPGA through the second FMC connector._
 
 We have built a prototype system based on parts of these specifications that
 delivers full use of the PCIe bus (12 Gbps throughput currently, up to 100 Gbps
-with other FPGA boards). This provides adequate bandwidth for greater 10,000
+with other FPGA boards). This provides adequate bandwidth for above 10,000
 channels sampled at 30 kHz, and low latency of less than 100 μs round trip
 between the host PC's main RAM allowing high level languages and libraries to
 be used for closed-loop experiments. The same system potentially could also be
@@ -179,7 +179,7 @@ identified by software, and keeps track of connection status.
 
 Even though we have developed most of the specification and implemented a
 working prototype system, there are a number of tasks that we will need to
-complete in order to make the system practically funcitonal and usable by other
+complete in order to make the system practically functional and usable by other
 developers:
 
   - Design and fabricate the DIO card to interface hardware modules to the
