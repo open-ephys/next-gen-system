@@ -26,8 +26,7 @@ connected breakout boards. In addition to the DIO board that provides the
 electrical connections between the FPGA and the breakout boards, a 3rd party
 FMC board is shown, connected to the FPGA through the second FMC connector._
 
-Examples of hardware
-modules are:
+Examples of hardware modules / daughter devices  are:
 
   - A simple Analog/Digital front-end with ADCs DACs and line receivers and
     drivers for digital input/output. This would also be the only piece of
@@ -70,7 +69,7 @@ different data sources can be operated together in one system.
 
 #### Definitions
 
-Daughter device - Physical device that actas as a data source, or effector.
+Daughter device - Physical device that acts as a data source, or effector.
 
 Port - A VHDCI connector that connects a daughter device to the DIO board. 
 
@@ -86,7 +85,7 @@ API - a set of functions cthat can be used by otehr software to communicate to d
 
 
 
-## Daughter device source - FPGA interface
+## Daughter device - FPGA interface
 
 ### Physical and signal type specification
 
@@ -94,6 +93,8 @@ Daughter devices connect to the FPGA via a very simple DIO card that directly co
 
 The main role of this card is to provide direct electrical access to the pins of the FPGA. 
 The FPGA pins on the FMC connector are broken out into 4 VHDCI connectors.
+
+See https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin-nnEgUCs/edit?usp=sharing for the full pin assignment.
 
 Most pins on the cable are connected directly to the FPGA, arranged in the
 following manner
@@ -111,9 +112,9 @@ variants, and are very robust and rated for many cycles.
 
 ### Protocol layer
 
-The Open Instruments standard does not enforce any protocol - a daughter device can communicate with the FPGA via the signal lines on the VHDCI connector defined in the physical layer in any way.
+The Open Instruments standard does not enforce any protocol - a daughter device can communicate with the FPGA via the signal lines on the VHDCI connector defined in the physical layer in any way. This inlcudes the use of LVDS pins for single ended signals.
 
-The only specification, apart from the pin out, is the presence of an EEPROM on the daughter device that identifies the device to the FPGA and determines what IP cores are conencted to the device's port. This identifier is also available to software via the API.
+The only specification, apart from the pin out, is the presence of an i2c EEPROM (either as IC or emulated on a microcontroller or FPGA) on the daughter device that identifies the device to the FPGA and determines what IP cores are conencted to the device's port. This identifier is also available to software via the API.
 
 #### Canconical SPI protocol
 
@@ -121,14 +122,11 @@ If desired, a daughter device can chose to adhere to a simple standardized proto
 
 In this case, the canonical SPI IP core is connected to a subset of pins on the VHDCI port.
 
-xxxx define this more.
-
-
+xxxx define this more. 
 
 
 ## FPGA - host interface
 The Open Instruments standard encapsulates the FPGA - host interface so that neither hardware, firmware or software need to be modified significantly in order to switch between interfaces. 
-
 
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured
@@ -141,6 +139,8 @@ latencies, bar plots reflect estimates._
 ### Ethernet
 Ethernet interfaces combine low latency of ~1-5ms with high troughput of around 10Gbps on common ethernet cards, which is sufficient for almost all current applications.
 
+The kc705 FPGA board includes a 10gig Ethernet connector, so implementing the interconnect via ethernet will just require an appropriate IP core.
+
 ### PCIe
 [PCIe](https://en.wikipedia.org/wiki/PCI_Express), which is used
 as the basic for almost all other interfaces can currently achieve throughputs of
@@ -149,7 +149,6 @@ mid-term electrophysiology applications, but could be useful eventually. The mos
 
 PCIe can achieve far shorter closed-loop delays than any other mainstream interface for commodity
 PCs. PCIe can achieve < 100 μs closed-loop latencies on common operating systems, and around 1 μs on real-time operating systems (for example, in the RTXI project).
-
 
 
 
