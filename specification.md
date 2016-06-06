@@ -9,8 +9,7 @@ performance performance and interoperability. This will also result in
 extendability to future interface technology generations without the need for
 device specific re-engineering.
 
-For a brief overview, see the whitepaper at https://github.com/open-ephys/next-
-gen-system/tree/master/doc/whitepaper_extended
+For a brief overview, see the whitepaper at https://github.com/open-ephys/next-gen-system/tree/master/doc/whitepaper_extended
 
 ## Overview
 
@@ -112,9 +111,8 @@ The main role of this card is to provide direct electrical access to the pins of
 the FPGA. The FPGA pins on the FMC connector are broken out into 4 VHDCI
 connectors.
 
-See https://docs.google.com/spreadsheets/d
-/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin- nnEgUCs/edit?usp=sharing for the full pin
-assignment.
+See https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin- nnEgUCs/edit?usp=sharing 
+for the full pin assignment.
 
 Most pins on the cable are connected directly to the FPGA, arranged in the
 following manner
@@ -158,7 +156,7 @@ In this case, the canonical SPI IP core is connected to a subset of pins on the
 VHDCI port.
 
 
-xxxx define this more.
+2do: define this more.
 
 
 ## FPGA - host interface 
@@ -212,19 +210,45 @@ development.
 
 ### Wishbone bus
 
-standardized interconnect between all IP cores
+Individual IP cores on the FPGA communicate via a standardized interconnect based on the wishbone specification.
+
+2do: specify this more
+
 
 mirrors the API
 
 ### I2C EEProm interface
 
-to identify device
+Each daughter device must contain an EEprom on the i2c bus of the VHDCI port that identifies the daughter device to the system.
+The device is identified by a simple device id that is specified by an enum in the open instruments API. New device types will be appended to this enum later.
+
+The device type fullfils two roles:
+
+1. Specify the type of daughter device specific IP core that is connected to the port that the device is connected to. In some cases, if the required IP core is not present on the FPGA, this could require a reconfiguration of the FPGA.
+
+1. Allow the  API to enumerate the connected devices and their types, so that an appropriate device specific API/library can be loaded.
+
+2do: specify details
+
 
 ### Interconnect matrix
 
-route pins
+Each daughter device connected to one of the ports needs to be routed to an appropriate IP core. 
+This is accomplished by an interconnect matrix that pairs the pins on the port (VHDCI connector, connected to the FPGA via the FMC connector) to nets of the appropriate IP core.
+
+this interconnect matrix is transparent to both the daughter device and the device specific IP core.
+
+
 
 ### Daughter device specific IP cores
+
+Each daughter device specific IP core is specific to one device type.
+
+
+In some cases, multiple instances of these cores will be implemented on the FPGA. For instance multiple generic SPI interfaces will likely be used simultaneously. 
+Device specific IP cores can be enumerated by the API via the oiGetNumCores and oiGetCoreType.
+
+2do: add this to the API and specify how this is done.
 
 Examples of daughter device specific IP cores are:
 
@@ -263,8 +287,7 @@ operate the hardware modules, but specifies a very flexible interface by which
 the software communicates with the hardware. This means that both the IP cores
 and the software can be independent of the actual interconnect implementation.
 
-The full API specification is found at https://github.com/open-ephys/next-gen-
-system/tree/master/API
+The full API specification is found at https://github.com/open-ephys/next-gen-system/tree/master/API
 
 Every communication between the software and the hardware can be cast as either
 _(i)_ a read or write from/to a register (of arbitrary size) on the hardware,
