@@ -111,7 +111,7 @@ The main role of this card is to provide direct electrical access to the pins of
 the FPGA. The FPGA pins on the FMC connector are broken out into 4 VHDCI
 connectors.
 
-See https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin- nnEgUCs/edit?usp=sharing 
+See https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin-nnEgUCs/edit?usp=sharing 
 for the full pin assignment.
 
 Most pins on the cable are connected directly to the FPGA, arranged in the
