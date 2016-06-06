@@ -135,6 +135,12 @@ pins, and 4 +12V pins) ground     and VCC.
 VHDCI cables are very widely available in low cost or very high quality
 variants, and are very robust and rated for many cycles.
 
+_Possible later extension:_ The kc705 boards provide 4 GTX tranceivers (12Gbps
+each) on the HPC FMC connector. Many other FPGA eval boards provide similar
+high-speed pins. For a further expansion of the system, these pins could be
+routd to external SPF or esata connector on the DIO board, providing a
+significantly higher troughput digital interface option.
+
 ### Protocol layer
 
 The Open Instruments standard does not enforce any protocol - a daughter device
@@ -220,9 +226,9 @@ Individual IP cores on the FPGA communicate via a standardized interconnect base
 
 mirrors the API
 
-### I2C EEProm interface
+### I2C EEPROM interface
 
-Each daughter device must contain an EEprom on the i2c bus of the VHDCI port that identifies the daughter device to the system.
+Each daughter device must contain an EEPROM on the i2c bus of the VHDCI port that identifies the daughter device to the system.
 The device is identified by a simple device id that is specified by an enum in the open instruments API. New device types will be appended to this enum later.
 
 The device type fullfils two roles:
@@ -267,15 +273,28 @@ extended with very low latency capability.
 
 ### Host interface IP core
 
-ethernet,
+All communication to the API and to device specific and user-facing software is encapsulated on the firmware side into host interface IP cores that adhere to the same wishbone interface as daugher device specific IP cores.
 
-PCIe, xillybus?
+Examples of host interface IP cores are:
+
+- Ethernet
+
+- PCIe via xillybus
 
 ## Software
 
-The software comonents of a Open Instruments system can be divided into four layers: Drivers, the Open Instruments API, the daughter device specific libraries/APIs, and the user-facing software.
-Only the Open Instruments API is specified by this standard and ensures interoperability between system components.
-However, in almost all practical implementations, a driver (for example Ethernet, or PCIe) will already be present, so developers aiming to integrate a new device only have to implement the device specific API and possiby user-facing software.
+The software comonents of a Open Instruments system can be divided into four
+layers: Drivers, the Open Instruments API, the daughter device specific
+libraries/APIs, and the user-facing software. Only the Open Instruments API is
+specified by this standard and ensures interoperability between system
+components. However, in almost all practical implementations, a driver (for
+example for Ethernet, or PCIe) will already be present, so developers aiming to
+integrate a new device only have to implement the device specific API and
+possiby user-facing software.
+
+Conversely, switching out the host PC interface should not require changes to the device specific code.
+
+
 
 ### Drivers
 
@@ -287,6 +306,14 @@ Examples of interconnect drivers are:
 - Ethernet driver, 
 
 - xillybus.
+
+2do: _possible exception to the independence of drivre/interconnect implementation_:
+it seems posisble that we want to be able to
+(optionally) configure the interconnect - for instance selecting block transfer
+sizes for a speed thourghput tradeoff. We could specify that this is optional
+and of course not driver independent, but that all API implementations should
+come with defualt values so that no specific configuration is stricktly
+required.
 
 ### API
 
@@ -311,7 +338,6 @@ identified by software, and keeps track of connection status.
 obvoius
 
 ### User-facing software
-
 
 Examples of user-facing software packages are:
 
