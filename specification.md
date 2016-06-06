@@ -78,6 +78,9 @@ instruments standard._
 
 Daughter device - Physical device that acts as a data source, or effector.
 
+Device type - unique id (enum specified in the API) that identifies device types
+and specifies the IP core, and device specific API that is used.
+
 Port - A VHDCI connector that connects a daughter device to the DIO board.
 
 DIO board - A PCI format card that provides an electrical interconnect between
@@ -97,8 +100,8 @@ daughter devices via the FPGA.
 
 ## Daughter device - FPGA interface
 
-Daughter devices connect to the FPGa that either controls the daughter device,
-or sinpy provides an interface to the host PC by a flexible interface that does
+Daughter devices connect to the FPGA (which either controls the daughter device,
+or simply provides an interface to the host PC) by a flexible interface that does
 not constrain what devices can be used, but ensures future interoperability.
 
 ### Physical and signal type specification
@@ -236,16 +239,15 @@ The device type fullfils two roles:
 Each daughter device connected to one of the ports needs to be routed to an appropriate IP core. 
 This is accomplished by an interconnect matrix that pairs the pins on the port (VHDCI connector, connected to the FPGA via the FMC connector) to nets of the appropriate IP core.
 
-this interconnect matrix is transparent to both the daughter device and the device specific IP core.
-
+This interconnect matrix is fullly transparent to both the daughter device and the device specific IP core, and connects all pins on the VHDCI port to corresponding nets on the device specific IP core.
 
 
 ### Daughter device specific IP cores
 
-Each daughter device specific IP core is specific to one device type.
+Each daughter device specific IP core is specific to one device type, defined by the device type id.
 
-
-In some cases, multiple instances of these cores will be implemented on the FPGA. For instance multiple generic SPI interfaces will likely be used simultaneously. 
+In some cases, multiple instances of these cores will be implemented on the FPGA. 
+For instance multiple generic SPI interfaces will likely be used simultaneously. 
 Device specific IP cores can be enumerated by the API via the oiGetNumCores and oiGetCoreType.
 
 2do: add this to the API and specify how this is done.
@@ -271,14 +273,20 @@ PCIe, xillybus?
 
 ## Software
 
-The software has Roughly four layers: Drivers, the Open Instruments API, Daughter device specific libraries/APIs, and the user-facing software
+The software comonents of a Open Instruments system can be divided into four layers: Drivers, the Open Instruments API, the daughter device specific libraries/APIs, and the user-facing software.
+Only the Open Instruments API is specified by this standard and ensures interoperability between system components.
+However, in almost all practical implementations, a driver (for example Ethernet, or PCIe) will already be present, so developers aiming to integrate a new device only have to implement the device specific API and possiby user-facing software.
 
 ### Drivers
 
-Wrapped into the API on one end, and the wishbone bus on the other.
+Drivers for the hardware-software interaonnect are wrapped into the open instruments API on one end, and the wishbone bus specification on the other.
+This means that developers can either develop for daughter devices without having to spend time on the interconnect specifics.
 
-Ethernet driver, 
-xillybus.
+Examples of interconnect drivers are:
+
+- Ethernet driver, 
+
+- xillybus.
 
 ### API
 
@@ -303,4 +311,13 @@ identified by software, and keeps track of connection status.
 obvoius
 
 ### User-facing software
+
+
+Examples of user-facing software packages are:
+
+- Minimalistic Open instruments data stream interface
+
+- The Open Ephys GUI 
+
+- Bonsai
 
