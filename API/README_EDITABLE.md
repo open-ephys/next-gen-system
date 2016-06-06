@@ -290,6 +290,7 @@ Query the device type (EEPROM specified) of breakout board attached to a port.
 int oiGetDeviceType(const oiContext c)
 ```
 
+
 #### Arguments
 
   - `c` context
@@ -299,6 +300,43 @@ int oiGetDeviceType(const oiContext c)
   - 0 if no device on port
   - Positive number indicating `oiDeviceType`
   - Negative number indicating `oiError`
+
+
+### oiGetNumCores
+Get the number of device specific IP cores associated with a context
+
+```c
+int oiGetNumCores(const oiContext c)
+```
+
+#### Arguments
+
+  - `c` context
+
+#### Returns `int`
+
+  - Greater than or equal to 0: number of device specific IP cores
+  - Less than 0: `oiError`
+
+### oiGetCoreType
+Query the device type (EEPROM specified) of the device specific IP core on the context. The device type is of `oiDeviceType` type.
+
+```c
+int oiGetCoreType(const oiContext c)
+```
+
+#### Arguments
+
+  - `c` context
+
+#### Returns
+
+  - 0 if no device on port
+  - Positive number indicating `oiDeviceType`
+  - Negative number indicating `oiError`
+
+
+
 
 
 ## Public Types
