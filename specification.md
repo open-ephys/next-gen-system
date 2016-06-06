@@ -254,9 +254,10 @@ Each daughter device specific IP core is specific to one device type, defined by
 
 In some cases, multiple instances of these cores will be implemented on the FPGA. 
 For instance multiple generic SPI interfaces will likely be used simultaneously. 
-Device specific IP cores can be enumerated by the API via the oiGetNumCores and oiGetCoreType.
 
-2do: add this to the API and specify how this is done.
+The presence of a matching IP core is checked by oiGetDeviceType, and the VHDCI pins on the port are associated with the ip core in oiOpenPort. (TODO: is this the correct call to do this?)
+
+2do: do we want that device specific IP cores can be enumerated by the API via and oiGetCoreType?
 
 Examples of daughter device specific IP cores are:
 

@@ -269,6 +269,7 @@ int oiWriteStream(oiContext c, int port, int stream, int nbytes, const void *dat
 
 ### oiGetNumPorts
 Get the number of physical ports associated with a context
+Performs no check on whether there are connected devices - it just returns the number of VHDCI connectors.
 
 ```c
 int oiGetNumPorts(const oiContext c)
@@ -285,12 +286,11 @@ int oiGetNumPorts(const oiContext c)
 
 ### oiGetDeviceType
 Query the device type (EEPROM specified) of breakout board attached to a port.
+Also, check if a (unbused) IP core with matching ioDeviceType is present on the FPGA.
 
 ```c
-int oiGetDeviceType(const oiContext c)
+int oiGetDeviceType(const oiContext c, int port)
 ```
-
-TODO: this needs the port number as argument?
 
 #### Arguments
 
@@ -303,43 +303,7 @@ TODO: this needs the port number as argument?
   - Negative number indicating `oiError`
 
 
-### oiGetNumCores
-Get the number of device specific IP cores associated with a context
-
-```c
-int oiGetNumCores(const oiContext c)
-```
-
-#### Arguments
-
-  - `c` context
-
-#### Returns `int`
-
-  - Greater than or equal to 0: number of device specific IP cores
-  - Less than 0: `oiError`
-
-### oiGetCoreType
-Query the device type (EEPROM specified) of the device specific IP core on the context. The device type is of `oiDeviceType` type.
-
-```c
-int oiGetCoreType(const oiContext c)
-```
-
-TODO: this needs the port number as argument?
-
-#### Arguments
-
-  - `c` context
-
-#### Returns
-
-  - 0 if no device on port
-  - Positive number indicating `oiDeviceType`
-  - Negative number indicating `oiError`
-
-
-
+TODO: do we need reflection functions for listing the available device specific IP cores?
 
 
 ## Public Types
@@ -374,6 +338,10 @@ typedef enum error {
     STREAM_DOES_NOT_EXIST,
     PORT_DOES_NOT_EXIST,
     CONTEXT_DOES_NOT_EXIST,
+    UNRECOGNIZED_DEVICE_TYPE, // returned deviceType is not in oiDeviceType
+    NO_MATCHING_IP_CORE, // IP core exists (otherwise UNRECOGNIZED_DEVICE_TYPE), but is not present on FPGA
+    NO_FREE_IP_CORE // IP core is present on FPGA, but already bound to another port
+
 } oiError
 ```
 
