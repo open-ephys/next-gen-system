@@ -158,7 +158,7 @@ In this case, the canonical SPI IP core is connected to a subset of pins on the
 VHDCI port.
 
 
-xxxx define this more.
+2do: define this more.
 
 
 ## FPGA - host interface 
@@ -212,19 +212,45 @@ development.
 
 ### Wishbone bus
 
-standardized interconnect between all IP cores
+Individual IP cores on the FPGA communicate via a standardized interconnect based on the wishbone specification.
+
+2do: specify this more
+
 
 mirrors the API
 
 ### I2C EEProm interface
 
-to identify device
+Each daughter device must contain an EEprom on the i2c bus of the VHDCI port that identifies the daughter device to the system.
+The device is identified by a simple device id that is specified by an enum in the open instruments API. New device types will be appended to this enum later.
+
+The device type fullfils two roles:
+
+1. Specify the type of daughter device specific IP core that is connected to the port that the device is connected to. In some cases, if the required IP core is not present on the FPGA, this could require a reconfiguration of the FPGA.
+
+1. Allow the  API to enumerate the connected devices and their types, so that an appropriate device specific API/library can be loaded.
+
+2do: specify details
+
 
 ### Interconnect matrix
 
-route pins
+Each daughter device connected to one of the ports needs to be routed to an appropriate IP core. 
+This is accomplished by an interconnect matrix that pairs the pins on the port (VHDCI connector, connected to the FPGA via the FMC connector) to nets of the appropriate IP core.
+
+this interconnect matrix is transparent to both the daughter device and the device specific IP core.
+
+
 
 ### Daughter device specific IP cores
+
+Each daughter device specific IP core is specific to one device type.
+
+
+In some cases, multiple instances of these cores will be implemented on the FPGA. For instance multiple generic SPI interfaces will likely be used simultaneously. 
+Device specific IP cores can be enumerated by the API via the oiGetNumCores and oiGetCoreType.
+
+2do: add this to the API and specify how this is done.
 
 Examples of daughter device specific IP cores are:
 
