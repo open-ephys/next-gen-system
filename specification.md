@@ -298,8 +298,8 @@ Conversely, switching out the host PC interface should not require changes to th
 
 ### Drivers
 
-Drivers for the hardware-software interaonnect are wrapped into the open instruments API on one end, and the wishbone bus specification on the other.
-This means that developers can either develop for daughter devices without having to spend time on the interconnect specifics.
+Drivers for the hardware-software interconnect are opaquely wrapped into the open instruments API on one end, and the wishbone bus specification of the host-pc interface IP core on the other.
+This means that developers can either develop for daughter devices without having to spend time on the interconnect specifics, or swap interconnects without requiring re-enginering of other system components.
 
 Examples of interconnect drivers are:
 
@@ -307,13 +307,14 @@ Examples of interconnect drivers are:
 
 - xillybus.
 
-2do: _possible exception to the independence of drivre/interconnect implementation_:
-it seems posisble that we want to be able to
-(optionally) configure the interconnect - for instance selecting block transfer
-sizes for a speed thourghput tradeoff. We could specify that this is optional
-and of course not driver independent, but that all API implementations should
-come with defualt values so that no specific configuration is stricktly
-required.
+2do: _possible exception to the independence of drivre/interconnect implementation_: 
+it seems possible that we want to be able to (optionally)
+configure the interconnect - for instance selecting block transfer sizes for a
+speed thourghput tradeoff. We could specify that this is optional and of course
+not driver independent, but that all API implementations should come with
+defualt values so that no specific configuration is strictly required. Maybe
+oiSetStreamAttributes already covers this? Or could there be other configuration
+options that are needed in special cases?
 
 ### API
 
@@ -335,9 +336,14 @@ identified by software, and keeps track of connection status.
 
 ### Daughter device specific APIs
 
-obvoius
+On top of the Open Instruments API, there will be daugher-device specific functions that should not be implemented by the user-facing software
+Examples of these are cable lenght calculation for the SPI bus on Intan chips, Impedance measurements, unpacking of data formats to interpretable values and timestamps, etc.
+
+For this, a user facing software can use oiGetDeviceType to determine the correct device specific API to interact (via the Open Instruments API) with the hardware/firmware of that device.
 
 ### User-facing software
+
+The User-facing software can either interact with the duagher device firmware directly trough the Open Instruments API, and/or an intermediate layer of a daughter device specific API.
 
 Examples of user-facing software packages are:
 
