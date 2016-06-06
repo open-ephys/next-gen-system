@@ -290,6 +290,7 @@ Query the device type (EEPROM specified) of breakout board attached to a port.
 int oiGetDeviceType(const oiContext c)
 ```
 
+TODO: this needs the port number as argument?
 
 #### Arguments
 
@@ -324,6 +325,8 @@ Query the device type (EEPROM specified) of the device specific IP core on the c
 ```c
 int oiGetCoreType(const oiContext c)
 ```
+
+TODO: this needs the port number as argument?
 
 #### Arguments
 
