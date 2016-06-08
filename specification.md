@@ -1,6 +1,6 @@
 # Open Instruments Specification
 
-This specification defines interfaces for  instrumentation systems for
+This specification defines interfaces for instrumentation systems for
 neuroscience (and other fields) that makes full use of existing technologies and
 industry standards to deliver the highest possible performance levels and
 modular design. The system can be used as a platform for existing and future
@@ -21,13 +21,13 @@ but specifies a flexible interconnect between the two.
 
 
 ![Example hardware configuration of a Open Instruments system with threesd
-connected breakout boards. In addition to the DIO board that provides the
+connected daugher devices / breakout boards. In addition to the DIO board that provides the
 electrical connections between the FPGA and the breakout boards, a 3rd party FMC
 board is shown, connected to the FPGA through the second FMC
 connector.](doc/whitepaper_extended/imgs/system_overview.png)
 
 _Example hardware configuration of a Open Instruments system with three
-connected breakout boards. In addition to the DIO board that provides the
+connected daugher devices / breakout boards. In addition to the DIO board that provides the
 electrical connections between the FPGA and the breakout boards, a 3rd party FMC
 board is shown, connected to the FPGA through the second FMC connector._
 
@@ -50,11 +50,11 @@ need to be designed:
   connectors and cables that are connected to the FPGA boards via the ubiquitous
   FMC connectors and an intermediate DIO board as mechanical interconnect. 
 
-  1. A firmware module for the FPGA that drives this hardware, but does notneed to be
-  able to communicate with the host PC, or be developed withdrivers in mind. 
+  1. A firmware module for the FPGA that drives this hardware, but does not need to be
+  able to communicate with the host PC, or be developed for specific drivers. 
 
   1.(Optional) A software that communicates with this hardware through theopen
-  instruments AI that provides a generic interface to the hardware viadata
+  instruments AI that provides a generic interface to the hardware via data
   transfers and device registers, and can be used with no knowledge ofthe
   underlying interconnect (PCIe, USB, Ethernet).
 
@@ -76,24 +76,24 @@ instruments standard._
 
 #### Definitions
 
-Daughter device - Physical device that acts as a data source, or effector.
+_Daughter device_ - Physical device that acts as a data source, or effector.
 
-Device type - unique id (enum specified in the API) that identifies device types
+_Device type_ - unique id (enum specified in the API) that identifies device types
 and specifies the IP core, and device specific API that is used.
 
-Port - A VHDCI connector that connects a daughter device to the DIO board.
+_Port_ - A VHDCI connector that connects a daughter device to the DIO board.
 
-DIO board - A PCI format card that provides an electrical interconnect between
-the FPGA and the duaghter devices.
+_DIO board_ - A PCI format card that provides an electrical interconnect between
+the FPGA and the daughter devices.
 
-FPGA board - A PCIe board that hosts the FPGA, as well as FMC connectors.
+_FPGA board_ - A PCIe board that hosts the FPGA, as well as FMC connectors.
 
-FMC connector - A high pin count standardized connector for attaching devices to
+_FMC connector_ - A high pin count standardized connector for attaching devices to
 FPGAs specified in the Vita 57 standard.
 
-IP core - A piece of firmware code that can be loaded to the FPGA.
+_IP core_ - A piece of firmware code that can be loaded to the FPGA.
 
-API - a set of functions cthat can be used by otehr software to communicate to
+_Open Instruments API_ - a set of functions that can be used by other software to communicate to
 daughter devices via the FPGA.
 
 
@@ -135,6 +135,8 @@ pins, and 4 +12V pins) ground     and VCC.
 VHDCI cables are very widely available in low cost or very high quality
 variants, and are very robust and rated for many cycles.
 
+In addition to the VHDCI connectors, the DIO card also provides a few SMA connectors that can be used as clock IO to synchronize multiple systems.
+
 _Possible later extension:_ The kc705 boards provide 4 GTX tranceivers (12Gbps
 each) on the HPC FMC connector. Many other FPGA eval boards provide similar
 high-speed pins. For a further expansion of the system, these pins could be
@@ -159,7 +161,10 @@ via the API.
 If desired, a daughter device can chose to adhere to a simple standardized
 protocol to stream data to and from the system via the VHDCI connector. To do
 this, the device simply needs to identify (via the eeprom) as a 'canonical SPI
-device'.
+device'. From the point of view of the open instruments standard, this canonical
+SPI protocol and the associated IP core are treated like any other daughter
+device and device- specific IP core.
+
 
 In this case, the canonical SPI IP core is connected to a subset of pins on the
 VHDCI port.
@@ -170,9 +175,9 @@ VHDCI port.
 
 ## FPGA - host interface 
 
-The Open Instruments standard encapsulates the FPGA -
-host interface so that neither hardware, firmware or software need to be
-modified significantly in order to switch between interfaces.
+The Open Instruments standard encapsulates the FPGA/host interface so that
+neither hardware, firmware or software need to be modified significantly in
+order to switch between interfaces.
 
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured
@@ -219,17 +224,20 @@ development.
 
 ### Wishbone bus
 
-Individual IP cores on the FPGA communicate via a standardized interconnect based on the wishbone specification.
+Individual IP cores on the FPGA communicate via a standardized interconnect
+based on the wishbone specification.
 
-2do: specify this more
+2do: specify this more - ideally the wishbone specifications should very closely
+mirror the API, similarly to how xillybus and opalkelly have equivalent API
+calls for register writes/reads/wires to registers, and pipes/streams to fifos.
 
-
-mirrors the API
 
 ### I2C EEPROM interface
 
-Each daughter device must contain an EEPROM on the i2c bus of the VHDCI port that identifies the daughter device to the system.
-The device is identified by a simple device id that is specified by an enum in the open instruments API. New device types will be appended to this enum later.
+Each daughter device must contain an EEPROM on the i2c bus of the VHDCI port
+that identifies the daughter device to the system. The device is identified by a
+simple device id that is specified by an enum (oiDeviceType) in the open
+instruments API. New device types will be appended to this enum later.
 
 The device type fullfils two roles:
 
@@ -242,22 +250,32 @@ The device type fullfils two roles:
 
 ### Interconnect matrix
 
-Each daughter device connected to one of the ports needs to be routed to an appropriate IP core. 
-This is accomplished by an interconnect matrix that pairs the pins on the port (VHDCI connector, connected to the FPGA via the FMC connector) to nets of the appropriate IP core.
+Each daughter device connected to one of the ports needs to be routed to an
+appropriate IP core.  This is accomplished by an interconnect matrix that pairs
+the pins on the port (VHDCI connector, connected to the FPGA via the FMC
+connector) to nets of the appropriate IP core.
 
-This interconnect matrix is fullly transparent to both the daughter device and the device specific IP core, and connects all pins on the VHDCI port to corresponding nets on the device specific IP core.
+This interconnect matrix is fullly transparent to both the daughter device and
+the device specific IP core, and connects all pins on the VHDCI port to
+corresponding nets on the device specific IP core.
 
+2do: when is this done? on oiOpenPort()?
 
 ### Daughter device specific IP cores
 
-Each daughter device specific IP core is specific to one device type, defined by the device type id.
+Each daughter device specific IP core is specific to one device type, defined by
+the device type id enum (oiDeviceType).
 
-In some cases, multiple instances of these cores will be implemented on the FPGA. 
-For instance multiple generic SPI interfaces will likely be used simultaneously. 
+In some cases, multiple instances of these cores will be implemented on the
+FPGA.  For instance multiple generic SPI interfaces will likely be used
+simultaneously.
 
-The presence of a matching IP core is checked by oiGetDeviceType, and the VHDCI pins on the port are associated with the ip core in oiOpenPort. (TODO: is this the correct call to do this?)
+The presence of a matching IP core is checked by oiGetDeviceType, and the VHDCI
+pins on the port are associated with the ip core in oiOpenPort. (TODO: is this
+the correct call to do this?)
 
-2do: do we want that device specific IP cores can be enumerated by the API via and oiGetCoreType?
+2do: do we want that device specific IP cores can be enumerated by the API via
+an oiGetCoreType call? 
 
 Examples of daughter device specific IP cores are:
 
@@ -274,7 +292,9 @@ extended with very low latency capability.
 
 ### Host interface IP core
 
-All communication to the API and to device specific and user-facing software is encapsulated on the firmware side into host interface IP cores that adhere to the same wishbone interface as daugher device specific IP cores.
+All communication to the API and to device specific and user-facing software is
+encapsulated on the firmware side into host interface IP cores that adhere to
+the same wishbone interface as daugher device specific IP cores.
 
 Examples of host interface IP cores are:
 
@@ -296,11 +316,14 @@ possiby user-facing software.
 Conversely, switching out the host PC interface should not require changes to the device specific code.
 
 
-
 ### Drivers
 
-Drivers for the hardware-software interconnect are opaquely wrapped into the open instruments API on one end, and the wishbone bus specification of the host-pc interface IP core on the other.
-This means that developers can either develop for daughter devices without having to spend time on the interconnect specifics, or swap interconnects without requiring re-enginering of other system components.
+Drivers for the hardware-software interconnect are opaquely wrapped into the
+open instruments API on one end, and the wishbone bus specification of the host-
+pc interface IP core on the other. This means that developers can either develop
+for daughter devices without having to spend time on the interconnect specifics,
+or swap interconnects without requiring re-enginering of other system
+components.
 
 Examples of interconnect drivers are:
 
