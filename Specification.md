@@ -37,7 +37,8 @@ Examples of hardware modules / daughter devices  are:
 drivers for digital input/output. This would also be the only piece of hardware
 needed to use the system in a dynamic clamp whole-cell experiment. 
 
-- An interface to Intan headstages.   
+- A mostly passive interface to Intan headstages, with LVDS line interfaces,
+- power supplies and galvanic isolators.
 
 - A digital interface connecting to high density CMOS probes.
 
@@ -340,11 +341,11 @@ Conversely, switching out the host PC interface should not require changes to th
 ### Drivers
 
 Drivers for the hardware-software interconnect are opaquely wrapped into the
-open instruments API on one end, and the wishbone bus specification of the host-
-pc interface IP core on the other. This means that developers can either develop
-for daughter devices without having to spend time on the interconnect specifics,
-or swap interconnects without requiring re-enginering of other system
-components.
+open instruments API on one end, and the (wishbone bus compatible)
+specification of the host- pc interface IP core on the other. This means that
+developers can either develop for daughter devices without having to spend
+time on the interconnect specifics, or swap interconnects without requiring
+re-enginering of other system components.
 
 Examples of interconnect drivers are:
 
