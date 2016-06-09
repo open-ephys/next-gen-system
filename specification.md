@@ -78,7 +78,7 @@ instruments standard._
 
 _Daughter device_ - Physical device that acts as a data source, or effector.
 
-_Device type_ - unique id (enum specified in the API) that identifies device types
+_Device type_ - unique id (enum specified in the API) that identifies daughter device types
 and specifies the IP core, and device specific API that is used.
 
 _Port_ - A VHDCI connector that connects a daughter device to the DIO board.
@@ -93,9 +93,10 @@ FPGAs specified in the Vita 57 standard.
 
 _IP core_ - A piece of firmware code that can be loaded to the FPGA.
 
-_Open Instruments API_ - a set of functions that can be used by other software to communicate to
+_Open Instruments API_ - an API used by other software to communicate to
 daughter devices via the FPGA.
 
+_Device specific API_ - an API that uses the Open INstruments API to interact with a daughter device.
 
 
 ## Daughter device - FPGA interface
@@ -141,7 +142,7 @@ _Possible later extension:_ The kc705 boards provide 4 GTX tranceivers (12Gbps
 each) on the HPC FMC connector. Many other FPGA eval boards provide similar
 high-speed pins. For a further expansion of the system, these pins could be
 routd to external SPF or esata connector on the DIO board, providing a
-significantly higher troughput digital interface option.
+significantly higher troughput option for device specific or generic digital interfaces.
 
 ### Protocol layer
 
@@ -169,15 +170,16 @@ device and device- specific IP core.
 In this case, the canonical SPI IP core is connected to a subset of pins on the
 VHDCI port.
 
-
 2do: define this more.
 
 
 ## FPGA - host interface 
 
-The Open Instruments standard encapsulates the FPGA/host interface so that
-neither hardware, firmware or software need to be modified significantly in
-order to switch between interfaces.
+The Open Instruments standard opaquely encapsulates the FPGA/host interface so
+that neither hardware, firmware or software need to be modified significantly in
+order to switch between interfaces. On the software side, the interface is
+encapsulated by the Open INstruments API, and on the firmware side by the Host
+interface IP core.
 
 
 ![Overview of latencies across hardware interfaces. Histograms reflect measured
@@ -198,13 +200,13 @@ interconnect via ethernet will just require an appropriate IP core.
 
 ### PCIe
 
-[PCIe](https://en.wikipedia.org/wiki/PCI_Express), which is used as the
-basic for almost all other interfaces can currently achieve throughputs of
-around ~100 Gbs, which far exceeds the bandwidth required for any current or
-mid-term electrophysiology applications, but could be useful eventually. The
-most common type of FPGA evaluation board that is recommended for open
-einstruments systems, the Xilinx Kintex kc705 achieves around 12Gbps, which is
-sufficient for almost all current applications.
+[PCIe](https://en.wikipedia.org/wiki/PCI_Express), which is used as the basic
+for almost all other interfaces can currently achieve throughputs of around ~100
+Gbs, which far exceeds the bandwidth required for any current or mid-term
+electrophysiology applications, but could be useful eventually. The most common
+type of FPGA evaluation board that is recommended for open einstruments systems,
+the Xilinx Kintex kc705 achieves around 12Gbps, which is sufficient for almost
+all current applications.
 
 PCIe can achieve far shorter closed-loop delays than any other mainstream
 interface for commodity PCs. PCIe can achieve < 100 μs closed-loop latencies on
@@ -271,11 +273,18 @@ FPGA.  For instance multiple generic SPI interfaces will likely be used
 simultaneously.
 
 The presence of a matching IP core is checked by oiGetDeviceType, and the VHDCI
-pins on the port are associated with the ip core in oiOpenPort. (TODO: is this
-the correct call to do this?)
+pins on the port are associated with the ip core in oiOpenPort. 
 
+2do: is oiOpenPort the correct call to do this?
 2do: do we want that device specific IP cores can be enumerated by the API via
 an oiGetCoreType call? 
+
+_One possible way this could work is that we loop over the oiGetNumPorts ports,
+and call oiGetDeviceType, and run oiOpenPort immediately. The return code then
+signals whether an ip core is present, or present and already associated with a
+port etc. Now the software could try uploading a different firmware that
+includes the required IP cores?_
+
 
 Examples of daughter device specific IP cores are:
 
@@ -296,6 +305,18 @@ All communication to the API and to device specific and user-facing software is
 encapsulated on the firmware side into host interface IP cores that adhere to
 the same wishbone interface as daugher device specific IP cores.
 
+There are two types of interfaces by which the host  interface IP core
+communicates with device specific IP cores: Registers, and streams.
+
+Registers are accessed on the API via oiReadConfig and oiWriteConfig by simple
+key/value (int) pairs. On the IP core, the configuration corresponds directly to
+a register bank.
+
+Ports can contain multiple streams, and each streams is accessed by oiReadStream
+or oiWriteStream. On the IP core, these streams correspond to FIFOs.
+
+2do: wrap this in a whishbone compatible interface.
+
 Examples of host interface IP cores are:
 
 - Ethernet
@@ -305,7 +326,7 @@ Examples of host interface IP cores are:
 ## Software
 
 The software comonents of a Open Instruments system can be divided into four
-layers: Drivers, the Open Instruments API, the daughter device specific
+layers: Interface specific drivers, the Open Instruments API, the daughter device specific
 libraries/APIs, and the user-facing software. Only the Open Instruments API is
 specified by this standard and ensures interoperability between system
 components. However, in almost all practical implementations, a driver (for
@@ -332,11 +353,11 @@ Examples of interconnect drivers are:
 - xillybus.
 
 2do: _possible exception to the independence of drivre/interconnect implementation_: 
-it seems possible that we want to be able to (optionally)
+it seems likely that we want to be able to (optionally)
 configure the interconnect - for instance selecting block transfer sizes for a
 speed thourghput tradeoff. We could specify that this is optional and of course
 not driver independent, but that all API implementations should come with
-defualt values so that no specific configuration is strictly required. Maybe
+default values so that no specific configuration is strictly required. Maybe
 oiSetStreamAttributes already covers this? Or could there be other configuration
 options that are needed in special cases?
 
