@@ -1,11 +1,11 @@
 # Open Instruments Specification
 
 This specification defines interfaces for instrumentation systems for
-neuroscience (and other fields) that makes full use of existing technologies and
-industry standards to deliver the highest possible performance levels and
+neuroscience (and other fields) that makes full use of existing technologies
+and industry standards to deliver the highest possible performance levels and
 modular design. The system can be used as a platform for existing and future
-data sources, reducing development overhead, while providing increases in system
-performance performance and interoperability. This will also result in
+data sources, reducing development overhead, while providing increases in
+system performance and interoperability. The standard will also result in
 extendability to future interface technology generations without the need for
 device specific re-engineering.
 
@@ -13,11 +13,12 @@ For a brief overview, see the whitepaper at https://github.com/open-ephys/next-g
 
 ## Overview
 
-A Open Instruments compatible system consists of one or more data sources or
-effectors that interact with  software on a PC via a series of standardized
-interfaces. The Open Instruments standard does not specify or constrain the
-design of either the data sources, nor the software used for data acquisition,
-but specifies a flexible interconnect between the two.
+An Open Instruments compatible system consists of one or more data sources or
+effectors, termed 'daughter devices', that interact with software on a PC via
+a series of standardized interfaces. The Open Instruments standard does not
+specify or constrain the design of either the daughter devices, nor the software
+used for data acquisition, but specifies a flexible interconnect between the
+two.
 
 
 ![Example hardware configuration of a Open Instruments system with threesd
@@ -48,20 +49,22 @@ need to be designed:
 
   1. A hardware interface that connects directly to FPGA pins trough a
   standardized high-speed digital interconnect via generic 68-pin VHDCI
-  connectors and cables that are connected to the FPGA boards via the ubiquitous
-  FMC connectors and an intermediate DIO board as mechanical interconnect. 
+  connectors and cables (which are connected to the FPGA boards via 
+  FMC connectors and an intermediate DIO board as mechanical interconnect). 
 
-  1. A firmware module for the FPGA that drives this hardware, but does not need to be
-  able to communicate with the host PC, or be developed for specific drivers. 
+  1. A firmware module / IP core for the FPGA that drives this hardware, but
+  does not need to be able to communicate with the host PC, or be developed
+  for specific drivers.
 
-  1.(Optional) A software that communicates with this hardware through theopen
+  1.(Optional) Software that communicates with this hardware through the open
   instruments AI that provides a generic interface to the hardware via data
-  transfers and device registers, and can be used with no knowledge ofthe
+  transfers and device registers, and can be used with no knowledge of the
   underlying interconnect (PCIe, USB, Ethernet).
 
 By removing and standardizing the intermediate components of hardware-software
-interfaces, the development effort required for this is vastly reduced, and
-different data sources can be operated together in one system.
+interfaces, the development effort required for this is vastly reduced. As an
+added benefit, different data sources can be operated together seamlessly in
+one system.
 
 
 ![Overview of the components and interfaces of the system. Only the interconnect
@@ -77,14 +80,14 @@ instruments standard._
 
 #### Definitions
 
-_Daughter device_ - Physical device that acts as a data source, or effector.
+_Daughter device_ - Physical device / breakout bard that acts as a data source, or effector.
 
 _Device type_ - unique id (enum specified in the API) that identifies daughter device types
 and specifies the IP core, and device specific API that is used.
 
 _Port_ - A VHDCI connector that connects a daughter device to the DIO board.
 
-_DIO board_ - A PCI format card that provides an electrical interconnect between
+_DIO board_ - A PCIe format card that provides an electrical interconnect between
 the FPGA and the daughter devices.
 
 _FPGA board_ - A PCIe board that hosts the FPGA, as well as FMC connectors.
@@ -97,7 +100,7 @@ _IP core_ - A piece of firmware code that can be loaded to the FPGA.
 _Open Instruments API_ - an API used by other software to communicate to
 daughter devices via the FPGA.
 
-_Device specific API_ - an API that uses the Open INstruments API to interact with a daughter device.
+_Device specific API_ - an API that uses the Open Instruments API to interact with a daughter device.
 
 
 ## Daughter device - FPGA interface
@@ -126,13 +129,13 @@ following manner
 depending on the device-specific firmware).    
 
 - 2 pins are dedicated to an I2C
-bus to obtain daughter board IO IDs and     metadata,   
+bus to obtain daughter board IO IDs and metadata,   
 
-- 4 undefined pins for
+- 4 undefined pins 
 that can be used in any way   
 
 - 20 Power supply pins (12 ground pins, 4 +5V
-pins, and 4 +12V pins) ground     and VCC.
+pins, and 4 +12V pins) ground and VCC.
 
 VHDCI cables are very widely available in low cost or very high quality
 variants, and are very robust and rated for many cycles.
@@ -179,7 +182,7 @@ VHDCI port.
 The Open Instruments standard opaquely encapsulates the FPGA/host interface so
 that neither hardware, firmware or software need to be modified significantly in
 order to switch between interfaces. On the software side, the interface is
-encapsulated by the Open INstruments API, and on the firmware side by the Host
+encapsulated by the Open Instruments API, and on the firmware side by the Host
 interface IP core.
 
 
