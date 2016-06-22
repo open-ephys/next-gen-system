@@ -22,13 +22,13 @@ two.
 
 
 ![Example hardware configuration of a Open Instruments system with threesd
-connected daugher devices / breakout boards. In addition to the DIO board that provides the
+connected daughter devices / breakout boards. In addition to the DIO board that provides the
 electrical connections between the FPGA and the breakout boards, a 3rd party FMC
 board is shown, connected to the FPGA through the second FMC
 connector.](doc/whitepaper_extended/imgs/system_overview.png)
 
 _Example hardware configuration of a Open Instruments system with three
-connected daugher devices / breakout boards. In addition to the DIO board that provides the
+connected daughter devices / breakout boards. In addition to the DIO board that provides the
 electrical connections between the FPGA and the breakout boards, a 3rd party FMC
 board is shown, connected to the FPGA through the second FMC connector._
 
@@ -44,10 +44,10 @@ needed to use the system in a dynamic clamp whole-cell experiment.
 - A digital interface connecting to high density CMOS probes.
 
 
-To implement a system based on new type of probe, only two or three components
+To add a new type of probe to an existing open instruments system, only two or three components
 need to be designed:
 
-  1. A hardware interface that connects directly to FPGA pins trough a
+  1. A hardware interface that connects directly to FPGA pins through a
   standardized high-speed digital interconnect via generic 68-pin VHDCI
   connectors and cables (which are connected to the FPGA boards via 
   FMC connectors and an intermediate DIO board as mechanical interconnect). 
@@ -56,7 +56,7 @@ need to be designed:
   does not need to be able to communicate with the host PC, or be developed
   for specific drivers.
 
-  1.(Optional) Software that communicates with this hardware through the open
+  1. (Optional) Software that communicates with this hardware through the open
   instruments AI that provides a generic interface to the hardware via data
   transfers and device registers, and can be used with no knowledge of the
   underlying interconnect (PCIe, USB, Ethernet).
@@ -137,22 +137,22 @@ that can be used in any way
 - 20 Power supply pins (12 ground pins, 4 +5V
 pins, and 4 +12V pins) ground and VCC.
 
-VHDCI cables are very widely available in low cost or very high quality
-variants, and are very robust and rated for many cycles.
+VHDCI cables are very widely available at low cost or in very high quality
+variants, and are very robust and rated for many mating cycles.
 
 In addition to the VHDCI connectors, the DIO card also provides a few SMA connectors that can be used as clock IO to synchronize multiple systems.
 
 _Possible later extension:_ The kc705 boards provide 4 GTX tranceivers (12Gbps
 each) on the HPC FMC connector. Many other FPGA eval boards provide similar
 high-speed pins. For a further expansion of the system, these pins could be
-routd to external SPF or esata connector on the DIO board, providing a
-significantly higher troughput option for device specific or generic digital interfaces.
+routed to external SPF or esata connector on the DIO board, providing a
+significantly higher throughput option for device specific or generic digital interfaces.
 
 ### Protocol layer
 
 The Open Instruments standard does not enforce any protocol - a daughter device
 can communicate with the FPGA via the signal lines on the VHDCI connector
-defined in the physical layer in any way. This inlcudes the use of LVDS pins for
+defined in the physical layer in any way. This includes the use of LVDS pins for
 single ended signals.
 
 The only specification, apart from the pin out, is the presence of an i2c EEPROM
@@ -163,7 +163,7 @@ via the API.
 
 #### Canconical SPI protocol
 
-If desired, a daughter device can chose to adhere to a simple standardized
+If desired, a daughter device can choose to adhere to a simple standardized
 protocol to stream data to and from the system via the VHDCI connector. To do
 this, the device simply needs to identify (via the eeprom) as a 'canonical SPI
 device'. From the point of view of the open instruments standard, this canonical
@@ -180,7 +180,7 @@ VHDCI port.
 ## FPGA - host interface 
 
 The Open Instruments standard opaquely encapsulates the FPGA/host interface so
-that neither hardware, firmware or software need to be modified significantly in
+that neither hardware, firmware nor software need to be modified significantly in
 order to switch between interfaces. On the software side, the interface is
 encapsulated by the Open Instruments API, and on the firmware side by the Host
 interface IP core.
@@ -206,7 +206,7 @@ interconnect via ethernet will just require an appropriate IP core.
 
 [PCIe](https://en.wikipedia.org/wiki/PCI_Express), which is used as the basic
 for almost all other interfaces can currently achieve throughputs of around ~100
-Gbs, which far exceeds the bandwidth required for any current or mid-term
+Gbts, which far exceeds the bandwidth required for any current or mid-term
 electrophysiology applications, but could be useful eventually. The most common
 type of FPGA evaluation board that is recommended for open einstruments systems,
 the Xilinx Kintex kc705 achieves around 12Gbps, which is sufficient for almost
@@ -307,7 +307,7 @@ extended with very low latency capability.
 
 All communication to the API and to device specific and user-facing software is
 encapsulated on the firmware side into host interface IP cores that adhere to
-the same wishbone interface as daugher device specific IP cores.
+the same wishbone interface as daughter device specific IP cores.
 
 There are two types of interfaces by which the host  interface IP core
 communicates with device specific IP cores: Registers, and streams.
@@ -319,7 +319,7 @@ a register bank.
 Ports can contain multiple streams, and each streams is accessed by oiReadStream
 or oiWriteStream. On the IP core, these streams correspond to FIFOs.
 
-2do: wrap this in a whishbone compatible interface.
+2do: wrap this in a wishbone compatible interface.
 
 Examples of host interface IP cores are:
 
