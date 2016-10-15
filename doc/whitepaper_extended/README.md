@@ -113,6 +113,8 @@ following manner
   - 20 Power supply pins (12 ground pins, 4 +5V pins, and 4 +12V pins) ground
     and VCC. 
 
+See google [doc of pin out specification] (https://docs.google.com/spreadsheets/d/18WfmbLGt8bGUUdksKp6AKA_wMX2SJ3Tndin-nnEgUCs/edit#gid=438515320)
+
 VHDCI cables are very widely available in low cost or very high quality
 variants, and are very robust and rated for many cycles. Examples of hardware
 modules are:
