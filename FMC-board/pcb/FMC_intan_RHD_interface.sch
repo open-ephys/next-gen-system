@@ -3965,6 +3965,9 @@ FMC MODULE</text>
 <part name="DO_ISO1" library="jonnew" deviceset="ADUM3440" device="" value="ISO7640"/>
 <part name="DO_ISO2" library="jonnew" deviceset="ADUM3440" device="" value="ISO7640"/>
 <part name="DI_ISO2" library="jonnew" deviceset="ADUM3440" device="" value="ISO7640"/>
+<part name="U9" library="jonnew" deviceset="ADN4664" device="_SOIC" value="ADN4664"/>
+<part name="U10" library="jonnew" deviceset="ADN4663" device="_SOIC" value="ADN4663"/>
+<part name="U11" library="jonnew" deviceset="ADN4663" device="_SOIC" value="ADN4663"/>
 </parts>
 <sheets>
 <sheet>
@@ -4132,6 +4135,9 @@ FMC MODULE</text>
 <instance part="DO_ISO1" gate="G$1" x="228.6" y="241.3" rot="R180"/>
 <instance part="DO_ISO2" gate="G$1" x="228.6" y="66.04" rot="R180"/>
 <instance part="DI_ISO2" gate="G$1" x="228.6" y="88.9"/>
+<instance part="U9" gate="G$1" x="33.02" y="287.02"/>
+<instance part="U10" gate="G$1" x="27.94" y="317.5" rot="MR0"/>
+<instance part="U11" gate="G$1" x="20.32" y="350.52" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -5361,6 +5367,7 @@ FMC MODULE</text>
 <wire x1="185.42" y1="139.7" x2="185.42" y2="109.22" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="DIN1"/>
 <wire x1="185.42" y1="109.22" x2="177.8" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="180.34" y1="106.68" x2="172.72" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
